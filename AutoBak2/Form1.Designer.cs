@@ -36,6 +36,7 @@
             optionsToolStripMenuItem = new ToolStripMenuItem();
             importToolStripMenuItem = new ToolStripMenuItem();
             exportToolStripMenuItem = new ToolStripMenuItem();
+            openConfigfolderToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             showHelpWindowToolStripMenuItem = new ToolStripMenuItem();
             settingsToolStripMenuItem = new ToolStripMenuItem();
@@ -44,9 +45,14 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
-            openConfigfolderToolStripMenuItem = new ToolStripMenuItem();
+            statusStrip1 = new StatusStrip();
+            toolStripProgressBar1 = new ToolStripProgressBar();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
+            label1 = new Label();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -54,7 +60,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, optionsToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1253, 24);
+            menuStrip1.Size = new Size(1270, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -95,14 +101,20 @@
             // importToolStripMenuItem
             // 
             importToolStripMenuItem.Name = "importToolStripMenuItem";
-            importToolStripMenuItem.Size = new Size(180, 22);
+            importToolStripMenuItem.Size = new Size(173, 22);
             importToolStripMenuItem.Text = "Import";
             // 
             // exportToolStripMenuItem
             // 
             exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            exportToolStripMenuItem.Size = new Size(180, 22);
+            exportToolStripMenuItem.Size = new Size(173, 22);
             exportToolStripMenuItem.Text = "Export";
+            // 
+            // openConfigfolderToolStripMenuItem
+            // 
+            openConfigfolderToolStripMenuItem.Name = "openConfigfolderToolStripMenuItem";
+            openConfigfolderToolStripMenuItem.Size = new Size(173, 22);
+            openConfigfolderToolStripMenuItem.Text = "Open Configfolder";
             // 
             // helpToolStripMenuItem
             // 
@@ -142,15 +154,16 @@
             tabControl1.Location = new Point(12, 27);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1229, 614);
+            tabControl1.Size = new Size(1246, 628);
             tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(label1);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1221, 586);
+            tabPage1.Size = new Size(1238, 600);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Instance 1";
             tabPage1.UseVisualStyleBackColor = true;
@@ -165,17 +178,41 @@
             tabPage2.Text = "Instance 2";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // openConfigfolderToolStripMenuItem
+            // statusStrip1
             // 
-            openConfigfolderToolStripMenuItem.Name = "openConfigfolderToolStripMenuItem";
-            openConfigfolderToolStripMenuItem.Size = new Size(180, 22);
-            openConfigfolderToolStripMenuItem.Text = "Open Configfolder";
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripProgressBar1, toolStripStatusLabel1 });
+            statusStrip1.Location = new Point(0, 658);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(1270, 22);
+            statusStrip1.TabIndex = 2;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripProgressBar1
+            // 
+            toolStripProgressBar1.Name = "toolStripProgressBar1";
+            toolStripProgressBar1.Size = new Size(1200, 16);
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(118, 15);
+            toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(173, 95);
+            label1.Name = "label1";
+            label1.Size = new Size(377, 60);
+            label1.TabIndex = 0;
+            label1.Text = "- Daemon Control\r\n\r\n-.NET Web Panel, bypassing onPrem controls to Remote-Set Daemons\r\n\r\n";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1253, 653);
+            ClientSize = new Size(1270, 680);
+            Controls.Add(statusStrip1);
             Controls.Add(tabControl1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
@@ -184,6 +221,10 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -207,5 +248,9 @@
         private ToolStripMenuItem visitWebsiteToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem openConfigfolderToolStripMenuItem;
+        private StatusStrip statusStrip1;
+        private ToolStripProgressBar toolStripProgressBar1;
+        private ToolStripStatusLabel toolStripStatusLabel1;
+        private Label label1;
     }
 }
