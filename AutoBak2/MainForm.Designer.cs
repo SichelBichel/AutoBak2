@@ -853,7 +853,7 @@
             ForeColor = SystemColors.ControlDarkDark;
             MainMenuStrip = menuStrip1;
             Name = "MainForm";
-            Text = "AutoBak 2";
+            Text = "AutoBak 2 [0.0.1]";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
