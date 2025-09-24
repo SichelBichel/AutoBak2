@@ -47,7 +47,6 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
-            panel1 = new Panel();
             textBox1 = new TextBox();
             imageListIcons = new ImageList(components);
             buttonSelectScheduleTask = new Button();
@@ -95,11 +94,14 @@
             radioButtonTCP = new RadioButton();
             radioButton1 = new RadioButton();
             label9 = new Label();
+            groupBox4 = new GroupBox();
+            comboBox1 = new ComboBox();
+            label10 = new Label();
+            richTextBox1 = new RichTextBox();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
-            panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             panel2.SuspendLayout();
@@ -109,6 +111,7 @@
             groupBox3.SuspendLayout();
             panel4.SuspendLayout();
             groupBoxProtocol.SuspendLayout();
+            groupBox4.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -219,7 +222,7 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.Silver;
-            tabPage1.Controls.Add(panel1);
+            tabPage1.Controls.Add(groupBox4);
             tabPage1.ForeColor = SystemColors.ActiveCaptionText;
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
@@ -243,15 +246,6 @@
             tabPage2.Size = new Size(1238, 613);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Job Editor";
-            // 
-            // panel1
-            // 
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(button1);
-            panel1.Location = new Point(135, 98);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(264, 325);
-            panel1.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -341,7 +335,7 @@
             button1.ImageAlign = ContentAlignment.TopCenter;
             button1.ImageKey = "icon_Start.png";
             button1.ImageList = imageListHighQualityIcons;
-            button1.Location = new Point(12, 13);
+            button1.Location = new Point(30, 22);
             button1.Name = "button1";
             button1.Size = new Size(101, 50);
             button1.TabIndex = 1;
@@ -693,12 +687,14 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(richTextBox1);
+            groupBox3.Controls.Add(label10);
             groupBox3.Controls.Add(panel4);
             groupBox3.Controls.Add(label11);
             groupBox3.Controls.Add(textBox6);
-            groupBox3.Location = new Point(6, 270);
+            groupBox3.Location = new Point(6, 191);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(600, 150);
+            groupBox3.Size = new Size(600, 229);
             groupBox3.TabIndex = 30;
             groupBox3.TabStop = false;
             groupBox3.Text = "General";
@@ -708,7 +704,7 @@
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(groupBoxProtocol);
             panel4.Controls.Add(checkBox4);
-            panel4.Location = new Point(4, 66);
+            panel4.Location = new Point(4, 146);
             panel4.Name = "panel4";
             panel4.Size = new Size(590, 77);
             panel4.TabIndex = 55;
@@ -803,12 +799,48 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(85, 155);
+            label9.Font = new Font("Segoe UI", 32F, FontStyle.Bold);
+            label9.Location = new Point(150, 132);
             label9.Name = "label9";
-            label9.Size = new Size(402, 86);
+            label9.Size = new Size(270, 59);
             label9.TabIndex = 31;
             label9.Text = "JOB EDITOR";
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(comboBox1);
+            groupBox4.Controls.Add(button1);
+            groupBox4.Location = new Point(379, 301);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(437, 100);
+            groupBox4.TabIndex = 1;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Single Copy";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(176, 24);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 2;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(6, 63);
+            label10.Name = "label10";
+            label10.Size = new Size(88, 15);
+            label10.TabIndex = 57;
+            label10.Text = "Job Description";
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Location = new Point(6, 81);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(588, 59);
+            richTextBox1.TabIndex = 58;
+            richTextBox1.Text = "";
             // 
             // MainForm
             // 
@@ -828,7 +860,6 @@
             tabPage1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
-            panel1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -847,6 +878,7 @@
             panel4.PerformLayout();
             groupBoxProtocol.ResumeLayout(false);
             groupBoxProtocol.PerformLayout();
+            groupBox4.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -870,7 +902,6 @@
         private ToolStripMenuItem visitWebsiteToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem openConfigfolderToolStripMenuItem;
-        private Panel panel1;
         private TextBox textBox1;
         private Button buttonSelectScheduleTask;
         private ImageList imageListIcons;
@@ -918,5 +949,9 @@
         private RadioButton radioButtonUDP;
         private RadioButton radioButtonTCP;
         private Label label9;
+        private GroupBox groupBox4;
+        private ComboBox comboBox1;
+        private RichTextBox richTextBox1;
+        private Label label10;
     }
 }
