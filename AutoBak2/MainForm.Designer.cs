@@ -94,6 +94,7 @@
             radioButtonUDP = new RadioButton();
             radioButtonTCP = new RadioButton();
             radioButton1 = new RadioButton();
+            label9 = new Label();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -230,6 +231,7 @@
             // tabPage2
             // 
             tabPage2.BackColor = Color.Silver;
+            tabPage2.Controls.Add(label9);
             tabPage2.Controls.Add(groupBox3);
             tabPage2.Controls.Add(panel5);
             tabPage2.Controls.Add(groupBox2);
@@ -593,7 +595,7 @@
             panel5.Controls.Add(button10);
             panel5.Controls.Add(label12);
             panel5.Controls.Add(comboBoxFirewallPreset);
-            panel5.Location = new Point(6, 6);
+            panel5.Location = new Point(6, 15);
             panel5.Name = "panel5";
             panel5.Size = new Size(600, 111);
             panel5.TabIndex = 29;
@@ -798,6 +800,16 @@
             radioButton1.Text = ".gz";
             radioButton1.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(85, 155);
+            label9.Name = "label9";
+            label9.Size = new Size(402, 86);
+            label9.TabIndex = 31;
+            label9.Text = "JOB EDITOR";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -815,6 +827,7 @@
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
             panel1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -904,5 +917,6 @@
         private RadioButton radioButtonTCPandUDP;
         private RadioButton radioButtonUDP;
         private RadioButton radioButtonTCP;
+        private Label label9;
     }
 }
