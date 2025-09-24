@@ -1,6 +1,6 @@
 ﻿namespace AutoBak2
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -45,18 +45,19 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
-            statusStrip1 = new StatusStrip();
-            toolStripProgressBar1 = new ToolStripProgressBar();
-            toolStripStatusLabel1 = new ToolStripStatusLabel();
-            label1 = new Label();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            textBox1 = new TextBox();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
-            statusStrip1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = SystemColors.ControlDarkDark;
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, optionsToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
@@ -93,6 +94,7 @@
             // optionsToolStripMenuItem
             // 
             optionsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { importToolStripMenuItem, exportToolStripMenuItem, openConfigfolderToolStripMenuItem });
+            optionsToolStripMenuItem.ForeColor = SystemColors.ActiveCaptionText;
             optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             optionsToolStripMenuItem.Size = new Size(55, 20);
             optionsToolStripMenuItem.Text = "Config";
@@ -154,77 +156,74 @@
             tabControl1.Location = new Point(12, 27);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1246, 628);
+            tabControl1.Size = new Size(1246, 641);
             tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(label1);
+            tabPage1.BackColor = Color.Silver;
+            tabPage1.Controls.Add(panel1);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1238, 600);
+            tabPage1.Size = new Size(1238, 613);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "Instance 1";
-            tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Text = "Control";
             // 
             // tabPage2
             // 
+            tabPage2.BackColor = Color.Silver;
+            tabPage2.Controls.Add(panel2);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1221, 586);
+            tabPage2.Size = new Size(1238, 613);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "Instance 2";
-            tabPage2.UseVisualStyleBackColor = true;
+            tabPage2.Text = "Job Editor";
             // 
-            // statusStrip1
+            // panel1
             // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripProgressBar1, toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(0, 658);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1270, 22);
-            statusStrip1.TabIndex = 2;
-            statusStrip1.Text = "statusStrip1";
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Location = new Point(135, 98);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(264, 325);
+            panel1.TabIndex = 0;
             // 
-            // toolStripProgressBar1
+            // panel2
             // 
-            toolStripProgressBar1.Name = "toolStripProgressBar1";
-            toolStripProgressBar1.Size = new Size(1200, 16);
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(textBox1);
+            panel2.Location = new Point(261, 135);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(688, 285);
+            panel2.TabIndex = 0;
             // 
-            // toolStripStatusLabel1
+            // textBox1
             // 
-            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(118, 15);
-            toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            textBox1.Location = new Point(3, 3);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(599, 23);
+            textBox1.TabIndex = 0;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(173, 95);
-            label1.Name = "label1";
-            label1.Size = new Size(377, 60);
-            label1.TabIndex = 0;
-            label1.Text = "- Daemon Control\r\n\r\n-.NET Web Panel, bypassing onPrem controls to Remote-Set Daemons\r\n\r\n";
-            // 
-            // Form1
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Gray;
             ClientSize = new Size(1270, 680);
-            Controls.Add(statusStrip1);
             Controls.Add(tabControl1);
             Controls.Add(menuStrip1);
+            ForeColor = SystemColors.ControlDarkDark;
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
+            Name = "MainForm";
             Text = "AutoBak 2";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
-            statusStrip1.ResumeLayout(false);
-            statusStrip1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -248,9 +247,8 @@
         private ToolStripMenuItem visitWebsiteToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem openConfigfolderToolStripMenuItem;
-        private StatusStrip statusStrip1;
-        private ToolStripProgressBar toolStripProgressBar1;
-        private ToolStripStatusLabel toolStripStatusLabel1;
-        private Label label1;
+        private Panel panel1;
+        private Panel panel2;
+        private TextBox textBox1;
     }
 }
