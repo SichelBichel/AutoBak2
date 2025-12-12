@@ -134,7 +134,6 @@ namespace AutoBak2
                 job.ArchiveType = JobConfig.ArchiveFormat.None;
             }
 
-            // 4. Subdirectory-Einstellungen
             job.CreateSubdirectory = checkBoxCreateSubdirectory.Checked;
             job.SubdirectoryName = textBoxSubdirectoryName.Text.Trim();
             job.UseSourcedirectoryName = checkBoxUseSourcedirectoryName.Checked;
@@ -171,7 +170,7 @@ namespace AutoBak2
 
             if (comboBoxJobSelection.SelectedItem == null || string.IsNullOrWhiteSpace(comboBoxJobSelection.Text))
             {
-                MessageBox.Show("Bitte wählen Sie zuerst einen Job aus der Liste im 'Job Manager' aus.", "Auswahl erforderlich", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageHandler.DisplayWarningBox("Caution", $"Select a Job first");
                 return;
             }
 
@@ -186,11 +185,11 @@ namespace AutoBak2
             }
             catch (FileNotFoundException)
             {
-                MessageBox.Show($"Die Konfigurationsdatei für den Job '{selectedJobName}' wurde nicht gefunden.", "Fehler beim Laden", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageHandler.DisplayWarningBox("Warning", $"{selectedJobName} not found");
             }
             catch (Exception ex)
-            {
-                MessageBox.Show($"Fehler beim Laden der Job-Konfiguration: {ex.Message}", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            { 
+                MessageHandler.DisplayErrorBox("ERROR", $"Error while loading job config: {ex.Message}");
             }
         }
 
@@ -198,39 +197,28 @@ namespace AutoBak2
         {
             try
             {
-                // 1. Daten aus der GUI auslesen und JobConfig-Objekt erstellen
                 JobConfig jobToSave = GetJobDataFromUI();
 
-                // 2. Validierung: Job Name muss vorhanden sein (Validierung aus dem Manager)
                 if (string.IsNullOrWhiteSpace(jobToSave.Name))
                 {
-                    MessageBox.Show("Der Job Name darf nicht leer sein.", "Speicherfehler", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageHandler.DisplayWarningBox("Warning", "Name cant be empty");
                     return;
                 }
 
-                // Wichtig: Beim Speichern wird die XML-Datei überschrieben,
-                // falls der Name (jobToSave.Name) bereits existiert.
                 JobConfigurationManager.SaveJob(jobToSave);
 
-                // 3. Nach erfolgreichem Speichern die Job-Liste aktualisieren
-                // Dies ist notwendig, falls ein NEUER Job gespeichert wurde (oder der Name geändert wurde).
                 LoadJobSelectionComboBox();
 
-                // Setze den Fokus auf den soeben gespeicherten Job in der ComboBox
                 comboBoxJobSelection.Text = jobToSave.Name;
 
-                // Erfolgsmeldung anzeigen
-                MessageBox.Show($"Job '{jobToSave.Name}' wurde erfolgreich gespeichert/aktualisiert.", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (ArgumentException ex)
             {
-                // Fängt die "Name Can't be empty"-Exception vom Manager ab
-                MessageBox.Show($"Fehler: {ex.Message}", "Speicherfehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageHandler.DisplayErrorBox(" Error", $"Argument Exception {ex.Message}");
             }
             catch (Exception ex)
             {
-                // Alle anderen Fehler abfangen (z.B. Dateisystemfehler, Serialisierungsfehler)
-                MessageBox.Show($"Ein unerwarteter Fehler beim Speichern ist aufgetreten: {ex.Message}", "Speicherfehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageHandler.DisplayErrorBox("Fatal Error", $"writing issues {ex.Message}");
             }
         }
 
