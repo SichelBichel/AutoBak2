@@ -136,6 +136,8 @@
             comboBox2 = new ComboBox();
             richTextBox1 = new RichTextBox();
             buttonShowDates = new Button();
+            flowLayoutPanelInstances = new FlowLayoutPanel();
+            label14 = new Label();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -162,6 +164,7 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             panel7.SuspendLayout();
+            flowLayoutPanelInstances.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -214,19 +217,19 @@
             // importToolStripMenuItem
             // 
             importToolStripMenuItem.Name = "importToolStripMenuItem";
-            importToolStripMenuItem.Size = new Size(216, 26);
+            importToolStripMenuItem.Size = new Size(224, 26);
             importToolStripMenuItem.Text = "Import";
             // 
             // exportToolStripMenuItem
             // 
             exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            exportToolStripMenuItem.Size = new Size(216, 26);
+            exportToolStripMenuItem.Size = new Size(224, 26);
             exportToolStripMenuItem.Text = "Export";
             // 
             // openConfigfolderToolStripMenuItem
             // 
             openConfigfolderToolStripMenuItem.Name = "openConfigfolderToolStripMenuItem";
-            openConfigfolderToolStripMenuItem.Size = new Size(216, 26);
+            openConfigfolderToolStripMenuItem.Size = new Size(224, 26);
             openConfigfolderToolStripMenuItem.Text = "Open Configfolder";
             // 
             // helpToolStripMenuItem
@@ -275,6 +278,7 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.Silver;
+            tabPage1.Controls.Add(flowLayoutPanelInstances);
             tabPage1.Controls.Add(groupBox4);
             tabPage1.ForeColor = SystemColors.ActiveCaptionText;
             tabPage1.Location = new Point(4, 29);
@@ -289,11 +293,11 @@
             // 
             groupBox4.Controls.Add(comboBox1);
             groupBox4.Controls.Add(button1);
-            groupBox4.Location = new Point(6, 8);
+            groupBox4.Location = new Point(458, 8);
             groupBox4.Margin = new Padding(3, 4, 3, 4);
             groupBox4.Name = "groupBox4";
             groupBox4.Padding = new Padding(3, 4, 3, 4);
-            groupBox4.Size = new Size(499, 133);
+            groupBox4.Size = new Size(451, 86);
             groupBox4.TabIndex = 1;
             groupBox4.TabStop = false;
             groupBox4.Text = "Single Copy";
@@ -301,7 +305,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(183, 50);
+            comboBox1.Location = new Point(136, 40);
             comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(292, 28);
@@ -314,10 +318,10 @@
             button1.ImageAlign = ContentAlignment.TopCenter;
             button1.ImageKey = "icon_Start.png";
             button1.ImageList = imageListHighQualityIcons;
-            button1.Location = new Point(34, 29);
+            button1.Location = new Point(6, 29);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(115, 67);
+            button1.Size = new Size(115, 49);
             button1.TabIndex = 1;
             button1.Text = "Start Job";
             button1.TextAlign = ContentAlignment.BottomCenter;
@@ -1389,6 +1393,26 @@
             buttonShowDates.Text = "Calculate Backup Times";
             buttonShowDates.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanelInstances
+            // 
+            flowLayoutPanelInstances.BackColor = Color.DarkGray;
+            flowLayoutPanelInstances.BorderStyle = BorderStyle.FixedSingle;
+            flowLayoutPanelInstances.Controls.Add(label14);
+            flowLayoutPanelInstances.Location = new Point(6, 101);
+            flowLayoutPanelInstances.Name = "flowLayoutPanelInstances";
+            flowLayoutPanelInstances.Size = new Size(1404, 714);
+            flowLayoutPanelInstances.TabIndex = 2;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 14F);
+            label14.Location = new Point(3, 0);
+            label14.Name = "label14";
+            label14.Size = new Size(336, 32);
+            label14.TabIndex = 0;
+            label14.Text = "Not available in alpha verision";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1445,6 +1469,8 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            flowLayoutPanelInstances.ResumeLayout(false);
+            flowLayoutPanelInstances.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1557,5 +1583,7 @@
         private ComboBox comboBox2;
         private Button buttonShowDates;
         private RichTextBox richTextBox1;
+        private FlowLayoutPanel flowLayoutPanelInstances;
+        private Label label14;
     }
 }
