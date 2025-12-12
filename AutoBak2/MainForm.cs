@@ -85,7 +85,7 @@ namespace AutoBak2
 
             // Ich nehme an, Sie haben hier die Steuerelemente checkBoxCreateSubdirectory 
             // und textBoxDirectoryName (oder ähnlich) verwendet, da sie im Screenshot sichtbar sind,
-            // aber nicht explizit benannt wurden. Ich verwende Platzhalternamen:
+
 
             checkBoxCreateSubdirectory.Checked = config.CreateSubdirectory;
 
