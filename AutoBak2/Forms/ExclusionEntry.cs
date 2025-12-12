@@ -16,5 +16,14 @@ namespace AutoBak2.Forms
         {
             InitializeComponent();
         }
+        public void setExclusionPath(string path)
+        {
+            labelExclusionPath.Text = path;
+        }
+
+        public string getExclusionPath()
+        {
+            return labelExclusionPath.Text;
+        }
     }
 }

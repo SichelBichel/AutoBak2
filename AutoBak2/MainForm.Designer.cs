@@ -79,7 +79,7 @@
             button4 = new Button();
             flowLayoutPanelExclusions = new FlowLayoutPanel();
             button15 = new Button();
-            button3 = new Button();
+            buttonSelectExclusionDialog = new Button();
             label5 = new Label();
             textBoxExclusionPath = new TextBox();
             label6 = new Label();
@@ -653,7 +653,7 @@
             panel3.Controls.Add(button4);
             panel3.Controls.Add(flowLayoutPanelExclusions);
             panel3.Controls.Add(button15);
-            panel3.Controls.Add(button3);
+            panel3.Controls.Add(buttonSelectExclusionDialog);
             panel3.Controls.Add(label5);
             panel3.Controls.Add(textBoxExclusionPath);
             panel3.Controls.Add(label6);
@@ -704,15 +704,16 @@
             button15.TextAlign = ContentAlignment.BottomCenter;
             button15.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonSelectExclusionDialog
             // 
-            button3.Location = new Point(389, 49);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(32, 35);
-            button3.TabIndex = 58;
-            button3.Text = "🔍";
-            button3.UseVisualStyleBackColor = true;
+            buttonSelectExclusionDialog.Location = new Point(389, 49);
+            buttonSelectExclusionDialog.Margin = new Padding(3, 4, 3, 4);
+            buttonSelectExclusionDialog.Name = "buttonSelectExclusionDialog";
+            buttonSelectExclusionDialog.Size = new Size(32, 35);
+            buttonSelectExclusionDialog.TabIndex = 58;
+            buttonSelectExclusionDialog.Text = "🔍";
+            buttonSelectExclusionDialog.UseVisualStyleBackColor = true;
+            buttonSelectExclusionDialog.Click += buttonSelectExclusionDialog_Click;
             // 
             // label5
             // 
@@ -975,7 +976,7 @@
         private Label label7;
         private Panel panel3;
         private Button button15;
-        private Button button3;
+        private Button buttonSelectExclusionDialog;
         private Label label5;
         private TextBox textBoxExclusionPath;
         private Label label6;

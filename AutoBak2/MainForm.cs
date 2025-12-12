@@ -1,3 +1,4 @@
+using AutoBak2.Forms;
 using AutoBak2.Utils;
 using AutoBak2.Utils.ShellActions;
 
@@ -58,6 +59,8 @@ namespace AutoBak2
             radioButton7z.Checked = false;
             radioButtonGz.Checked = false;
 
+            flowLayoutPanelExclusions.Controls.Clear();
+
             if (config.ArchiveEnabled)
             {
                 switch (config.ArchiveType)
@@ -81,11 +84,17 @@ namespace AutoBak2
                 }
             }
 
-            // --- 4. Subdirectory-Einstellungen (basierend auf der JobConfig) ---
+            if (config.ExcludedItems != null)
+            {
+                foreach (string exclusionPath in config.ExcludedItems)
+                {
+                    ExclusionEntry entry = new ExclusionEntry();
 
-            // Ich nehme an, Sie haben hier die Steuerelemente checkBoxCreateSubdirectory 
-            // und textBoxDirectoryName (oder ähnlich) verwendet, da sie im Screenshot sichtbar sind,
+                    entry.setExclusionPath(exclusionPath);
 
+                    flowLayoutPanelExclusions.Controls.Add(entry);
+                }
+            }
 
             checkBoxCreateSubdirectory.Checked = config.CreateSubdirectory;
 
@@ -136,11 +145,21 @@ namespace AutoBak2
             job.SubdirectoryName = textBoxSubdirectoryName.Text.Trim();
             job.UseSourcedirectoryName = checkBoxUseSourcedirectoryName.Checked;
 
-            // 5. Exklusionen (Müssten hier ausgelesen werden, wir initialisieren sie leer)
-            // Wenn der Job geladen wurde, enthält diese Liste möglicherweise schon Daten.
-            // Beim Speichern eines geänderten Jobs müssen wir die Exclusions mitnehmen.
-            // Da wir diese noch ignorieren, erstellen wir hier nur eine neue leere Liste.
-            // Später müsste hier die Logik zum Auslesen der Exclusions-Liste hin.
+            job.ExcludedItems = new List<string>();
+            foreach (Control control in flowLayoutPanelExclusions.Controls)
+            {
+                // Prüft, ob es sich um unser ExclusionEntry UserControl handelt
+                if (control is ExclusionEntry exclusionEntry)
+                {
+                    string path = exclusionEntry.getExclusionPath();
+
+                    if (!string.IsNullOrWhiteSpace(path))
+                    {
+                        job.ExcludedItems.Add(path);
+                    }
+                }
+            }
+
             job.ExcludedItems = new List<string>();
 
             return job;
@@ -257,16 +276,50 @@ namespace AutoBak2
                     {
                         textBoxDestinationPath.Text = fbd.SelectedPath;
                     }
-                    if (context == "source")
+                    else if (context == "source")
                     {
                         textBoxSourcePath.Text = fbd.SelectedPath;
                     }
-                    if (context == "exclusion")
+                    else if (context == "exclusion")
                     {
-                        textBoxExclusionPath.Text = fbd.SelectedPath;
+                        string exclusionPath = fbd.SelectedPath;
+
+                        // 1. Prüfen, ob der Pfad nicht leer ist
+                        if (!string.IsNullOrWhiteSpace(exclusionPath))
+                        {
+                            // 2. Prüfen, ob dieser Pfad nicht bereits existiert (optional, aber empfohlen)
+                            if (IsExclusionPathAlreadyPresent(exclusionPath))
+                            {
+                                MessageHandler.DisplayWarningBox("Caution", $"The path '{exclusionPath}' is already listed as an exclusion.");
+                                return;
+                            }
+
+                            // 3. Neues ExclusionEntry Control erstellen
+                            ExclusionEntry entry = new ExclusionEntry();
+
+                            // 4. Pfad setzen (nimmt den Pfad aus dem Dialog)
+                            entry.setExclusionPath(exclusionPath);
+
+                            // 5. Dem FlowLayoutPanel hinzufügen
+                            flowLayoutPanelExclusions.Controls.Add(entry);
+                        }
                     }
                 }
             }
+        }
+        private bool IsExclusionPathAlreadyPresent(string path)
+        {
+            foreach (Control control in flowLayoutPanelExclusions.Controls)
+            {
+                if (control is ExclusionEntry exclusionEntry)
+                {
+                    if (exclusionEntry.getExclusionPath().Trim().Equals(path.Trim(), StringComparison.OrdinalIgnoreCase))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
 
@@ -332,6 +385,11 @@ namespace AutoBak2
                     MessageHandler.DisplayErrorBox("Fatal Error", $"Error while deleting job: {ex.Message}");
                 }
             }
+        }
+
+        private void buttonSelectExclusionDialog_Click(object sender, EventArgs e)
+        {
+            SelectFolderAndSetTextBox("exclusion");
         }
     }
 }
