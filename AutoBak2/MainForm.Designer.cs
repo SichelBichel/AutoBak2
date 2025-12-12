@@ -127,13 +127,15 @@
             numericUpDown1 = new NumericUpDown();
             label8 = new Label();
             panel7 = new Panel();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
+            buttonOpenSchedulefolder = new Button();
+            buttonNewSchedule = new Button();
+            buttonDeleteSchedule = new Button();
+            buttonEditSchedule = new Button();
+            buttonSaveSchedule = new Button();
             label13 = new Label();
             comboBox2 = new ComboBox();
+            richTextBox1 = new RichTextBox();
+            buttonShowDates = new Button();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -928,6 +930,8 @@
             // tabPage3
             // 
             tabPage3.BackColor = Color.Silver;
+            tabPage3.Controls.Add(buttonShowDates);
+            tabPage3.Controls.Add(richTextBox1);
             tabPage3.Controls.Add(label8);
             tabPage3.Controls.Add(panel7);
             tabPage3.Controls.Add(groupBox7);
@@ -1239,7 +1243,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 32F, FontStyle.Bold);
             label8.ForeColor = SystemColors.ActiveCaptionText;
-            label8.Location = new Point(152, 163);
+            label8.Location = new Point(183, 163);
             label8.Name = "label8";
             label8.Size = new Size(507, 72);
             label8.TabIndex = 33;
@@ -1249,101 +1253,101 @@
             // panel7
             // 
             panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(button2);
-            panel7.Controls.Add(button3);
-            panel7.Controls.Add(button4);
-            panel7.Controls.Add(button5);
-            panel7.Controls.Add(button6);
+            panel7.Controls.Add(buttonOpenSchedulefolder);
+            panel7.Controls.Add(buttonNewSchedule);
+            panel7.Controls.Add(buttonDeleteSchedule);
+            panel7.Controls.Add(buttonEditSchedule);
+            panel7.Controls.Add(buttonSaveSchedule);
             panel7.Controls.Add(label13);
             panel7.Controls.Add(comboBox2);
-            panel7.Location = new Point(60, 12);
+            panel7.Location = new Point(102, 12);
             panel7.Margin = new Padding(3, 4, 3, 4);
             panel7.Name = "panel7";
             panel7.Size = new Size(685, 147);
             panel7.TabIndex = 32;
             // 
-            // button2
+            // buttonOpenSchedulefolder
             // 
-            button2.Cursor = Cursors.Hand;
-            button2.Font = new Font("Segoe UI", 9F);
-            button2.ForeColor = SystemColors.ActiveCaptionText;
-            button2.ImageAlign = ContentAlignment.TopCenter;
-            button2.ImageIndex = 13;
-            button2.ImageList = imageListIcons;
-            button2.Location = new Point(543, 75);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(126, 57);
-            button2.TabIndex = 7;
-            button2.Text = "Open Job Folder";
-            button2.TextAlign = ContentAlignment.BottomCenter;
-            button2.UseVisualStyleBackColor = true;
+            buttonOpenSchedulefolder.Cursor = Cursors.Hand;
+            buttonOpenSchedulefolder.Font = new Font("Segoe UI", 9F);
+            buttonOpenSchedulefolder.ForeColor = SystemColors.ActiveCaptionText;
+            buttonOpenSchedulefolder.ImageAlign = ContentAlignment.TopCenter;
+            buttonOpenSchedulefolder.ImageIndex = 13;
+            buttonOpenSchedulefolder.ImageList = imageListIcons;
+            buttonOpenSchedulefolder.Location = new Point(543, 75);
+            buttonOpenSchedulefolder.Margin = new Padding(3, 4, 3, 4);
+            buttonOpenSchedulefolder.Name = "buttonOpenSchedulefolder";
+            buttonOpenSchedulefolder.Size = new Size(126, 57);
+            buttonOpenSchedulefolder.TabIndex = 7;
+            buttonOpenSchedulefolder.Text = "Open Folder";
+            buttonOpenSchedulefolder.TextAlign = ContentAlignment.BottomCenter;
+            buttonOpenSchedulefolder.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonNewSchedule
             // 
-            button3.Cursor = Cursors.Hand;
-            button3.ForeColor = SystemColors.ActiveCaptionText;
-            button3.ImageAlign = ContentAlignment.TopCenter;
-            button3.ImageIndex = 6;
-            button3.ImageList = imageListIcons;
-            button3.Location = new Point(15, 75);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(126, 57);
-            button3.TabIndex = 6;
-            button3.Text = "New Job";
-            button3.TextAlign = ContentAlignment.BottomCenter;
-            button3.UseVisualStyleBackColor = true;
+            buttonNewSchedule.Cursor = Cursors.Hand;
+            buttonNewSchedule.ForeColor = SystemColors.ActiveCaptionText;
+            buttonNewSchedule.ImageAlign = ContentAlignment.TopCenter;
+            buttonNewSchedule.ImageIndex = 6;
+            buttonNewSchedule.ImageList = imageListIcons;
+            buttonNewSchedule.Location = new Point(15, 75);
+            buttonNewSchedule.Margin = new Padding(3, 4, 3, 4);
+            buttonNewSchedule.Name = "buttonNewSchedule";
+            buttonNewSchedule.Size = new Size(126, 57);
+            buttonNewSchedule.TabIndex = 6;
+            buttonNewSchedule.Text = "New Schedule";
+            buttonNewSchedule.TextAlign = ContentAlignment.BottomCenter;
+            buttonNewSchedule.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // buttonDeleteSchedule
             // 
-            button4.Cursor = Cursors.Hand;
-            button4.Font = new Font("Segoe UI", 9F);
-            button4.ForeColor = SystemColors.ActiveCaptionText;
-            button4.ImageAlign = ContentAlignment.TopCenter;
-            button4.ImageIndex = 3;
-            button4.ImageList = imageListIcons;
-            button4.Location = new Point(413, 75);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(126, 57);
-            button4.TabIndex = 5;
-            button4.Text = "Delete Job";
-            button4.TextAlign = ContentAlignment.BottomCenter;
-            button4.UseVisualStyleBackColor = true;
+            buttonDeleteSchedule.Cursor = Cursors.Hand;
+            buttonDeleteSchedule.Font = new Font("Segoe UI", 9F);
+            buttonDeleteSchedule.ForeColor = SystemColors.ActiveCaptionText;
+            buttonDeleteSchedule.ImageAlign = ContentAlignment.TopCenter;
+            buttonDeleteSchedule.ImageIndex = 3;
+            buttonDeleteSchedule.ImageList = imageListIcons;
+            buttonDeleteSchedule.Location = new Point(413, 75);
+            buttonDeleteSchedule.Margin = new Padding(3, 4, 3, 4);
+            buttonDeleteSchedule.Name = "buttonDeleteSchedule";
+            buttonDeleteSchedule.Size = new Size(126, 57);
+            buttonDeleteSchedule.TabIndex = 5;
+            buttonDeleteSchedule.Text = "Delete";
+            buttonDeleteSchedule.TextAlign = ContentAlignment.BottomCenter;
+            buttonDeleteSchedule.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // buttonEditSchedule
             // 
-            button5.Cursor = Cursors.Hand;
-            button5.Font = new Font("Segoe UI", 9F);
-            button5.ForeColor = SystemColors.ActiveCaptionText;
-            button5.ImageAlign = ContentAlignment.TopCenter;
-            button5.ImageIndex = 16;
-            button5.ImageList = imageListIcons;
-            button5.Location = new Point(280, 75);
-            button5.Margin = new Padding(3, 4, 3, 4);
-            button5.Name = "button5";
-            button5.Size = new Size(126, 57);
-            button5.TabIndex = 4;
-            button5.Text = "Edit Job";
-            button5.TextAlign = ContentAlignment.BottomCenter;
-            button5.UseVisualStyleBackColor = true;
+            buttonEditSchedule.Cursor = Cursors.Hand;
+            buttonEditSchedule.Font = new Font("Segoe UI", 9F);
+            buttonEditSchedule.ForeColor = SystemColors.ActiveCaptionText;
+            buttonEditSchedule.ImageAlign = ContentAlignment.TopCenter;
+            buttonEditSchedule.ImageIndex = 16;
+            buttonEditSchedule.ImageList = imageListIcons;
+            buttonEditSchedule.Location = new Point(280, 75);
+            buttonEditSchedule.Margin = new Padding(3, 4, 3, 4);
+            buttonEditSchedule.Name = "buttonEditSchedule";
+            buttonEditSchedule.Size = new Size(126, 57);
+            buttonEditSchedule.TabIndex = 4;
+            buttonEditSchedule.Text = "Edit";
+            buttonEditSchedule.TextAlign = ContentAlignment.BottomCenter;
+            buttonEditSchedule.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // buttonSaveSchedule
             // 
-            button6.Cursor = Cursors.Hand;
-            button6.ForeColor = SystemColors.ActiveCaptionText;
-            button6.ImageAlign = ContentAlignment.TopCenter;
-            button6.ImageIndex = 15;
-            button6.ImageList = imageListIcons;
-            button6.Location = new Point(147, 75);
-            button6.Margin = new Padding(3, 4, 3, 4);
-            button6.Name = "button6";
-            button6.Size = new Size(126, 57);
-            button6.TabIndex = 2;
-            button6.Text = "Save Job";
-            button6.TextAlign = ContentAlignment.BottomCenter;
-            button6.UseVisualStyleBackColor = true;
+            buttonSaveSchedule.Cursor = Cursors.Hand;
+            buttonSaveSchedule.ForeColor = SystemColors.ActiveCaptionText;
+            buttonSaveSchedule.ImageAlign = ContentAlignment.TopCenter;
+            buttonSaveSchedule.ImageIndex = 15;
+            buttonSaveSchedule.ImageList = imageListIcons;
+            buttonSaveSchedule.Location = new Point(147, 75);
+            buttonSaveSchedule.Margin = new Padding(3, 4, 3, 4);
+            buttonSaveSchedule.Name = "buttonSaveSchedule";
+            buttonSaveSchedule.Size = new Size(126, 57);
+            buttonSaveSchedule.TabIndex = 2;
+            buttonSaveSchedule.Text = "Save";
+            buttonSaveSchedule.TextAlign = ContentAlignment.BottomCenter;
+            buttonSaveSchedule.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
@@ -1352,9 +1356,9 @@
             label13.ForeColor = SystemColors.ActiveCaptionText;
             label13.Location = new Point(264, 0);
             label13.Name = "label13";
-            label13.Size = new Size(109, 23);
+            label13.Size = new Size(152, 23);
             label13.TabIndex = 1;
-            label13.Text = "Job Manager";
+            label13.Text = "Schedule Manager";
             // 
             // comboBox2
             // 
@@ -1364,6 +1368,26 @@
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(676, 28);
             comboBox2.TabIndex = 0;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.BackColor = Color.Black;
+            richTextBox1.ForeColor = Color.White;
+            richTextBox1.Location = new Point(947, 49);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(453, 761);
+            richTextBox1.TabIndex = 34;
+            richTextBox1.Text = "";
+            // 
+            // buttonShowDates
+            // 
+            buttonShowDates.ForeColor = Color.Black;
+            buttonShowDates.Location = new Point(947, 8);
+            buttonShowDates.Name = "buttonShowDates";
+            buttonShowDates.Size = new Size(453, 35);
+            buttonShowDates.TabIndex = 35;
+            buttonShowDates.Text = "Calculate Backup Times";
+            buttonShowDates.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -1524,12 +1548,14 @@
         private RadioButton radioButtonUseInterval;
         private Label label8;
         private Panel panel7;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
+        private Button buttonOpenSchedulefolder;
+        private Button buttonNewSchedule;
+        private Button buttonDeleteSchedule;
+        private Button buttonEditSchedule;
+        private Button buttonSaveSchedule;
         private Label label13;
         private ComboBox comboBox2;
+        private Button buttonShowDates;
+        private RichTextBox richTextBox1;
     }
 }
