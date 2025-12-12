@@ -78,7 +78,7 @@
             panel3 = new Panel();
             button4 = new Button();
             flowLayoutPanelExclusions = new FlowLayoutPanel();
-            button15 = new Button();
+            buttonCreateExclusion = new Button();
             buttonSelectExclusionDialog = new Button();
             label5 = new Label();
             textBoxExclusionPath = new TextBox();
@@ -652,7 +652,7 @@
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(button4);
             panel3.Controls.Add(flowLayoutPanelExclusions);
-            panel3.Controls.Add(button15);
+            panel3.Controls.Add(buttonCreateExclusion);
             panel3.Controls.Add(buttonSelectExclusionDialog);
             panel3.Controls.Add(label5);
             panel3.Controls.Add(textBoxExclusionPath);
@@ -688,21 +688,22 @@
             flowLayoutPanelExclusions.Size = new Size(665, 564);
             flowLayoutPanelExclusions.TabIndex = 60;
             // 
-            // button15
+            // buttonCreateExclusion
             // 
-            button15.Cursor = Cursors.Hand;
-            button15.Font = new Font("Segoe UI", 9F);
-            button15.ImageAlign = ContentAlignment.TopCenter;
-            button15.ImageKey = "icon_create.png";
-            button15.ImageList = imageListHighQualityIcons;
-            button15.Location = new Point(427, 21);
-            button15.Margin = new Padding(3, 4, 3, 4);
-            button15.Name = "button15";
-            button15.Size = new Size(118, 63);
-            button15.TabIndex = 59;
-            button15.Text = "Create Exclusion";
-            button15.TextAlign = ContentAlignment.BottomCenter;
-            button15.UseVisualStyleBackColor = true;
+            buttonCreateExclusion.Cursor = Cursors.Hand;
+            buttonCreateExclusion.Font = new Font("Segoe UI", 9F);
+            buttonCreateExclusion.ImageAlign = ContentAlignment.TopCenter;
+            buttonCreateExclusion.ImageKey = "icon_create.png";
+            buttonCreateExclusion.ImageList = imageListHighQualityIcons;
+            buttonCreateExclusion.Location = new Point(427, 21);
+            buttonCreateExclusion.Margin = new Padding(3, 4, 3, 4);
+            buttonCreateExclusion.Name = "buttonCreateExclusion";
+            buttonCreateExclusion.Size = new Size(118, 63);
+            buttonCreateExclusion.TabIndex = 59;
+            buttonCreateExclusion.Text = "Create Exclusion";
+            buttonCreateExclusion.TextAlign = ContentAlignment.BottomCenter;
+            buttonCreateExclusion.UseVisualStyleBackColor = true;
+            buttonCreateExclusion.Click += buttonCreateExclusion_Click;
             // 
             // buttonSelectExclusionDialog
             // 
@@ -975,7 +976,7 @@
         private Button buttonSelectSourcePath;
         private Label label7;
         private Panel panel3;
-        private Button button15;
+        private Button buttonCreateExclusion;
         private Button buttonSelectExclusionDialog;
         private Label label5;
         private TextBox textBoxExclusionPath;

@@ -307,6 +307,9 @@ namespace AutoBak2
                 }
             }
         }
+
+
+
         private bool IsExclusionPathAlreadyPresent(string path)
         {
             foreach (Control control in flowLayoutPanelExclusions.Controls)
@@ -390,6 +393,24 @@ namespace AutoBak2
         private void buttonSelectExclusionDialog_Click(object sender, EventArgs e)
         {
             SelectFolderAndSetTextBox("exclusion");
+        }
+
+        private void buttonCreateExclusion_Click(object sender, EventArgs e)
+        {
+            string exclusionPath = textBoxExclusionPath.Text;
+
+            if (!string.IsNullOrWhiteSpace(exclusionPath))
+            { 
+                if (IsExclusionPathAlreadyPresent(exclusionPath))
+                {
+                    MessageHandler.DisplayWarningBox("Caution", $"The path '{exclusionPath}' is already listed as an exclusion.");
+                    return;
+                }
+
+                ExclusionEntry entry = new ExclusionEntry();
+                entry.setExclusionPath(exclusionPath);
+                flowLayoutPanelExclusions.Controls.Add(entry);
+            }
         }
     }
 }
