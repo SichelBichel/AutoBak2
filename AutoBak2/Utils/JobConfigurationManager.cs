@@ -64,6 +64,29 @@ public static class JobConfigurationManager
         MessageHandler.DisplayInfoBox("Success", $"Configuration for {config.Name} saved successfully to {filePath}");
     }
 
+
+    public static void DeleteJob(string jobName)
+    {
+        if (string.IsNullOrWhiteSpace(jobName))
+        {
+            throw new ArgumentException("Job name cannot be null or empty.");
+        }
+
+        string filePath = GetJobFilePath(jobName); // Verwendet die bestehende Pfad-Logik
+
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
+        }
+        else
+        {
+            // Wirft keine Exception, wenn die Datei bereits fehlt, aber meldet es
+            // Optional: throw new FileNotFoundException($"Die Job-Datei '{jobName}' wurde nicht gefunden.");
+        }
+    }
+
+
+
     /// <summary>
     /// Lädt eine JobConfig-Instanz aus einer XML-Datei.
     /// </summary>

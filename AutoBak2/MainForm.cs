@@ -300,7 +300,38 @@ namespace AutoBak2
 
         private void buttonDeleteJob_Click(object sender, EventArgs e)
         {
+            if (comboBoxJobSelection.SelectedItem == null || string.IsNullOrWhiteSpace(comboBoxJobSelection.Text))
+            {
+                MessageHandler.DisplayWarningBox("Caution", "Select a Job first");
+                return;
+            }
 
+            string selectedJobName = comboBoxJobSelection.Text;
+
+            // 2. Bestätigung einholen
+            DialogResult dialogResult = MessageBox.Show(
+                $"Are you sure you want to delete '{selectedJobName}' permanently?",
+                "Confirm deletion",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    JobConfigurationManager.DeleteJob(selectedJobName);
+
+                    clearEditorSelection();
+
+                    LoadJobSelectionComboBox();
+
+                    MessageHandler.DisplayInfoBox("Success", $"Job '{selectedJobName}' was deleted.");
+                }
+                catch (Exception ex)
+                {
+                    MessageHandler.DisplayErrorBox("Fatal Error", $"Error while deleting job: {ex.Message}");
+                }
+            }
         }
     }
 }
