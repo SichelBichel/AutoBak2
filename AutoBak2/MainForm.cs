@@ -160,7 +160,7 @@ namespace AutoBak2
                 }
             }
 
-            job.ExcludedItems = new List<string>();
+            // job.ExcludedItems = new List<string>();
 
             return job;
         }
@@ -284,23 +284,16 @@ namespace AutoBak2
                     {
                         string exclusionPath = fbd.SelectedPath;
 
-                        // 1. Prüfen, ob der Pfad nicht leer ist
                         if (!string.IsNullOrWhiteSpace(exclusionPath))
                         {
-                            // 2. Prüfen, ob dieser Pfad nicht bereits existiert (optional, aber empfohlen)
                             if (IsExclusionPathAlreadyPresent(exclusionPath))
                             {
                                 MessageHandler.DisplayWarningBox("Caution", $"The path '{exclusionPath}' is already listed as an exclusion.");
                                 return;
                             }
 
-                            // 3. Neues ExclusionEntry Control erstellen
                             ExclusionEntry entry = new ExclusionEntry();
-
-                            // 4. Pfad setzen (nimmt den Pfad aus dem Dialog)
                             entry.setExclusionPath(exclusionPath);
-
-                            // 5. Dem FlowLayoutPanel hinzufügen
                             flowLayoutPanelExclusions.Controls.Add(entry);
                         }
                     }
@@ -400,7 +393,7 @@ namespace AutoBak2
             string exclusionPath = textBoxExclusionPath.Text;
 
             if (!string.IsNullOrWhiteSpace(exclusionPath))
-            { 
+            {
                 if (IsExclusionPathAlreadyPresent(exclusionPath))
                 {
                     MessageHandler.DisplayWarningBox("Caution", $"The path '{exclusionPath}' is already listed as an exclusion.");
@@ -411,6 +404,11 @@ namespace AutoBak2
                 entry.setExclusionPath(exclusionPath);
                 flowLayoutPanelExclusions.Controls.Add(entry);
             }
+        }
+
+        private void buttonDeleteExclusions_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanelExclusions.Controls.Clear();
         }
     }
 }

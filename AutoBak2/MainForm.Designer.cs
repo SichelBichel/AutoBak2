@@ -76,7 +76,7 @@
             groupBox2 = new GroupBox();
             label7 = new Label();
             panel3 = new Panel();
-            button4 = new Button();
+            buttonDeleteExclusions = new Button();
             flowLayoutPanelExclusions = new FlowLayoutPanel();
             buttonCreateExclusion = new Button();
             buttonSelectExclusionDialog = new Button();
@@ -650,7 +650,7 @@
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(button4);
+            panel3.Controls.Add(buttonDeleteExclusions);
             panel3.Controls.Add(flowLayoutPanelExclusions);
             panel3.Controls.Add(buttonCreateExclusion);
             panel3.Controls.Add(buttonSelectExclusionDialog);
@@ -663,24 +663,26 @@
             panel3.Size = new Size(674, 662);
             panel3.TabIndex = 58;
             // 
-            // button4
+            // buttonDeleteExclusions
             // 
-            button4.Cursor = Cursors.Hand;
-            button4.Font = new Font("Segoe UI", 9F);
-            button4.ImageAlign = ContentAlignment.TopCenter;
-            button4.ImageKey = "icon_delete.png";
-            button4.ImageList = imageListHighQualityIcons;
-            button4.Location = new Point(551, 21);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(118, 63);
-            button4.TabIndex = 61;
-            button4.Text = "Delete All";
-            button4.TextAlign = ContentAlignment.BottomCenter;
-            button4.UseVisualStyleBackColor = true;
+            buttonDeleteExclusions.Cursor = Cursors.Hand;
+            buttonDeleteExclusions.Font = new Font("Segoe UI", 9F);
+            buttonDeleteExclusions.ImageAlign = ContentAlignment.TopCenter;
+            buttonDeleteExclusions.ImageKey = "icon_delete.png";
+            buttonDeleteExclusions.ImageList = imageListHighQualityIcons;
+            buttonDeleteExclusions.Location = new Point(551, 21);
+            buttonDeleteExclusions.Margin = new Padding(3, 4, 3, 4);
+            buttonDeleteExclusions.Name = "buttonDeleteExclusions";
+            buttonDeleteExclusions.Size = new Size(118, 63);
+            buttonDeleteExclusions.TabIndex = 61;
+            buttonDeleteExclusions.Text = "Delete All";
+            buttonDeleteExclusions.TextAlign = ContentAlignment.BottomCenter;
+            buttonDeleteExclusions.UseVisualStyleBackColor = true;
+            buttonDeleteExclusions.Click += buttonDeleteExclusions_Click;
             // 
             // flowLayoutPanelExclusions
             // 
+            flowLayoutPanelExclusions.AutoScroll = true;
             flowLayoutPanelExclusions.BorderStyle = BorderStyle.Fixed3D;
             flowLayoutPanelExclusions.Location = new Point(3, 91);
             flowLayoutPanelExclusions.Margin = new Padding(3, 4, 3, 4);
@@ -982,7 +984,7 @@
         private TextBox textBoxExclusionPath;
         private Label label6;
         private FlowLayoutPanel flowLayoutPanelExclusions;
-        private Button button4;
+        private Button buttonDeleteExclusions;
         private TabPage tabPage3;
         private Label label8;
         private Panel panel5;
