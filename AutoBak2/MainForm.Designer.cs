@@ -137,19 +137,19 @@
             // addInstanceToolStripMenuItem
             // 
             addInstanceToolStripMenuItem.Name = "addInstanceToolStripMenuItem";
-            addInstanceToolStripMenuItem.Size = new Size(209, 26);
+            addInstanceToolStripMenuItem.Size = new Size(224, 26);
             addInstanceToolStripMenuItem.Text = "Add Instance";
             // 
             // deleteInstanceToolStripMenuItem
             // 
             deleteInstanceToolStripMenuItem.Name = "deleteInstanceToolStripMenuItem";
-            deleteInstanceToolStripMenuItem.Size = new Size(209, 26);
-            deleteInstanceToolStripMenuItem.Text = "Delete Instance";
+            deleteInstanceToolStripMenuItem.Size = new Size(235, 26);
+            deleteInstanceToolStripMenuItem.Text = "Delete Instance (N/A)";
             // 
             // stopAllInstancesToolStripMenuItem
             // 
             stopAllInstancesToolStripMenuItem.Name = "stopAllInstancesToolStripMenuItem";
-            stopAllInstancesToolStripMenuItem.Size = new Size(209, 26);
+            stopAllInstancesToolStripMenuItem.Size = new Size(224, 26);
             stopAllInstancesToolStripMenuItem.Text = "Stop All Instances";
             // 
             // optionsToolStripMenuItem
@@ -164,19 +164,19 @@
             // importToolStripMenuItem
             // 
             importToolStripMenuItem.Name = "importToolStripMenuItem";
-            importToolStripMenuItem.Size = new Size(216, 26);
+            importToolStripMenuItem.Size = new Size(224, 26);
             importToolStripMenuItem.Text = "Import";
             // 
             // exportToolStripMenuItem
             // 
             exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            exportToolStripMenuItem.Size = new Size(216, 26);
+            exportToolStripMenuItem.Size = new Size(224, 26);
             exportToolStripMenuItem.Text = "Export";
             // 
             // openConfigfolderToolStripMenuItem
             // 
             openConfigfolderToolStripMenuItem.Name = "openConfigfolderToolStripMenuItem";
-            openConfigfolderToolStripMenuItem.Size = new Size(216, 26);
+            openConfigfolderToolStripMenuItem.Size = new Size(224, 26);
             openConfigfolderToolStripMenuItem.Text = "Open Configfolder";
             // 
             // helpToolStripMenuItem

@@ -87,13 +87,10 @@ namespace AutoBak2
             // und textBoxDirectoryName (oder ähnlich) verwendet, da sie im Screenshot sichtbar sind,
             // aber nicht explizit benannt wurden. Ich verwende Platzhalternamen:
 
-            // Checkbox für das Erstellen eines Unterverzeichnisses
             checkBoxCreateSubdirectory.Checked = config.CreateSubdirectory;
 
-            // Name des Unterverzeichnisses
             textBoxSubdirectoryName.Text = config.SubdirectoryName;
 
-            // optional: Fokus setzen
             textBoxJobName.Focus();
         }
 
