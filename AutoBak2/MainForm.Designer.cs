@@ -1103,9 +1103,9 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(6, 26);
+            textBox3.Location = new Point(19, 36);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(93, 27);
+            textBox3.Size = new Size(99, 27);
             textBox3.TabIndex = 11;
             // 
             // radioButtonMinutes
