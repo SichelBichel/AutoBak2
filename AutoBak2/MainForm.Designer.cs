@@ -97,9 +97,43 @@
             textBoxDestinationPath = new TextBox();
             buttonSelectDestinationPath = new Button();
             tabPage3 = new TabPage();
-            monthCalendar2 = new MonthCalendar();
+            groupBox7 = new GroupBox();
+            radioButtonEndTime = new RadioButton();
+            radioButtonNever = new RadioButton();
+            textBox2 = new TextBox();
+            panel6 = new Panel();
+            buttonSetNowEnd = new Button();
+            numericUpDown3 = new NumericUpDown();
+            monthCalendarEnd = new MonthCalendar();
+            numericUpDown4 = new NumericUpDown();
+            groupBox6 = new GroupBox();
+            radioButtonUseWeekdays = new RadioButton();
+            radioButtonUseInterval = new RadioButton();
+            groupBox9 = new GroupBox();
+            checkedListBoxWeekdays = new CheckedListBox();
+            groupBox8 = new GroupBox();
+            textBox3 = new TextBox();
+            radioButtonMinutes = new RadioButton();
+            radioButton2 = new RadioButton();
+            radioButton1 = new RadioButton();
+            groupBox5 = new GroupBox();
+            radioButtonStartTime = new RadioButton();
+            radioButtonImmediate = new RadioButton();
+            textBox1 = new TextBox();
+            panel1 = new Panel();
+            buttonSetNowStart = new Button();
+            numericUpDown2 = new NumericUpDown();
+            monthCalendarStart = new MonthCalendar();
+            numericUpDown1 = new NumericUpDown();
             label8 = new Label();
-            dateTimePicker2 = new DateTimePicker();
+            panel7 = new Panel();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            button6 = new Button();
+            label13 = new Label();
+            comboBox2 = new ComboBox();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -114,6 +148,18 @@
             groupBox1.SuspendLayout();
             panel2.SuspendLayout();
             tabPage3.SuspendLayout();
+            groupBox7.SuspendLayout();
+            panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
+            groupBox6.SuspendLayout();
+            groupBox9.SuspendLayout();
+            groupBox8.SuspendLayout();
+            groupBox5.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            panel7.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -882,9 +928,11 @@
             // tabPage3
             // 
             tabPage3.BackColor = Color.Silver;
-            tabPage3.Controls.Add(dateTimePicker2);
-            tabPage3.Controls.Add(monthCalendar2);
             tabPage3.Controls.Add(label8);
+            tabPage3.Controls.Add(panel7);
+            tabPage3.Controls.Add(groupBox7);
+            tabPage3.Controls.Add(groupBox6);
+            tabPage3.Controls.Add(groupBox5);
             tabPage3.Location = new Point(4, 29);
             tabPage3.Margin = new Padding(3, 4, 3, 4);
             tabPage3.Name = "tabPage3";
@@ -892,31 +940,430 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Schedule Editor";
             // 
-            // monthCalendar2
+            // groupBox7
             // 
-            monthCalendar2.Location = new Point(217, 27);
-            monthCalendar2.Name = "monthCalendar2";
-            monthCalendar2.TabIndex = 4;
+            groupBox7.BackColor = Color.Transparent;
+            groupBox7.Controls.Add(radioButtonEndTime);
+            groupBox7.Controls.Add(radioButtonNever);
+            groupBox7.Controls.Add(textBox2);
+            groupBox7.Controls.Add(panel6);
+            groupBox7.Location = new Point(395, 255);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Size = new Size(374, 555);
+            groupBox7.TabIndex = 12;
+            groupBox7.TabStop = false;
+            groupBox7.Text = "End Time";
+            // 
+            // radioButtonEndTime
+            // 
+            radioButtonEndTime.AutoSize = true;
+            radioButtonEndTime.Location = new Point(31, 76);
+            radioButtonEndTime.Name = "radioButtonEndTime";
+            radioButtonEndTime.Size = new Size(17, 16);
+            radioButtonEndTime.TabIndex = 12;
+            radioButtonEndTime.TabStop = true;
+            radioButtonEndTime.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonNever
+            // 
+            radioButtonNever.AutoSize = true;
+            radioButtonNever.BackColor = Color.Silver;
+            radioButtonNever.ForeColor = Color.Black;
+            radioButtonNever.Location = new Point(31, 41);
+            radioButtonNever.Name = "radioButtonNever";
+            radioButtonNever.Size = new Size(69, 24);
+            radioButtonNever.TabIndex = 11;
+            radioButtonNever.TabStop = true;
+            radioButtonNever.Text = "Never";
+            radioButtonNever.UseVisualStyleBackColor = false;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(54, 71);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(280, 27);
+            textBox2.TabIndex = 10;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.DarkGray;
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(buttonSetNowEnd);
+            panel6.Controls.Add(numericUpDown3);
+            panel6.Controls.Add(monthCalendarEnd);
+            panel6.Controls.Add(numericUpDown4);
+            panel6.Location = new Point(67, 198);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(228, 351);
+            panel6.TabIndex = 9;
+            // 
+            // buttonSetNowEnd
+            // 
+            buttonSetNowEnd.BackColor = SystemColors.Control;
+            buttonSetNowEnd.ForeColor = SystemColors.ActiveCaptionText;
+            buttonSetNowEnd.Location = new Point(69, 308);
+            buttonSetNowEnd.Name = "buttonSetNowEnd";
+            buttonSetNowEnd.Size = new Size(94, 29);
+            buttonSetNowEnd.TabIndex = 9;
+            buttonSetNowEnd.Text = "set to now";
+            buttonSetNowEnd.UseVisualStyleBackColor = false;
+            // 
+            // numericUpDown3
+            // 
+            numericUpDown3.Location = new Point(125, 252);
+            numericUpDown3.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
+            numericUpDown3.Name = "numericUpDown3";
+            numericUpDown3.Size = new Size(73, 27);
+            numericUpDown3.TabIndex = 8;
+            // 
+            // monthCalendarEnd
+            // 
+            monthCalendarEnd.Location = new Point(11, 9);
+            monthCalendarEnd.Name = "monthCalendarEnd";
+            monthCalendarEnd.TabIndex = 4;
+            // 
+            // numericUpDown4
+            // 
+            numericUpDown4.Location = new Point(25, 252);
+            numericUpDown4.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
+            numericUpDown4.Name = "numericUpDown4";
+            numericUpDown4.Size = new Size(73, 27);
+            numericUpDown4.TabIndex = 7;
+            numericUpDown4.Value = new decimal(new int[] { 12, 0, 0, 0 });
+            // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(radioButtonUseWeekdays);
+            groupBox6.Controls.Add(radioButtonUseInterval);
+            groupBox6.Controls.Add(groupBox9);
+            groupBox6.Controls.Add(groupBox8);
+            groupBox6.Location = new Point(775, 255);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(166, 555);
+            groupBox6.TabIndex = 11;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "Schedule";
+            // 
+            // radioButtonUseWeekdays
+            // 
+            radioButtonUseWeekdays.AutoSize = true;
+            radioButtonUseWeekdays.ForeColor = Color.Black;
+            radioButtonUseWeekdays.Location = new Point(24, 88);
+            radioButtonUseWeekdays.Name = "radioButtonUseWeekdays";
+            radioButtonUseWeekdays.Size = new Size(96, 24);
+            radioButtonUseWeekdays.TabIndex = 19;
+            radioButtonUseWeekdays.TabStop = true;
+            radioButtonUseWeekdays.Text = "Weekdays";
+            radioButtonUseWeekdays.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonUseInterval
+            // 
+            radioButtonUseInterval.AutoSize = true;
+            radioButtonUseInterval.ForeColor = Color.Black;
+            radioButtonUseInterval.Location = new Point(24, 58);
+            radioButtonUseInterval.Name = "radioButtonUseInterval";
+            radioButtonUseInterval.Size = new Size(79, 24);
+            radioButtonUseInterval.TabIndex = 18;
+            radioButtonUseInterval.TabStop = true;
+            radioButtonUseInterval.Text = "Interval";
+            radioButtonUseInterval.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            groupBox9.Controls.Add(checkedListBoxWeekdays);
+            groupBox9.Location = new Point(15, 357);
+            groupBox9.Name = "groupBox9";
+            groupBox9.Size = new Size(133, 192);
+            groupBox9.TabIndex = 17;
+            groupBox9.TabStop = false;
+            groupBox9.Text = "Every";
+            // 
+            // checkedListBoxWeekdays
+            // 
+            checkedListBoxWeekdays.BackColor = Color.DarkGray;
+            checkedListBoxWeekdays.FormattingEnabled = true;
+            checkedListBoxWeekdays.Items.AddRange(new object[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" });
+            checkedListBoxWeekdays.Location = new Point(6, 26);
+            checkedListBoxWeekdays.Name = "checkedListBoxWeekdays";
+            checkedListBoxWeekdays.Size = new Size(121, 158);
+            checkedListBoxWeekdays.TabIndex = 0;
+            // 
+            // groupBox8
+            // 
+            groupBox8.Controls.Add(textBox3);
+            groupBox8.Controls.Add(radioButtonMinutes);
+            groupBox8.Controls.Add(radioButton2);
+            groupBox8.Controls.Add(radioButton1);
+            groupBox8.Location = new Point(15, 172);
+            groupBox8.Name = "groupBox8";
+            groupBox8.Size = new Size(133, 170);
+            groupBox8.TabIndex = 16;
+            groupBox8.TabStop = false;
+            groupBox8.Text = "Every";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(6, 26);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(93, 27);
+            textBox3.TabIndex = 11;
+            // 
+            // radioButtonMinutes
+            // 
+            radioButtonMinutes.AutoSize = true;
+            radioButtonMinutes.ForeColor = SystemColors.ActiveCaptionText;
+            radioButtonMinutes.Location = new Point(9, 73);
+            radioButtonMinutes.Name = "radioButtonMinutes";
+            radioButtonMinutes.Size = new Size(82, 24);
+            radioButtonMinutes.TabIndex = 12;
+            radioButtonMinutes.TabStop = true;
+            radioButtonMinutes.Text = "Minutes";
+            radioButtonMinutes.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.ForeColor = SystemColors.ActiveCaptionText;
+            radioButton2.Location = new Point(9, 133);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(62, 24);
+            radioButton2.TabIndex = 14;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Days";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.ForeColor = SystemColors.ActiveCaptionText;
+            radioButton1.Location = new Point(9, 103);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(69, 24);
+            radioButton1.TabIndex = 13;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Hours";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(radioButtonStartTime);
+            groupBox5.Controls.Add(radioButtonImmediate);
+            groupBox5.Controls.Add(textBox1);
+            groupBox5.Controls.Add(panel1);
+            groupBox5.Location = new Point(15, 255);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(374, 555);
+            groupBox5.TabIndex = 10;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Start Time";
+            // 
+            // radioButtonStartTime
+            // 
+            radioButtonStartTime.AutoSize = true;
+            radioButtonStartTime.Location = new Point(31, 76);
+            radioButtonStartTime.Name = "radioButtonStartTime";
+            radioButtonStartTime.Size = new Size(17, 16);
+            radioButtonStartTime.TabIndex = 12;
+            radioButtonStartTime.TabStop = true;
+            radioButtonStartTime.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonImmediate
+            // 
+            radioButtonImmediate.AutoSize = true;
+            radioButtonImmediate.BackColor = Color.Silver;
+            radioButtonImmediate.ForeColor = Color.Black;
+            radioButtonImmediate.Location = new Point(31, 41);
+            radioButtonImmediate.Name = "radioButtonImmediate";
+            radioButtonImmediate.Size = new Size(102, 24);
+            radioButtonImmediate.TabIndex = 11;
+            radioButtonImmediate.TabStop = true;
+            radioButtonImmediate.Text = "Immediate";
+            radioButtonImmediate.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(54, 71);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(280, 27);
+            textBox1.TabIndex = 10;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.DarkGray;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(buttonSetNowStart);
+            panel1.Controls.Add(numericUpDown2);
+            panel1.Controls.Add(monthCalendarStart);
+            panel1.Controls.Add(numericUpDown1);
+            panel1.Location = new Point(67, 198);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(228, 351);
+            panel1.TabIndex = 9;
+            // 
+            // buttonSetNowStart
+            // 
+            buttonSetNowStart.BackColor = SystemColors.Control;
+            buttonSetNowStart.ForeColor = SystemColors.ActiveCaptionText;
+            buttonSetNowStart.Location = new Point(69, 308);
+            buttonSetNowStart.Name = "buttonSetNowStart";
+            buttonSetNowStart.Size = new Size(94, 29);
+            buttonSetNowStart.TabIndex = 9;
+            buttonSetNowStart.Text = "set to now";
+            buttonSetNowStart.UseVisualStyleBackColor = false;
+            // 
+            // numericUpDown2
+            // 
+            numericUpDown2.Location = new Point(125, 252);
+            numericUpDown2.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
+            numericUpDown2.Name = "numericUpDown2";
+            numericUpDown2.Size = new Size(73, 27);
+            numericUpDown2.TabIndex = 8;
+            // 
+            // monthCalendarStart
+            // 
+            monthCalendarStart.Location = new Point(11, 9);
+            monthCalendarStart.Name = "monthCalendarStart";
+            monthCalendarStart.TabIndex = 4;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(25, 252);
+            numericUpDown1.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(73, 27);
+            numericUpDown1.TabIndex = 7;
+            numericUpDown1.Value = new decimal(new int[] { 12, 0, 0, 0 });
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 90F);
-            label8.Location = new Point(531, 273);
+            label8.Font = new Font("Segoe UI", 32F, FontStyle.Bold);
+            label8.ForeColor = SystemColors.ActiveCaptionText;
+            label8.Location = new Point(152, 163);
             label8.Name = "label8";
-            label8.Size = new Size(351, 199);
-            label8.TabIndex = 0;
-            label8.Text = "N/A";
+            label8.Size = new Size(507, 72);
+            label8.TabIndex = 33;
+            label8.Text = "SCHEDULE EDITOR";
+            label8.TextAlign = ContentAlignment.TopCenter;
             // 
-            // dateTimePicker2
+            // panel7
             // 
-            dateTimePicker2.CustomFormat = "MM.dd.yyyy HH:mm";
-            dateTimePicker2.Format = DateTimePickerFormat.Time;
-            dateTimePicker2.Location = new Point(217, 257);
-            dateTimePicker2.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(206, 27);
-            dateTimePicker2.TabIndex = 6;
+            panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(button2);
+            panel7.Controls.Add(button3);
+            panel7.Controls.Add(button4);
+            panel7.Controls.Add(button5);
+            panel7.Controls.Add(button6);
+            panel7.Controls.Add(label13);
+            panel7.Controls.Add(comboBox2);
+            panel7.Location = new Point(60, 12);
+            panel7.Margin = new Padding(3, 4, 3, 4);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(685, 147);
+            panel7.TabIndex = 32;
+            // 
+            // button2
+            // 
+            button2.Cursor = Cursors.Hand;
+            button2.Font = new Font("Segoe UI", 9F);
+            button2.ForeColor = SystemColors.ActiveCaptionText;
+            button2.ImageAlign = ContentAlignment.TopCenter;
+            button2.ImageIndex = 13;
+            button2.ImageList = imageListIcons;
+            button2.Location = new Point(543, 75);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(126, 57);
+            button2.TabIndex = 7;
+            button2.Text = "Open Job Folder";
+            button2.TextAlign = ContentAlignment.BottomCenter;
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Cursor = Cursors.Hand;
+            button3.ForeColor = SystemColors.ActiveCaptionText;
+            button3.ImageAlign = ContentAlignment.TopCenter;
+            button3.ImageIndex = 6;
+            button3.ImageList = imageListIcons;
+            button3.Location = new Point(15, 75);
+            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Name = "button3";
+            button3.Size = new Size(126, 57);
+            button3.TabIndex = 6;
+            button3.Text = "New Job";
+            button3.TextAlign = ContentAlignment.BottomCenter;
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Cursor = Cursors.Hand;
+            button4.Font = new Font("Segoe UI", 9F);
+            button4.ForeColor = SystemColors.ActiveCaptionText;
+            button4.ImageAlign = ContentAlignment.TopCenter;
+            button4.ImageIndex = 3;
+            button4.ImageList = imageListIcons;
+            button4.Location = new Point(413, 75);
+            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(126, 57);
+            button4.TabIndex = 5;
+            button4.Text = "Delete Job";
+            button4.TextAlign = ContentAlignment.BottomCenter;
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            button5.Cursor = Cursors.Hand;
+            button5.Font = new Font("Segoe UI", 9F);
+            button5.ForeColor = SystemColors.ActiveCaptionText;
+            button5.ImageAlign = ContentAlignment.TopCenter;
+            button5.ImageIndex = 16;
+            button5.ImageList = imageListIcons;
+            button5.Location = new Point(280, 75);
+            button5.Margin = new Padding(3, 4, 3, 4);
+            button5.Name = "button5";
+            button5.Size = new Size(126, 57);
+            button5.TabIndex = 4;
+            button5.Text = "Edit Job";
+            button5.TextAlign = ContentAlignment.BottomCenter;
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            button6.Cursor = Cursors.Hand;
+            button6.ForeColor = SystemColors.ActiveCaptionText;
+            button6.ImageAlign = ContentAlignment.TopCenter;
+            button6.ImageIndex = 15;
+            button6.ImageList = imageListIcons;
+            button6.Location = new Point(147, 75);
+            button6.Margin = new Padding(3, 4, 3, 4);
+            button6.Name = "button6";
+            button6.Size = new Size(126, 57);
+            button6.TabIndex = 2;
+            button6.Text = "Save Job";
+            button6.TextAlign = ContentAlignment.BottomCenter;
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 10F);
+            label13.ForeColor = SystemColors.ActiveCaptionText;
+            label13.Location = new Point(264, 0);
+            label13.Name = "label13";
+            label13.Size = new Size(109, 23);
+            label13.TabIndex = 1;
+            label13.Text = "Job Manager";
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(3, 36);
+            comboBox2.Margin = new Padding(3, 4, 3, 4);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(676, 28);
+            comboBox2.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -957,6 +1404,23 @@
             panel2.PerformLayout();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
+            groupBox7.ResumeLayout(false);
+            groupBox7.PerformLayout();
+            panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
+            groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
+            groupBox9.ResumeLayout(false);
+            groupBox8.ResumeLayout(false);
+            groupBox8.PerformLayout();
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1007,7 +1471,6 @@
         private FlowLayoutPanel flowLayoutPanelExclusions;
         private Button buttonDeleteExclusions;
         private TabPage tabPage3;
-        private Label label8;
         private Panel panel5;
         private Button buttonDeleteJob;
         private Button buttonEditJob;
@@ -1031,7 +1494,42 @@
         private ComboBox comboBox1;
         private RichTextBox richTextBoxJobDescription;
         private Label label10;
-        private MonthCalendar monthCalendar2;
-        private DateTimePicker dateTimePicker2;
+        private MonthCalendar monthCalendarStart;
+        private Panel panel1;
+        private NumericUpDown numericUpDown2;
+        private NumericUpDown numericUpDown1;
+        private GroupBox groupBox5;
+        private Button buttonSetNowStart;
+        private GroupBox groupBox6;
+        private GroupBox groupBox7;
+        private RadioButton radioButtonEndTime;
+        private RadioButton radioButtonNever;
+        private TextBox textBox2;
+        private Panel panel6;
+        private Button buttonSetNowEnd;
+        private NumericUpDown numericUpDown3;
+        private MonthCalendar monthCalendarEnd;
+        private NumericUpDown numericUpDown4;
+        private RadioButton radioButtonStartTime;
+        private RadioButton radioButtonImmediate;
+        private TextBox textBox1;
+        private RadioButton radioButton2;
+        private RadioButton radioButton1;
+        private RadioButton radioButtonMinutes;
+        private TextBox textBox3;
+        private GroupBox groupBox9;
+        private CheckedListBox checkedListBoxWeekdays;
+        private GroupBox groupBox8;
+        private RadioButton radioButtonUseWeekdays;
+        private RadioButton radioButtonUseInterval;
+        private Label label8;
+        private Panel panel7;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        private Button button5;
+        private Button button6;
+        private Label label13;
+        private ComboBox comboBox2;
     }
 }
