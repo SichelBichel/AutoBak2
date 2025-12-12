@@ -24,7 +24,7 @@ namespace AutoBak2.Utils.ShellActions
             }
             catch (Exception ex)
             {
-                form.Invoke(() => form.AppendErrorText($"[ERROR] failed to open path: {ex.Message}"));
+                //form.Invoke(() => form.AppendErrorText($"[ERROR] failed to open path: {ex.Message}"));
                 MessageHandler.DisplayErrorBox("Error Opening Path", $"Failed to open the path: {path}\n\nError: {ex.Message}");
             }
         }
@@ -40,7 +40,7 @@ namespace AutoBak2.Utils.ShellActions
             }
             catch (Exception ex)
             {
-                form.Invoke(() => form.AppendErrorText($"[ERROR] failed to open URL: {ex.Message}"));
+                //form.Invoke(() => form.AppendErrorText($"[ERROR] failed to open URL: {ex.Message}"));
                 MessageHandler.DisplayErrorBox("Error Opening URL", $"Failed to open the URL: {url}\n\nError: {ex.Message}");
             }
         }
@@ -63,7 +63,7 @@ namespace AutoBak2.Utils.ShellActions
             }
             catch (Exception ex)
             {
-                form.Invoke(() => form.AppendErrorText($"[ERROR] failed to open file: {ex.Message}"));
+                //form.Invoke(() => form.AppendErrorText($"[ERROR] failed to open file: {ex.Message}"));
                 MessageHandler.DisplayErrorBox("Error Opening File", $"Failed to open the file: {filePath}\n\nError: {ex.Message}");
             }
         }

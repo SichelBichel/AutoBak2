@@ -46,81 +46,83 @@
             aboutToolStripMenuItem = new ToolStripMenuItem();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
-            textBox1 = new TextBox();
-            imageListIcons = new ImageList(components);
-            buttonSelectScheduleTask = new Button();
-            imageListHighQualityIcons = new ImageList(components);
+            groupBox4 = new GroupBox();
+            comboBox1 = new ComboBox();
             button1 = new Button();
-            groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
-            label1 = new Label();
-            checkBox1 = new CheckBox();
-            panel2 = new Panel();
-            label2 = new Label();
-            label3 = new Label();
-            textBox3 = new TextBox();
-            checkBox2 = new CheckBox();
-            label4 = new Label();
-            textBox2 = new TextBox();
-            button2 = new Button();
-            panel3 = new Panel();
-            label5 = new Label();
-            textBox4 = new TextBox();
-            label6 = new Label();
-            button3 = new Button();
-            label7 = new Label();
-            button15 = new Button();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            button4 = new Button();
-            tabPage3 = new TabPage();
-            label8 = new Label();
+            imageListHighQualityIcons = new ImageList(components);
+            tabPage2 = new TabPage();
+            label9 = new Label();
+            groupBox3 = new GroupBox();
+            richTextBox1 = new RichTextBox();
+            label10 = new Label();
+            panel4 = new Panel();
+            groupBoxProtocol = new GroupBox();
+            radioButton1 = new RadioButton();
+            radioButtonTCPandUDP = new RadioButton();
+            radioButtonUDP = new RadioButton();
+            radioButtonTCP = new RadioButton();
+            checkBox4 = new CheckBox();
+            label11 = new Label();
+            textBox6 = new TextBox();
             panel5 = new Panel();
+            button7 = new Button();
+            imageListIcons = new ImageList(components);
+            button5 = new Button();
+            button6 = new Button();
             button8 = new Button();
             button10 = new Button();
             label12 = new Label();
             comboBoxFirewallPreset = new ComboBox();
-            button6 = new Button();
-            button5 = new Button();
-            button7 = new Button();
-            groupBox3 = new GroupBox();
-            panel4 = new Panel();
-            checkBox4 = new CheckBox();
-            label11 = new Label();
-            textBox6 = new TextBox();
-            groupBoxProtocol = new GroupBox();
-            radioButtonTCPandUDP = new RadioButton();
-            radioButtonUDP = new RadioButton();
-            radioButtonTCP = new RadioButton();
-            radioButton1 = new RadioButton();
-            label9 = new Label();
-            groupBox4 = new GroupBox();
-            comboBox1 = new ComboBox();
-            label10 = new Label();
-            richTextBox1 = new RichTextBox();
+            groupBox2 = new GroupBox();
+            label7 = new Label();
+            panel3 = new Panel();
+            button4 = new Button();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            button15 = new Button();
+            button3 = new Button();
+            label5 = new Label();
+            textBox4 = new TextBox();
+            label6 = new Label();
+            button2 = new Button();
+            label4 = new Label();
+            textBox2 = new TextBox();
+            groupBox1 = new GroupBox();
+            panel2 = new Panel();
+            checkBox2 = new CheckBox();
+            label3 = new Label();
+            textBox3 = new TextBox();
+            label2 = new Label();
+            checkBox1 = new CheckBox();
+            label1 = new Label();
+            textBox1 = new TextBox();
+            buttonSelectScheduleTask = new Button();
+            tabPage3 = new TabPage();
+            label8 = new Label();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            groupBox4.SuspendLayout();
             tabPage2.SuspendLayout();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            tabPage3.SuspendLayout();
-            panel5.SuspendLayout();
             groupBox3.SuspendLayout();
             panel4.SuspendLayout();
             groupBoxProtocol.SuspendLayout();
-            groupBox4.SuspendLayout();
+            panel5.SuspendLayout();
+            groupBox2.SuspendLayout();
+            panel3.SuspendLayout();
+            groupBox1.SuspendLayout();
+            panel2.SuspendLayout();
+            tabPage3.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.BackColor = SystemColors.ControlDarkDark;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, optionsToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1270, 24);
+            menuStrip1.Padding = new Padding(7, 3, 0, 3);
+            menuStrip1.Size = new Size(1451, 30);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -128,26 +130,26 @@
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addInstanceToolStripMenuItem, deleteInstanceToolStripMenuItem, stopAllInstancesToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(37, 20);
+            fileToolStripMenuItem.Size = new Size(46, 24);
             fileToolStripMenuItem.Text = "File";
             fileToolStripMenuItem.Click += fileToolStripMenuItem_Click;
             // 
             // addInstanceToolStripMenuItem
             // 
             addInstanceToolStripMenuItem.Name = "addInstanceToolStripMenuItem";
-            addInstanceToolStripMenuItem.Size = new Size(180, 22);
+            addInstanceToolStripMenuItem.Size = new Size(224, 26);
             addInstanceToolStripMenuItem.Text = "Add Instance";
             // 
             // deleteInstanceToolStripMenuItem
             // 
             deleteInstanceToolStripMenuItem.Name = "deleteInstanceToolStripMenuItem";
-            deleteInstanceToolStripMenuItem.Size = new Size(180, 22);
+            deleteInstanceToolStripMenuItem.Size = new Size(224, 26);
             deleteInstanceToolStripMenuItem.Text = "Delete Instance";
             // 
             // stopAllInstancesToolStripMenuItem
             // 
             stopAllInstancesToolStripMenuItem.Name = "stopAllInstancesToolStripMenuItem";
-            stopAllInstancesToolStripMenuItem.Size = new Size(180, 22);
+            stopAllInstancesToolStripMenuItem.Size = new Size(224, 26);
             stopAllInstancesToolStripMenuItem.Text = "Stop All Instances";
             // 
             // optionsToolStripMenuItem
@@ -155,57 +157,57 @@
             optionsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { importToolStripMenuItem, exportToolStripMenuItem, openConfigfolderToolStripMenuItem });
             optionsToolStripMenuItem.ForeColor = SystemColors.ActiveCaptionText;
             optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            optionsToolStripMenuItem.Size = new Size(55, 20);
+            optionsToolStripMenuItem.Size = new Size(67, 24);
             optionsToolStripMenuItem.Text = "Config";
             optionsToolStripMenuItem.Click += optionsToolStripMenuItem_Click;
             // 
             // importToolStripMenuItem
             // 
             importToolStripMenuItem.Name = "importToolStripMenuItem";
-            importToolStripMenuItem.Size = new Size(180, 22);
+            importToolStripMenuItem.Size = new Size(224, 26);
             importToolStripMenuItem.Text = "Import";
             // 
             // exportToolStripMenuItem
             // 
             exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            exportToolStripMenuItem.Size = new Size(180, 22);
+            exportToolStripMenuItem.Size = new Size(224, 26);
             exportToolStripMenuItem.Text = "Export";
             // 
             // openConfigfolderToolStripMenuItem
             // 
             openConfigfolderToolStripMenuItem.Name = "openConfigfolderToolStripMenuItem";
-            openConfigfolderToolStripMenuItem.Size = new Size(180, 22);
+            openConfigfolderToolStripMenuItem.Size = new Size(224, 26);
             openConfigfolderToolStripMenuItem.Text = "Open Configfolder";
             // 
             // helpToolStripMenuItem
             // 
             helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { showHelpWindowToolStripMenuItem, settingsToolStripMenuItem, visitWebsiteToolStripMenuItem, aboutToolStripMenuItem });
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(44, 20);
+            helpToolStripMenuItem.Size = new Size(55, 24);
             helpToolStripMenuItem.Text = "Help";
             // 
             // showHelpWindowToolStripMenuItem
             // 
             showHelpWindowToolStripMenuItem.Name = "showHelpWindowToolStripMenuItem";
-            showHelpWindowToolStripMenuItem.Size = new Size(180, 22);
+            showHelpWindowToolStripMenuItem.Size = new Size(223, 26);
             showHelpWindowToolStripMenuItem.Text = "Show Help Window";
             // 
             // settingsToolStripMenuItem
             // 
             settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            settingsToolStripMenuItem.Size = new Size(180, 22);
+            settingsToolStripMenuItem.Size = new Size(223, 26);
             settingsToolStripMenuItem.Text = "Settings";
             // 
             // visitWebsiteToolStripMenuItem
             // 
             visitWebsiteToolStripMenuItem.Name = "visitWebsiteToolStripMenuItem";
-            visitWebsiteToolStripMenuItem.Size = new Size(180, 22);
+            visitWebsiteToolStripMenuItem.Size = new Size(223, 26);
             visitWebsiteToolStripMenuItem.Text = "Visit Website";
             // 
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(180, 22);
+            aboutToolStripMenuItem.Size = new Size(223, 26);
             aboutToolStripMenuItem.Text = "About";
             // 
             // tabControl1
@@ -213,10 +215,11 @@
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
-            tabControl1.Location = new Point(12, 27);
+            tabControl1.Location = new Point(14, 36);
+            tabControl1.Margin = new Padding(3, 4, 3, 4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1246, 641);
+            tabControl1.Size = new Size(1424, 855);
             tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -224,76 +227,51 @@
             tabPage1.BackColor = Color.Silver;
             tabPage1.Controls.Add(groupBox4);
             tabPage1.ForeColor = SystemColors.ActiveCaptionText;
-            tabPage1.Location = new Point(4, 24);
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Margin = new Padding(3, 4, 3, 4);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1238, 613);
+            tabPage1.Padding = new Padding(3, 4, 3, 4);
+            tabPage1.Size = new Size(1416, 822);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Control";
             // 
-            // tabPage2
+            // groupBox4
             // 
-            tabPage2.BackColor = Color.Silver;
-            tabPage2.Controls.Add(label9);
-            tabPage2.Controls.Add(groupBox3);
-            tabPage2.Controls.Add(panel5);
-            tabPage2.Controls.Add(groupBox2);
-            tabPage2.Controls.Add(groupBox1);
-            tabPage2.ForeColor = SystemColors.ActiveCaptionText;
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1238, 613);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Job Editor";
+            groupBox4.Controls.Add(comboBox1);
+            groupBox4.Controls.Add(button1);
+            groupBox4.Location = new Point(6, 8);
+            groupBox4.Margin = new Padding(3, 4, 3, 4);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Padding = new Padding(3, 4, 3, 4);
+            groupBox4.Size = new Size(499, 133);
+            groupBox4.TabIndex = 1;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Single Copy";
             // 
-            // textBox1
+            // comboBox1
             // 
-            textBox1.Location = new Point(6, 37);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(557, 23);
-            textBox1.TabIndex = 0;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(183, 50);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(292, 28);
+            comboBox1.TabIndex = 2;
             // 
-            // imageListIcons
+            // button1
             // 
-            imageListIcons.ColorDepth = ColorDepth.Depth32Bit;
-            imageListIcons.ImageStream = (ImageListStreamer)resources.GetObject("imageListIcons.ImageStream");
-            imageListIcons.TransparentColor = Color.Transparent;
-            imageListIcons.Images.SetKeyName(0, "icon_blitz.png");
-            imageListIcons.Images.SetKeyName(1, "icon_Check.png");
-            imageListIcons.Images.SetKeyName(2, "icon_create.png");
-            imageListIcons.Images.SetKeyName(3, "icon_delete.png");
-            imageListIcons.Images.SetKeyName(4, "icon_disable.png");
-            imageListIcons.Images.SetKeyName(5, "icon_download.png");
-            imageListIcons.Images.SetKeyName(6, "icon_Edit.png");
-            imageListIcons.Images.SetKeyName(7, "icon_enable.png");
-            imageListIcons.Images.SetKeyName(8, "icon_export.png");
-            imageListIcons.Images.SetKeyName(9, "icon_help.png");
-            imageListIcons.Images.SetKeyName(10, "icon_import.png");
-            imageListIcons.Images.SetKeyName(11, "icon_information.png");
-            imageListIcons.Images.SetKeyName(12, "icon_inject.png");
-            imageListIcons.Images.SetKeyName(13, "icon_Load.png");
-            imageListIcons.Images.SetKeyName(14, "icon_reload.png");
-            imageListIcons.Images.SetKeyName(15, "icon_Save.png");
-            imageListIcons.Images.SetKeyName(16, "icon_settings.png");
-            imageListIcons.Images.SetKeyName(17, "icon_Start.png");
-            imageListIcons.Images.SetKeyName(18, "icon_stopall.png");
-            imageListIcons.Images.SetKeyName(19, "icon_Uncheck.png");
-            imageListIcons.Images.SetKeyName(20, "icon_upload.png");
-            imageListIcons.Images.SetKeyName(21, "icon_website.png");
-            imageListIcons.Images.SetKeyName(22, "icon_clear.png");
-            imageListIcons.Images.SetKeyName(23, "icon_console.png");
-            imageListIcons.Images.SetKeyName(24, "icon_remove.png");
-            imageListIcons.Images.SetKeyName(25, "icon_clearconsole.png");
-            // 
-            // buttonSelectScheduleTask
-            // 
-            buttonSelectScheduleTask.Location = new Point(566, 35);
-            buttonSelectScheduleTask.Name = "buttonSelectScheduleTask";
-            buttonSelectScheduleTask.Size = new Size(28, 26);
-            buttonSelectScheduleTask.TabIndex = 52;
-            buttonSelectScheduleTask.Text = "🔍";
-            buttonSelectScheduleTask.UseVisualStyleBackColor = true;
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Segoe UI", 9F);
+            button1.ImageAlign = ContentAlignment.TopCenter;
+            button1.ImageKey = "icon_Start.png";
+            button1.ImageList = imageListHighQualityIcons;
+            button1.Location = new Point(34, 29);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(115, 67);
+            button1.TabIndex = 1;
+            button1.Text = "Start Job";
+            button1.TextAlign = ContentAlignment.BottomCenter;
+            button1.UseVisualStyleBackColor = true;
             // 
             // imageListHighQualityIcons
             // 
@@ -328,256 +306,171 @@
             imageListHighQualityIcons.Images.SetKeyName(25, "icon_website.png");
             imageListHighQualityIcons.Images.SetKeyName(26, "icon_Save2.png");
             // 
-            // button1
+            // tabPage2
             // 
-            button1.Cursor = Cursors.Hand;
-            button1.Font = new Font("Segoe UI", 9F);
-            button1.ImageAlign = ContentAlignment.TopCenter;
-            button1.ImageKey = "icon_Start.png";
-            button1.ImageList = imageListHighQualityIcons;
-            button1.Location = new Point(30, 22);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 50);
-            button1.TabIndex = 1;
-            button1.Text = "Start Job";
-            button1.TextAlign = ContentAlignment.BottomCenter;
-            button1.UseVisualStyleBackColor = true;
+            tabPage2.BackColor = Color.Silver;
+            tabPage2.Controls.Add(label9);
+            tabPage2.Controls.Add(groupBox3);
+            tabPage2.Controls.Add(panel5);
+            tabPage2.Controls.Add(groupBox2);
+            tabPage2.Controls.Add(groupBox1);
+            tabPage2.ForeColor = SystemColors.ActiveCaptionText;
+            tabPage2.Location = new Point(4, 29);
+            tabPage2.Margin = new Padding(3, 4, 3, 4);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3, 4, 3, 4);
+            tabPage2.Size = new Size(1416, 822);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Job Editor";
             // 
-            // groupBox1
+            // label9
             // 
-            groupBox1.Controls.Add(panel2);
-            groupBox1.Controls.Add(checkBox1);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(buttonSelectScheduleTask);
-            groupBox1.Location = new Point(6, 426);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(600, 181);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Destination";
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 32F, FontStyle.Bold);
+            label9.Location = new Point(171, 176);
+            label9.Name = "label9";
+            label9.Size = new Size(337, 72);
+            label9.TabIndex = 31;
+            label9.Text = "JOB EDITOR";
             // 
-            // groupBox2
+            // groupBox3
             // 
-            groupBox2.Controls.Add(label7);
-            groupBox2.Controls.Add(panel3);
-            groupBox2.Controls.Add(button2);
-            groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(textBox2);
-            groupBox2.Location = new Point(632, 6);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(600, 601);
-            groupBox2.TabIndex = 2;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Source";
+            groupBox3.Controls.Add(richTextBox1);
+            groupBox3.Controls.Add(label10);
+            groupBox3.Controls.Add(panel4);
+            groupBox3.Controls.Add(label11);
+            groupBox3.Controls.Add(textBox6);
+            groupBox3.Location = new Point(7, 255);
+            groupBox3.Margin = new Padding(3, 4, 3, 4);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(3, 4, 3, 4);
+            groupBox3.Size = new Size(686, 305);
+            groupBox3.TabIndex = 30;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "General";
             // 
-            // label1
+            // richTextBox1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 19);
-            label1.Name = "label1";
-            label1.Size = new Size(66, 15);
-            label1.TabIndex = 53;
-            label1.Text = "Target Path";
+            richTextBox1.Location = new Point(7, 108);
+            richTextBox1.Margin = new Padding(3, 4, 3, 4);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(671, 77);
+            richTextBox1.TabIndex = 58;
+            richTextBox1.Text = "";
             // 
-            // checkBox1
+            // label10
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(6, 76);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(130, 19);
-            checkBox1.TabIndex = 54;
-            checkBox1.Text = "Create Subdirectory";
-            checkBox1.UseVisualStyleBackColor = true;
+            label10.AutoSize = true;
+            label10.Location = new Point(7, 84);
+            label10.Name = "label10";
+            label10.Size = new Size(112, 20);
+            label10.TabIndex = 57;
+            label10.Text = "Job Description";
             // 
-            // panel2
+            // panel4
             // 
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(checkBox2);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(textBox3);
-            panel2.Controls.Add(label2);
-            panel2.Location = new Point(4, 98);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(590, 77);
-            panel2.TabIndex = 55;
+            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(groupBoxProtocol);
+            panel4.Controls.Add(checkBox4);
+            panel4.Location = new Point(5, 195);
+            panel4.Margin = new Padding(3, 4, 3, 4);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(674, 102);
+            panel4.TabIndex = 55;
             // 
-            // label2
+            // groupBoxProtocol
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(43, 27);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 0;
-            label2.Text = "label2";
+            groupBoxProtocol.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBoxProtocol.BackColor = Color.Silver;
+            groupBoxProtocol.Controls.Add(radioButton1);
+            groupBoxProtocol.Controls.Add(radioButtonTCPandUDP);
+            groupBoxProtocol.Controls.Add(radioButtonUDP);
+            groupBoxProtocol.Controls.Add(radioButtonTCP);
+            groupBoxProtocol.FlatStyle = FlatStyle.Flat;
+            groupBoxProtocol.Location = new Point(170, 7);
+            groupBoxProtocol.Margin = new Padding(3, 4, 3, 4);
+            groupBoxProtocol.Name = "groupBoxProtocol";
+            groupBoxProtocol.Padding = new Padding(3, 4, 3, 4);
+            groupBoxProtocol.Size = new Size(494, 76);
+            groupBoxProtocol.TabIndex = 2;
+            groupBoxProtocol.TabStop = false;
+            groupBoxProtocol.Text = "Format";
             // 
-            // label3
+            // radioButton1
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(3, 12);
-            label3.Name = "label3";
-            label3.Size = new Size(90, 15);
-            label3.TabIndex = 55;
-            label3.Text = "Directory Name";
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(185, 28);
+            radioButton1.Margin = new Padding(3, 4, 3, 4);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(49, 24);
+            radioButton1.TabIndex = 3;
+            radioButton1.TabStop = true;
+            radioButton1.Text = ".gz";
+            radioButton1.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // radioButtonTCPandUDP
             // 
-            textBox3.Location = new Point(3, 30);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(281, 23);
-            textBox3.TabIndex = 54;
+            radioButtonTCPandUDP.AutoSize = true;
+            radioButtonTCPandUDP.Location = new Point(65, 29);
+            radioButtonTCPandUDP.Margin = new Padding(3, 4, 3, 4);
+            radioButtonTCPandUDP.Name = "radioButtonTCPandUDP";
+            radioButtonTCPandUDP.Size = new Size(51, 24);
+            radioButtonTCPandUDP.TabIndex = 2;
+            radioButtonTCPandUDP.TabStop = true;
+            radioButtonTCPandUDP.Text = ".rar";
+            radioButtonTCPandUDP.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // radioButtonUDP
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(357, 32);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(166, 19);
-            checkBox2.TabIndex = 56;
-            checkBox2.Text = "Use Sourcedirectory Name";
-            checkBox2.UseVisualStyleBackColor = true;
+            radioButtonUDP.AutoSize = true;
+            radioButtonUDP.Location = new Point(120, 29);
+            radioButtonUDP.Margin = new Padding(3, 4, 3, 4);
+            radioButtonUDP.Name = "radioButtonUDP";
+            radioButtonUDP.Size = new Size(48, 24);
+            radioButtonUDP.TabIndex = 1;
+            radioButtonUDP.TabStop = true;
+            radioButtonUDP.Text = ".7z";
+            radioButtonUDP.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // radioButtonTCP
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(6, 19);
-            label4.Name = "label4";
-            label4.Size = new Size(70, 15);
-            label4.TabIndex = 56;
-            label4.Text = "Source Path";
+            radioButtonTCP.AutoSize = true;
+            radioButtonTCP.Location = new Point(7, 29);
+            radioButtonTCP.Margin = new Padding(3, 4, 3, 4);
+            radioButtonTCP.Name = "radioButtonTCP";
+            radioButtonTCP.Size = new Size(53, 24);
+            radioButtonTCP.TabIndex = 0;
+            radioButtonTCP.TabStop = true;
+            radioButtonTCP.Text = ".zip";
+            radioButtonTCP.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // checkBox4
             // 
-            textBox2.Location = new Point(6, 37);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(557, 23);
-            textBox2.TabIndex = 54;
+            checkBox4.AutoSize = true;
+            checkBox4.Location = new Point(31, 36);
+            checkBox4.Margin = new Padding(3, 4, 3, 4);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(80, 24);
+            checkBox4.TabIndex = 54;
+            checkBox4.Text = "Archive";
+            checkBox4.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // label11
             // 
-            button2.Location = new Point(566, 35);
-            button2.Name = "button2";
-            button2.Size = new Size(28, 26);
-            button2.TabIndex = 57;
-            button2.Text = "🔍";
-            button2.UseVisualStyleBackColor = true;
+            label11.AutoSize = true;
+            label11.Location = new Point(7, 25);
+            label11.Name = "label11";
+            label11.Size = new Size(76, 20);
+            label11.TabIndex = 53;
+            label11.Text = "Job Name";
             // 
-            // panel3
+            // textBox6
             // 
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(button4);
-            panel3.Controls.Add(flowLayoutPanel1);
-            panel3.Controls.Add(button15);
-            panel3.Controls.Add(button3);
-            panel3.Controls.Add(label5);
-            panel3.Controls.Add(textBox4);
-            panel3.Controls.Add(label6);
-            panel3.Location = new Point(4, 98);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(590, 497);
-            panel3.TabIndex = 58;
-            panel3.Paint += this.panel3_Paint;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(3, 21);
-            label5.Name = "label5";
-            label5.Size = new Size(90, 15);
-            label5.TabIndex = 55;
-            label5.Text = "Directory Name";
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(3, 39);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(331, 23);
-            textBox4.TabIndex = 54;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(43, 36);
-            label6.Name = "label6";
-            label6.Size = new Size(38, 15);
-            label6.TabIndex = 0;
-            label6.Text = "label6";
-            // 
-            // button3
-            // 
-            button3.Location = new Point(340, 37);
-            button3.Name = "button3";
-            button3.Size = new Size(28, 26);
-            button3.TabIndex = 58;
-            button3.Text = "🔍";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(8, 80);
-            label7.Name = "label7";
-            label7.Size = new Size(62, 15);
-            label7.TabIndex = 59;
-            label7.Text = "Exclusions";
-            // 
-            // button15
-            // 
-            button15.Cursor = Cursors.Hand;
-            button15.Font = new Font("Segoe UI", 9F);
-            button15.ImageAlign = ContentAlignment.TopCenter;
-            button15.ImageKey = "icon_create.png";
-            button15.ImageList = imageListHighQualityIcons;
-            button15.Location = new Point(374, 16);
-            button15.Name = "button15";
-            button15.Size = new Size(103, 47);
-            button15.TabIndex = 59;
-            button15.Text = "Create Exclusion";
-            button15.TextAlign = ContentAlignment.BottomCenter;
-            button15.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.BorderStyle = BorderStyle.Fixed3D;
-            flowLayoutPanel1.Location = new Point(3, 68);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(582, 424);
-            flowLayoutPanel1.TabIndex = 60;
-            // 
-            // button4
-            // 
-            button4.Cursor = Cursors.Hand;
-            button4.Font = new Font("Segoe UI", 9F);
-            button4.ImageAlign = ContentAlignment.TopCenter;
-            button4.ImageKey = "icon_delete.png";
-            button4.ImageList = imageListHighQualityIcons;
-            button4.Location = new Point(482, 16);
-            button4.Name = "button4";
-            button4.Size = new Size(103, 47);
-            button4.TabIndex = 61;
-            button4.Text = "Delete All";
-            button4.TextAlign = ContentAlignment.BottomCenter;
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            tabPage3.Controls.Add(label8);
-            tabPage3.Location = new Point(4, 24);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1238, 613);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "Schedule Editor";
-            tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 90F);
-            label8.Location = new Point(465, 205);
-            label8.Name = "label8";
-            label8.Size = new Size(281, 159);
-            label8.TabIndex = 0;
-            label8.Text = "N/A";
+            textBox6.Location = new Point(7, 49);
+            textBox6.Margin = new Padding(3, 4, 3, 4);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(671, 27);
+            textBox6.TabIndex = 0;
             // 
             // panel5
             // 
@@ -589,10 +482,90 @@
             panel5.Controls.Add(button10);
             panel5.Controls.Add(label12);
             panel5.Controls.Add(comboBoxFirewallPreset);
-            panel5.Location = new Point(6, 15);
+            panel5.Location = new Point(7, 20);
+            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(600, 111);
+            panel5.Size = new Size(685, 147);
             panel5.TabIndex = 29;
+            // 
+            // button7
+            // 
+            button7.Cursor = Cursors.Hand;
+            button7.Font = new Font("Segoe UI", 9F);
+            button7.ImageAlign = ContentAlignment.TopCenter;
+            button7.ImageIndex = 13;
+            button7.ImageList = imageListIcons;
+            button7.Location = new Point(543, 75);
+            button7.Margin = new Padding(3, 4, 3, 4);
+            button7.Name = "button7";
+            button7.Size = new Size(126, 57);
+            button7.TabIndex = 7;
+            button7.Text = "Open Job Folder";
+            button7.TextAlign = ContentAlignment.BottomCenter;
+            button7.UseVisualStyleBackColor = true;
+            // 
+            // imageListIcons
+            // 
+            imageListIcons.ColorDepth = ColorDepth.Depth32Bit;
+            imageListIcons.ImageStream = (ImageListStreamer)resources.GetObject("imageListIcons.ImageStream");
+            imageListIcons.TransparentColor = Color.Transparent;
+            imageListIcons.Images.SetKeyName(0, "icon_blitz.png");
+            imageListIcons.Images.SetKeyName(1, "icon_Check.png");
+            imageListIcons.Images.SetKeyName(2, "icon_create.png");
+            imageListIcons.Images.SetKeyName(3, "icon_delete.png");
+            imageListIcons.Images.SetKeyName(4, "icon_disable.png");
+            imageListIcons.Images.SetKeyName(5, "icon_download.png");
+            imageListIcons.Images.SetKeyName(6, "icon_Edit.png");
+            imageListIcons.Images.SetKeyName(7, "icon_enable.png");
+            imageListIcons.Images.SetKeyName(8, "icon_export.png");
+            imageListIcons.Images.SetKeyName(9, "icon_help.png");
+            imageListIcons.Images.SetKeyName(10, "icon_import.png");
+            imageListIcons.Images.SetKeyName(11, "icon_information.png");
+            imageListIcons.Images.SetKeyName(12, "icon_inject.png");
+            imageListIcons.Images.SetKeyName(13, "icon_Load.png");
+            imageListIcons.Images.SetKeyName(14, "icon_reload.png");
+            imageListIcons.Images.SetKeyName(15, "icon_Save.png");
+            imageListIcons.Images.SetKeyName(16, "icon_settings.png");
+            imageListIcons.Images.SetKeyName(17, "icon_Start.png");
+            imageListIcons.Images.SetKeyName(18, "icon_stopall.png");
+            imageListIcons.Images.SetKeyName(19, "icon_Uncheck.png");
+            imageListIcons.Images.SetKeyName(20, "icon_upload.png");
+            imageListIcons.Images.SetKeyName(21, "icon_website.png");
+            imageListIcons.Images.SetKeyName(22, "icon_clear.png");
+            imageListIcons.Images.SetKeyName(23, "icon_console.png");
+            imageListIcons.Images.SetKeyName(24, "icon_remove.png");
+            imageListIcons.Images.SetKeyName(25, "icon_clearconsole.png");
+            // 
+            // button5
+            // 
+            button5.Cursor = Cursors.Hand;
+            button5.ImageAlign = ContentAlignment.TopCenter;
+            button5.ImageIndex = 6;
+            button5.ImageList = imageListIcons;
+            button5.Location = new Point(15, 75);
+            button5.Margin = new Padding(3, 4, 3, 4);
+            button5.Name = "button5";
+            button5.Size = new Size(126, 57);
+            button5.TabIndex = 6;
+            button5.Text = "New Job";
+            button5.TextAlign = ContentAlignment.BottomCenter;
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            button6.Cursor = Cursors.Hand;
+            button6.Font = new Font("Segoe UI", 9F);
+            button6.ImageAlign = ContentAlignment.TopCenter;
+            button6.ImageIndex = 3;
+            button6.ImageList = imageListIcons;
+            button6.Location = new Point(413, 75);
+            button6.Margin = new Padding(3, 4, 3, 4);
+            button6.Name = "button6";
+            button6.Size = new Size(126, 57);
+            button6.TabIndex = 5;
+            button6.Text = "Delete Job";
+            button6.TextAlign = ContentAlignment.BottomCenter;
+            button6.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
@@ -601,9 +574,10 @@
             button8.ImageAlign = ContentAlignment.TopCenter;
             button8.ImageIndex = 16;
             button8.ImageList = imageListIcons;
-            button8.Location = new Point(245, 56);
+            button8.Location = new Point(280, 75);
+            button8.Margin = new Padding(3, 4, 3, 4);
             button8.Name = "button8";
-            button8.Size = new Size(110, 43);
+            button8.Size = new Size(126, 57);
             button8.TabIndex = 4;
             button8.Text = "Edit Job";
             button8.TextAlign = ContentAlignment.BottomCenter;
@@ -615,9 +589,10 @@
             button10.ImageAlign = ContentAlignment.TopCenter;
             button10.ImageIndex = 15;
             button10.ImageList = imageListIcons;
-            button10.Location = new Point(129, 56);
+            button10.Location = new Point(147, 75);
+            button10.Margin = new Padding(3, 4, 3, 4);
             button10.Name = "button10";
-            button10.Size = new Size(110, 43);
+            button10.Size = new Size(126, 57);
             button10.TabIndex = 2;
             button10.Text = "Save Job";
             button10.TextAlign = ContentAlignment.BottomCenter;
@@ -627,258 +602,329 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 10F);
-            label12.Location = new Point(231, 0);
+            label12.Location = new Point(264, 0);
             label12.Name = "label12";
-            label12.Size = new Size(89, 19);
+            label12.Size = new Size(109, 23);
             label12.TabIndex = 1;
             label12.Text = "Job Manager";
             // 
             // comboBoxFirewallPreset
             // 
             comboBoxFirewallPreset.FormattingEnabled = true;
-            comboBoxFirewallPreset.Location = new Point(3, 27);
+            comboBoxFirewallPreset.Location = new Point(3, 36);
+            comboBoxFirewallPreset.Margin = new Padding(3, 4, 3, 4);
             comboBoxFirewallPreset.Name = "comboBoxFirewallPreset";
-            comboBoxFirewallPreset.Size = new Size(592, 23);
+            comboBoxFirewallPreset.Size = new Size(676, 28);
             comboBoxFirewallPreset.TabIndex = 0;
             // 
-            // button6
+            // groupBox2
             // 
-            button6.Cursor = Cursors.Hand;
-            button6.Font = new Font("Segoe UI", 9F);
-            button6.ImageAlign = ContentAlignment.TopCenter;
-            button6.ImageIndex = 3;
-            button6.ImageList = imageListIcons;
-            button6.Location = new Point(361, 56);
-            button6.Name = "button6";
-            button6.Size = new Size(110, 43);
-            button6.TabIndex = 5;
-            button6.Text = "Delete Job";
-            button6.TextAlign = ContentAlignment.BottomCenter;
-            button6.UseVisualStyleBackColor = true;
+            groupBox2.Controls.Add(label7);
+            groupBox2.Controls.Add(panel3);
+            groupBox2.Controls.Add(button2);
+            groupBox2.Controls.Add(label4);
+            groupBox2.Controls.Add(textBox2);
+            groupBox2.Location = new Point(722, 8);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(3, 4, 3, 4);
+            groupBox2.Size = new Size(686, 801);
+            groupBox2.TabIndex = 2;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Source";
             // 
-            // button5
+            // label7
             // 
-            button5.Cursor = Cursors.Hand;
-            button5.ImageAlign = ContentAlignment.TopCenter;
-            button5.ImageIndex = 6;
-            button5.ImageList = imageListIcons;
-            button5.Location = new Point(13, 56);
-            button5.Name = "button5";
-            button5.Size = new Size(110, 43);
-            button5.TabIndex = 6;
-            button5.Text = "New Job";
-            button5.TextAlign = ContentAlignment.BottomCenter;
-            button5.UseVisualStyleBackColor = true;
+            label7.AutoSize = true;
+            label7.Location = new Point(9, 107);
+            label7.Name = "label7";
+            label7.Size = new Size(76, 20);
+            label7.TabIndex = 59;
+            label7.Text = "Exclusions";
             // 
-            // button7
+            // panel3
             // 
-            button7.Cursor = Cursors.Hand;
-            button7.Font = new Font("Segoe UI", 9F);
-            button7.ImageAlign = ContentAlignment.TopCenter;
-            button7.ImageIndex = 13;
-            button7.ImageList = imageListIcons;
-            button7.Location = new Point(475, 56);
-            button7.Name = "button7";
-            button7.Size = new Size(110, 43);
-            button7.TabIndex = 7;
-            button7.Text = "Open Job Folder";
-            button7.TextAlign = ContentAlignment.BottomCenter;
-            button7.UseVisualStyleBackColor = true;
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(button4);
+            panel3.Controls.Add(flowLayoutPanel1);
+            panel3.Controls.Add(button15);
+            panel3.Controls.Add(button3);
+            panel3.Controls.Add(label5);
+            panel3.Controls.Add(textBox4);
+            panel3.Controls.Add(label6);
+            panel3.Location = new Point(5, 131);
+            panel3.Margin = new Padding(3, 4, 3, 4);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(674, 662);
+            panel3.TabIndex = 58;
             // 
-            // groupBox3
+            // button4
             // 
-            groupBox3.Controls.Add(richTextBox1);
-            groupBox3.Controls.Add(label10);
-            groupBox3.Controls.Add(panel4);
-            groupBox3.Controls.Add(label11);
-            groupBox3.Controls.Add(textBox6);
-            groupBox3.Location = new Point(6, 191);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(600, 229);
-            groupBox3.TabIndex = 30;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "General";
+            button4.Cursor = Cursors.Hand;
+            button4.Font = new Font("Segoe UI", 9F);
+            button4.ImageAlign = ContentAlignment.TopCenter;
+            button4.ImageKey = "icon_delete.png";
+            button4.ImageList = imageListHighQualityIcons;
+            button4.Location = new Point(551, 21);
+            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(118, 63);
+            button4.TabIndex = 61;
+            button4.Text = "Delete All";
+            button4.TextAlign = ContentAlignment.BottomCenter;
+            button4.UseVisualStyleBackColor = true;
             // 
-            // panel4
+            // flowLayoutPanel1
             // 
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(groupBoxProtocol);
-            panel4.Controls.Add(checkBox4);
-            panel4.Location = new Point(4, 146);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(590, 77);
-            panel4.TabIndex = 55;
+            flowLayoutPanel1.BorderStyle = BorderStyle.Fixed3D;
+            flowLayoutPanel1.Location = new Point(3, 91);
+            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(665, 564);
+            flowLayoutPanel1.TabIndex = 60;
             // 
-            // checkBox4
+            // button15
             // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(27, 27);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(66, 19);
-            checkBox4.TabIndex = 54;
-            checkBox4.Text = "Archive";
-            checkBox4.UseVisualStyleBackColor = true;
+            button15.Cursor = Cursors.Hand;
+            button15.Font = new Font("Segoe UI", 9F);
+            button15.ImageAlign = ContentAlignment.TopCenter;
+            button15.ImageKey = "icon_create.png";
+            button15.ImageList = imageListHighQualityIcons;
+            button15.Location = new Point(427, 21);
+            button15.Margin = new Padding(3, 4, 3, 4);
+            button15.Name = "button15";
+            button15.Size = new Size(118, 63);
+            button15.TabIndex = 59;
+            button15.Text = "Create Exclusion";
+            button15.TextAlign = ContentAlignment.BottomCenter;
+            button15.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // button3
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(6, 19);
-            label11.Name = "label11";
-            label11.Size = new Size(60, 15);
-            label11.TabIndex = 53;
-            label11.Text = "Job Name";
+            button3.Location = new Point(389, 49);
+            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Name = "button3";
+            button3.Size = new Size(32, 35);
+            button3.TabIndex = 58;
+            button3.Text = "🔍";
+            button3.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // label5
             // 
-            textBox6.Location = new Point(6, 37);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(588, 23);
-            textBox6.TabIndex = 0;
+            label5.AutoSize = true;
+            label5.Location = new Point(3, 28);
+            label5.Name = "label5";
+            label5.Size = new Size(114, 20);
+            label5.TabIndex = 55;
+            label5.Text = "Directory Name";
             // 
-            // groupBoxProtocol
+            // textBox4
             // 
-            groupBoxProtocol.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            groupBoxProtocol.BackColor = Color.Silver;
-            groupBoxProtocol.Controls.Add(radioButton1);
-            groupBoxProtocol.Controls.Add(radioButtonTCPandUDP);
-            groupBoxProtocol.Controls.Add(radioButtonUDP);
-            groupBoxProtocol.Controls.Add(radioButtonTCP);
-            groupBoxProtocol.FlatStyle = FlatStyle.Flat;
-            groupBoxProtocol.Location = new Point(149, 5);
-            groupBoxProtocol.Name = "groupBoxProtocol";
-            groupBoxProtocol.Size = new Size(432, 57);
-            groupBoxProtocol.TabIndex = 2;
-            groupBoxProtocol.TabStop = false;
-            groupBoxProtocol.Text = "Format";
-            groupBoxProtocol.Enter += this.groupBoxProtocol_Enter;
+            textBox4.Location = new Point(3, 52);
+            textBox4.Margin = new Padding(3, 4, 3, 4);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(378, 27);
+            textBox4.TabIndex = 54;
             // 
-            // radioButtonTCPandUDP
+            // label6
             // 
-            radioButtonTCPandUDP.AutoSize = true;
-            radioButtonTCPandUDP.Location = new Point(57, 22);
-            radioButtonTCPandUDP.Name = "radioButtonTCPandUDP";
-            radioButtonTCPandUDP.Size = new Size(42, 19);
-            radioButtonTCPandUDP.TabIndex = 2;
-            radioButtonTCPandUDP.TabStop = true;
-            radioButtonTCPandUDP.Text = ".rar";
-            radioButtonTCPandUDP.UseVisualStyleBackColor = true;
+            label6.AutoSize = true;
+            label6.Location = new Point(49, 48);
+            label6.Name = "label6";
+            label6.Size = new Size(50, 20);
+            label6.TabIndex = 0;
+            label6.Text = "label6";
             // 
-            // radioButtonUDP
+            // button2
             // 
-            radioButtonUDP.AutoSize = true;
-            radioButtonUDP.Location = new Point(105, 22);
-            radioButtonUDP.Name = "radioButtonUDP";
-            radioButtonUDP.Size = new Size(39, 19);
-            radioButtonUDP.TabIndex = 1;
-            radioButtonUDP.TabStop = true;
-            radioButtonUDP.Text = ".7z";
-            radioButtonUDP.UseVisualStyleBackColor = true;
+            button2.Location = new Point(647, 47);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(32, 35);
+            button2.TabIndex = 57;
+            button2.Text = "🔍";
+            button2.UseVisualStyleBackColor = true;
             // 
-            // radioButtonTCP
+            // label4
             // 
-            radioButtonTCP.AutoSize = true;
-            radioButtonTCP.Location = new Point(6, 22);
-            radioButtonTCP.Name = "radioButtonTCP";
-            radioButtonTCP.Size = new Size(43, 19);
-            radioButtonTCP.TabIndex = 0;
-            radioButtonTCP.TabStop = true;
-            radioButtonTCP.Text = ".zip";
-            radioButtonTCP.UseVisualStyleBackColor = true;
+            label4.AutoSize = true;
+            label4.Location = new Point(7, 25);
+            label4.Name = "label4";
+            label4.Size = new Size(86, 20);
+            label4.TabIndex = 56;
+            label4.Text = "Source Path";
             // 
-            // radioButton1
+            // textBox2
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(162, 21);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(40, 19);
-            radioButton1.TabIndex = 3;
-            radioButton1.TabStop = true;
-            radioButton1.Text = ".gz";
-            radioButton1.UseVisualStyleBackColor = true;
+            textBox2.Location = new Point(7, 49);
+            textBox2.Margin = new Padding(3, 4, 3, 4);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(636, 27);
+            textBox2.TabIndex = 54;
             // 
-            // label9
+            // groupBox1
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 32F, FontStyle.Bold);
-            label9.Location = new Point(150, 132);
-            label9.Name = "label9";
-            label9.Size = new Size(270, 59);
-            label9.TabIndex = 31;
-            label9.Text = "JOB EDITOR";
+            groupBox1.Controls.Add(panel2);
+            groupBox1.Controls.Add(checkBox1);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(buttonSelectScheduleTask);
+            groupBox1.Location = new Point(7, 568);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(686, 241);
+            groupBox1.TabIndex = 1;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Destination";
             // 
-            // groupBox4
+            // panel2
             // 
-            groupBox4.Controls.Add(comboBox1);
-            groupBox4.Controls.Add(button1);
-            groupBox4.Location = new Point(379, 301);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(437, 100);
-            groupBox4.TabIndex = 1;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Single Copy";
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(checkBox2);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(textBox3);
+            panel2.Controls.Add(label2);
+            panel2.Location = new Point(5, 131);
+            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(674, 102);
+            panel2.TabIndex = 55;
             // 
-            // comboBox1
+            // checkBox2
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(176, 24);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 2;
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(408, 43);
+            checkBox2.Margin = new Padding(3, 4, 3, 4);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(207, 24);
+            checkBox2.TabIndex = 56;
+            checkBox2.Text = "Use Sourcedirectory Name";
+            checkBox2.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // label3
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(6, 63);
-            label10.Name = "label10";
-            label10.Size = new Size(88, 15);
-            label10.TabIndex = 57;
-            label10.Text = "Job Description";
+            label3.AutoSize = true;
+            label3.Location = new Point(3, 16);
+            label3.Name = "label3";
+            label3.Size = new Size(114, 20);
+            label3.TabIndex = 55;
+            label3.Text = "Directory Name";
             // 
-            // richTextBox1
+            // textBox3
             // 
-            richTextBox1.Location = new Point(6, 81);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(588, 59);
-            richTextBox1.TabIndex = 58;
-            richTextBox1.Text = "";
+            textBox3.Location = new Point(3, 40);
+            textBox3.Margin = new Padding(3, 4, 3, 4);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(321, 27);
+            textBox3.TabIndex = 54;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(49, 36);
+            label2.Name = "label2";
+            label2.Size = new Size(50, 20);
+            label2.TabIndex = 0;
+            label2.Text = "label2";
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(7, 101);
+            checkBox1.Margin = new Padding(3, 4, 3, 4);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(162, 24);
+            checkBox1.TabIndex = 54;
+            checkBox1.Text = "Create Subdirectory";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(7, 25);
+            label1.Name = "label1";
+            label1.Size = new Size(82, 20);
+            label1.TabIndex = 53;
+            label1.Text = "Target Path";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(7, 49);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(636, 27);
+            textBox1.TabIndex = 0;
+            // 
+            // buttonSelectScheduleTask
+            // 
+            buttonSelectScheduleTask.Location = new Point(647, 47);
+            buttonSelectScheduleTask.Margin = new Padding(3, 4, 3, 4);
+            buttonSelectScheduleTask.Name = "buttonSelectScheduleTask";
+            buttonSelectScheduleTask.Size = new Size(32, 35);
+            buttonSelectScheduleTask.TabIndex = 52;
+            buttonSelectScheduleTask.Text = "🔍";
+            buttonSelectScheduleTask.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            tabPage3.Controls.Add(label8);
+            tabPage3.Location = new Point(4, 29);
+            tabPage3.Margin = new Padding(3, 4, 3, 4);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Size = new Size(1416, 822);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Schedule Editor";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 90F);
+            label8.Location = new Point(531, 273);
+            label8.Name = "label8";
+            label8.Size = new Size(351, 199);
+            label8.TabIndex = 0;
+            label8.Text = "N/A";
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(1270, 680);
+            ClientSize = new Size(1451, 907);
             Controls.Add(tabControl1);
             Controls.Add(menuStrip1);
             ForeColor = SystemColors.ControlDarkDark;
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "MainForm";
             Text = "AutoBak 2 [0.0.1]";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            groupBox4.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            tabPage3.ResumeLayout(false);
-            tabPage3.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             groupBoxProtocol.ResumeLayout(false);
             groupBoxProtocol.PerformLayout();
-            groupBox4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
