@@ -907,6 +907,7 @@
             Controls.Add(tabControl1);
             Controls.Add(menuStrip1);
             ForeColor = SystemColors.ControlDarkDark;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             Name = "MainForm";
