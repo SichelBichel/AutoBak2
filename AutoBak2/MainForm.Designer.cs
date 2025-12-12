@@ -67,10 +67,10 @@
             panel5 = new Panel();
             button7 = new Button();
             imageListIcons = new ImageList(components);
-            button5 = new Button();
+            buttonNewJob = new Button();
             button6 = new Button();
             buttonEditJob = new Button();
-            button10 = new Button();
+            buttonSaveJob = new Button();
             label12 = new Label();
             comboBoxJobSelection = new ComboBox();
             groupBox2 = new GroupBox();
@@ -88,7 +88,7 @@
             textBoxSourcePath = new TextBox();
             groupBox1 = new GroupBox();
             panel2 = new Panel();
-            checkBox2 = new CheckBox();
+            checkBoxUseSourcedirectoryName = new CheckBox();
             label3 = new Label();
             textBoxSubdirectoryName = new TextBox();
             label2 = new Label();
@@ -476,10 +476,10 @@
             // 
             panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(button7);
-            panel5.Controls.Add(button5);
+            panel5.Controls.Add(buttonNewJob);
             panel5.Controls.Add(button6);
             panel5.Controls.Add(buttonEditJob);
-            panel5.Controls.Add(button10);
+            panel5.Controls.Add(buttonSaveJob);
             panel5.Controls.Add(label12);
             panel5.Controls.Add(comboBoxJobSelection);
             panel5.Location = new Point(7, 20);
@@ -536,20 +536,21 @@
             imageListIcons.Images.SetKeyName(24, "icon_remove.png");
             imageListIcons.Images.SetKeyName(25, "icon_clearconsole.png");
             // 
-            // button5
+            // buttonNewJob
             // 
-            button5.Cursor = Cursors.Hand;
-            button5.ImageAlign = ContentAlignment.TopCenter;
-            button5.ImageIndex = 6;
-            button5.ImageList = imageListIcons;
-            button5.Location = new Point(15, 75);
-            button5.Margin = new Padding(3, 4, 3, 4);
-            button5.Name = "button5";
-            button5.Size = new Size(126, 57);
-            button5.TabIndex = 6;
-            button5.Text = "New Job";
-            button5.TextAlign = ContentAlignment.BottomCenter;
-            button5.UseVisualStyleBackColor = true;
+            buttonNewJob.Cursor = Cursors.Hand;
+            buttonNewJob.ImageAlign = ContentAlignment.TopCenter;
+            buttonNewJob.ImageIndex = 6;
+            buttonNewJob.ImageList = imageListIcons;
+            buttonNewJob.Location = new Point(15, 75);
+            buttonNewJob.Margin = new Padding(3, 4, 3, 4);
+            buttonNewJob.Name = "buttonNewJob";
+            buttonNewJob.Size = new Size(126, 57);
+            buttonNewJob.TabIndex = 6;
+            buttonNewJob.Text = "New Job";
+            buttonNewJob.TextAlign = ContentAlignment.BottomCenter;
+            buttonNewJob.UseVisualStyleBackColor = true;
+            buttonNewJob.Click += buttonNewJob_Click;
             // 
             // button6
             // 
@@ -584,20 +585,21 @@
             buttonEditJob.UseVisualStyleBackColor = true;
             buttonEditJob.Click += buttonEditJob_Click;
             // 
-            // button10
+            // buttonSaveJob
             // 
-            button10.Cursor = Cursors.Hand;
-            button10.ImageAlign = ContentAlignment.TopCenter;
-            button10.ImageIndex = 15;
-            button10.ImageList = imageListIcons;
-            button10.Location = new Point(147, 75);
-            button10.Margin = new Padding(3, 4, 3, 4);
-            button10.Name = "button10";
-            button10.Size = new Size(126, 57);
-            button10.TabIndex = 2;
-            button10.Text = "Save Job";
-            button10.TextAlign = ContentAlignment.BottomCenter;
-            button10.UseVisualStyleBackColor = true;
+            buttonSaveJob.Cursor = Cursors.Hand;
+            buttonSaveJob.ImageAlign = ContentAlignment.TopCenter;
+            buttonSaveJob.ImageIndex = 15;
+            buttonSaveJob.ImageList = imageListIcons;
+            buttonSaveJob.Location = new Point(147, 75);
+            buttonSaveJob.Margin = new Padding(3, 4, 3, 4);
+            buttonSaveJob.Name = "buttonSaveJob";
+            buttonSaveJob.Size = new Size(126, 57);
+            buttonSaveJob.TabIndex = 2;
+            buttonSaveJob.Text = "Save Job";
+            buttonSaveJob.TextAlign = ContentAlignment.BottomCenter;
+            buttonSaveJob.UseVisualStyleBackColor = true;
+            buttonSaveJob.Click += buttonSaveJob_Click;
             // 
             // label12
             // 
@@ -782,7 +784,7 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(checkBox2);
+            panel2.Controls.Add(checkBoxUseSourcedirectoryName);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(textBoxSubdirectoryName);
             panel2.Controls.Add(label2);
@@ -792,16 +794,16 @@
             panel2.Size = new Size(674, 102);
             panel2.TabIndex = 55;
             // 
-            // checkBox2
+            // checkBoxUseSourcedirectoryName
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(408, 43);
-            checkBox2.Margin = new Padding(3, 4, 3, 4);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(207, 24);
-            checkBox2.TabIndex = 56;
-            checkBox2.Text = "Use Sourcedirectory Name";
-            checkBox2.UseVisualStyleBackColor = true;
+            checkBoxUseSourcedirectoryName.AutoSize = true;
+            checkBoxUseSourcedirectoryName.Location = new Point(408, 43);
+            checkBoxUseSourcedirectoryName.Margin = new Padding(3, 4, 3, 4);
+            checkBoxUseSourcedirectoryName.Name = "checkBoxUseSourcedirectoryName";
+            checkBoxUseSourcedirectoryName.Size = new Size(207, 24);
+            checkBoxUseSourcedirectoryName.TabIndex = 56;
+            checkBoxUseSourcedirectoryName.Text = "Use Sourcedirectory Name";
+            checkBoxUseSourcedirectoryName.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -959,7 +961,7 @@
         private Label label1;
         private Panel panel2;
         private CheckBox checkBoxCreateSubdirectory;
-        private CheckBox checkBox2;
+        private CheckBox checkBoxUseSourcedirectoryName;
         private Label label3;
         private TextBox textBoxSubdirectoryName;
         private Label label2;
@@ -980,11 +982,11 @@
         private Panel panel5;
         private Button button6;
         private Button buttonEditJob;
-        private Button button10;
+        private Button buttonSaveJob;
         private Label label12;
         private ComboBox comboBoxJobSelection;
         private Button button7;
-        private Button button5;
+        private Button buttonNewJob;
         private GroupBox groupBox3;
         private Panel panel4;
         private CheckBox checkBoxArchive;

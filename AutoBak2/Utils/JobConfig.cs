@@ -40,6 +40,9 @@ namespace AutoBak2.Utils
         [XmlElement("CreateSubdirectory")]
         public bool CreateSubdirectory { get; set; } = false;
 
+        [XmlElement("UseSourcedirectoryName")]
+        public bool UseSourcedirectoryName {  get; set; }
+
         [XmlElement("SubdirectoryName")]
         public string SubdirectoryName { get; set; } = string.Empty;
 
