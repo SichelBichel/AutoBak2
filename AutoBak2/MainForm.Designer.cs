@@ -992,7 +992,7 @@
             panel6.Controls.Add(numericUpDown3);
             panel6.Controls.Add(monthCalendarEnd);
             panel6.Controls.Add(numericUpDown4);
-            panel6.Location = new Point(67, 198);
+            panel6.Location = new Point(67, 172);
             panel6.Name = "panel6";
             panel6.Size = new Size(228, 351);
             panel6.TabIndex = 9;
@@ -1071,7 +1071,7 @@
             // groupBox9
             // 
             groupBox9.Controls.Add(checkedListBoxWeekdays);
-            groupBox9.Location = new Point(15, 357);
+            groupBox9.Location = new Point(15, 331);
             groupBox9.Name = "groupBox9";
             groupBox9.Size = new Size(133, 192);
             groupBox9.TabIndex = 17;
@@ -1094,7 +1094,7 @@
             groupBox8.Controls.Add(radioButtonMinutes);
             groupBox8.Controls.Add(radioButton2);
             groupBox8.Controls.Add(radioButton1);
-            groupBox8.Location = new Point(15, 172);
+            groupBox8.Location = new Point(15, 155);
             groupBox8.Name = "groupBox8";
             groupBox8.Size = new Size(133, 170);
             groupBox8.TabIndex = 16;
@@ -1195,7 +1195,7 @@
             panel1.Controls.Add(numericUpDown2);
             panel1.Controls.Add(monthCalendarStart);
             panel1.Controls.Add(numericUpDown1);
-            panel1.Location = new Point(67, 198);
+            panel1.Location = new Point(61, 172);
             panel1.Name = "panel1";
             panel1.Size = new Size(228, 351);
             panel1.TabIndex = 9;
