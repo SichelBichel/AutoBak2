@@ -97,7 +97,9 @@
             textBoxDestinationPath = new TextBox();
             buttonSelectDestinationPath = new Button();
             tabPage3 = new TabPage();
+            monthCalendar2 = new MonthCalendar();
             label8 = new Label();
+            dateTimePicker2 = new DateTimePicker();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -879,6 +881,9 @@
             // 
             // tabPage3
             // 
+            tabPage3.BackColor = Color.Silver;
+            tabPage3.Controls.Add(dateTimePicker2);
+            tabPage3.Controls.Add(monthCalendar2);
             tabPage3.Controls.Add(label8);
             tabPage3.Location = new Point(4, 29);
             tabPage3.Margin = new Padding(3, 4, 3, 4);
@@ -886,7 +891,12 @@
             tabPage3.Size = new Size(1416, 822);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Schedule Editor";
-            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // monthCalendar2
+            // 
+            monthCalendar2.Location = new Point(217, 27);
+            monthCalendar2.Name = "monthCalendar2";
+            monthCalendar2.TabIndex = 4;
             // 
             // label8
             // 
@@ -897,6 +907,16 @@
             label8.Size = new Size(351, 199);
             label8.TabIndex = 0;
             label8.Text = "N/A";
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.CustomFormat = "MM.dd.yyyy HH:mm";
+            dateTimePicker2.Format = DateTimePickerFormat.Time;
+            dateTimePicker2.Location = new Point(217, 257);
+            dateTimePicker2.Margin = new Padding(3, 4, 3, 4);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(206, 27);
+            dateTimePicker2.TabIndex = 6;
             // 
             // MainForm
             // 
@@ -1011,5 +1031,7 @@
         private ComboBox comboBox1;
         private RichTextBox richTextBoxJobDescription;
         private Label label10;
+        private MonthCalendar monthCalendar2;
+        private DateTimePicker dateTimePicker2;
     }
 }
