@@ -77,7 +77,7 @@
             label7 = new Label();
             panel3 = new Panel();
             button4 = new Button();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            flowLayoutPanelExclusions = new FlowLayoutPanel();
             button15 = new Button();
             button3 = new Button();
             label5 = new Label();
@@ -137,7 +137,7 @@
             // addInstanceToolStripMenuItem
             // 
             addInstanceToolStripMenuItem.Name = "addInstanceToolStripMenuItem";
-            addInstanceToolStripMenuItem.Size = new Size(224, 26);
+            addInstanceToolStripMenuItem.Size = new Size(235, 26);
             addInstanceToolStripMenuItem.Text = "Add Instance";
             // 
             // deleteInstanceToolStripMenuItem
@@ -149,7 +149,7 @@
             // stopAllInstancesToolStripMenuItem
             // 
             stopAllInstancesToolStripMenuItem.Name = "stopAllInstancesToolStripMenuItem";
-            stopAllInstancesToolStripMenuItem.Size = new Size(224, 26);
+            stopAllInstancesToolStripMenuItem.Size = new Size(235, 26);
             stopAllInstancesToolStripMenuItem.Text = "Stop All Instances";
             // 
             // optionsToolStripMenuItem
@@ -164,19 +164,19 @@
             // importToolStripMenuItem
             // 
             importToolStripMenuItem.Name = "importToolStripMenuItem";
-            importToolStripMenuItem.Size = new Size(224, 26);
+            importToolStripMenuItem.Size = new Size(216, 26);
             importToolStripMenuItem.Text = "Import";
             // 
             // exportToolStripMenuItem
             // 
             exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            exportToolStripMenuItem.Size = new Size(224, 26);
+            exportToolStripMenuItem.Size = new Size(216, 26);
             exportToolStripMenuItem.Text = "Export";
             // 
             // openConfigfolderToolStripMenuItem
             // 
             openConfigfolderToolStripMenuItem.Name = "openConfigfolderToolStripMenuItem";
-            openConfigfolderToolStripMenuItem.Size = new Size(224, 26);
+            openConfigfolderToolStripMenuItem.Size = new Size(216, 26);
             openConfigfolderToolStripMenuItem.Text = "Open Configfolder";
             // 
             // helpToolStripMenuItem
@@ -651,7 +651,7 @@
             // 
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(button4);
-            panel3.Controls.Add(flowLayoutPanel1);
+            panel3.Controls.Add(flowLayoutPanelExclusions);
             panel3.Controls.Add(button15);
             panel3.Controls.Add(button3);
             panel3.Controls.Add(label5);
@@ -679,14 +679,14 @@
             button4.TextAlign = ContentAlignment.BottomCenter;
             button4.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanelExclusions
             // 
-            flowLayoutPanel1.BorderStyle = BorderStyle.Fixed3D;
-            flowLayoutPanel1.Location = new Point(3, 91);
-            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(665, 564);
-            flowLayoutPanel1.TabIndex = 60;
+            flowLayoutPanelExclusions.BorderStyle = BorderStyle.Fixed3D;
+            flowLayoutPanelExclusions.Location = new Point(3, 91);
+            flowLayoutPanelExclusions.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanelExclusions.Name = "flowLayoutPanelExclusions";
+            flowLayoutPanelExclusions.Size = new Size(665, 564);
+            flowLayoutPanelExclusions.TabIndex = 60;
             // 
             // button15
             // 
@@ -979,7 +979,7 @@
         private Label label5;
         private TextBox textBoxExclusionPath;
         private Label label6;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flowLayoutPanelExclusions;
         private Button button4;
         private TabPage tabPage3;
         private Label label8;

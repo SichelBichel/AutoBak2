@@ -41,7 +41,7 @@
             button1.Font = new Font("Segoe UI", 12F);
             button1.ImageKey = "icon_remove.png";
             button1.ImageList = imageListHighQualityIcons;
-            button1.Location = new Point(770, 3);
+            button1.Location = new Point(670, 3);
             button1.Name = "button1";
             button1.Size = new Size(45, 45);
             button1.TabIndex = 0;
@@ -128,7 +128,7 @@
             Controls.Add(labelExclusionPath);
             Controls.Add(button1);
             Name = "ExclusionEntry";
-            Size = new Size(818, 53);
+            Size = new Size(722, 53);
             ResumeLayout(false);
             PerformLayout();
         }
