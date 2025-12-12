@@ -53,26 +53,26 @@
             tabPage2 = new TabPage();
             label9 = new Label();
             groupBox3 = new GroupBox();
-            richTextBox1 = new RichTextBox();
+            richTextBoxJobDescription = new RichTextBox();
             label10 = new Label();
             panel4 = new Panel();
             groupBoxProtocol = new GroupBox();
-            radioButton1 = new RadioButton();
-            radioButtonTCPandUDP = new RadioButton();
-            radioButtonUDP = new RadioButton();
-            radioButtonTCP = new RadioButton();
-            checkBox4 = new CheckBox();
+            radioButtonGz = new RadioButton();
+            radioButtonRar = new RadioButton();
+            radioButton7z = new RadioButton();
+            radioButtonZip = new RadioButton();
+            checkBoxArchive = new CheckBox();
             label11 = new Label();
-            textBox6 = new TextBox();
+            textBoxJobName = new TextBox();
             panel5 = new Panel();
             button7 = new Button();
             imageListIcons = new ImageList(components);
             button5 = new Button();
             button6 = new Button();
-            button8 = new Button();
+            buttonEditJob = new Button();
             button10 = new Button();
             label12 = new Label();
-            comboBoxFirewallPreset = new ComboBox();
+            comboBoxJobSelection = new ComboBox();
             groupBox2 = new GroupBox();
             label7 = new Label();
             panel3 = new Panel();
@@ -85,16 +85,16 @@
             label6 = new Label();
             button2 = new Button();
             label4 = new Label();
-            textBox2 = new TextBox();
+            textBoxSourcePath = new TextBox();
             groupBox1 = new GroupBox();
             panel2 = new Panel();
             checkBox2 = new CheckBox();
             label3 = new Label();
-            textBox3 = new TextBox();
+            textBoxSubdirectoryName = new TextBox();
             label2 = new Label();
-            checkBox1 = new CheckBox();
+            checkBoxCreateSubdirectory = new CheckBox();
             label1 = new Label();
-            textBox1 = new TextBox();
+            textBoxDestinationPath = new TextBox();
             buttonSelectScheduleTask = new Button();
             tabPage3 = new TabPage();
             label8 = new Label();
@@ -137,19 +137,19 @@
             // addInstanceToolStripMenuItem
             // 
             addInstanceToolStripMenuItem.Name = "addInstanceToolStripMenuItem";
-            addInstanceToolStripMenuItem.Size = new Size(224, 26);
+            addInstanceToolStripMenuItem.Size = new Size(209, 26);
             addInstanceToolStripMenuItem.Text = "Add Instance";
             // 
             // deleteInstanceToolStripMenuItem
             // 
             deleteInstanceToolStripMenuItem.Name = "deleteInstanceToolStripMenuItem";
-            deleteInstanceToolStripMenuItem.Size = new Size(224, 26);
+            deleteInstanceToolStripMenuItem.Size = new Size(209, 26);
             deleteInstanceToolStripMenuItem.Text = "Delete Instance";
             // 
             // stopAllInstancesToolStripMenuItem
             // 
             stopAllInstancesToolStripMenuItem.Name = "stopAllInstancesToolStripMenuItem";
-            stopAllInstancesToolStripMenuItem.Size = new Size(224, 26);
+            stopAllInstancesToolStripMenuItem.Size = new Size(209, 26);
             stopAllInstancesToolStripMenuItem.Text = "Stop All Instances";
             // 
             // optionsToolStripMenuItem
@@ -164,19 +164,19 @@
             // importToolStripMenuItem
             // 
             importToolStripMenuItem.Name = "importToolStripMenuItem";
-            importToolStripMenuItem.Size = new Size(224, 26);
+            importToolStripMenuItem.Size = new Size(216, 26);
             importToolStripMenuItem.Text = "Import";
             // 
             // exportToolStripMenuItem
             // 
             exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            exportToolStripMenuItem.Size = new Size(224, 26);
+            exportToolStripMenuItem.Size = new Size(216, 26);
             exportToolStripMenuItem.Text = "Export";
             // 
             // openConfigfolderToolStripMenuItem
             // 
             openConfigfolderToolStripMenuItem.Name = "openConfigfolderToolStripMenuItem";
-            openConfigfolderToolStripMenuItem.Size = new Size(224, 26);
+            openConfigfolderToolStripMenuItem.Size = new Size(216, 26);
             openConfigfolderToolStripMenuItem.Text = "Open Configfolder";
             // 
             // helpToolStripMenuItem
@@ -335,11 +335,11 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(richTextBox1);
+            groupBox3.Controls.Add(richTextBoxJobDescription);
             groupBox3.Controls.Add(label10);
             groupBox3.Controls.Add(panel4);
             groupBox3.Controls.Add(label11);
-            groupBox3.Controls.Add(textBox6);
+            groupBox3.Controls.Add(textBoxJobName);
             groupBox3.Location = new Point(7, 255);
             groupBox3.Margin = new Padding(3, 4, 3, 4);
             groupBox3.Name = "groupBox3";
@@ -349,14 +349,14 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "General";
             // 
-            // richTextBox1
+            // richTextBoxJobDescription
             // 
-            richTextBox1.Location = new Point(7, 108);
-            richTextBox1.Margin = new Padding(3, 4, 3, 4);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(671, 77);
-            richTextBox1.TabIndex = 58;
-            richTextBox1.Text = "";
+            richTextBoxJobDescription.Location = new Point(7, 108);
+            richTextBoxJobDescription.Margin = new Padding(3, 4, 3, 4);
+            richTextBoxJobDescription.Name = "richTextBoxJobDescription";
+            richTextBoxJobDescription.Size = new Size(671, 77);
+            richTextBoxJobDescription.TabIndex = 58;
+            richTextBoxJobDescription.Text = "";
             // 
             // label10
             // 
@@ -371,7 +371,7 @@
             // 
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(groupBoxProtocol);
-            panel4.Controls.Add(checkBox4);
+            panel4.Controls.Add(checkBoxArchive);
             panel4.Location = new Point(5, 195);
             panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
@@ -382,10 +382,10 @@
             // 
             groupBoxProtocol.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBoxProtocol.BackColor = Color.Silver;
-            groupBoxProtocol.Controls.Add(radioButton1);
-            groupBoxProtocol.Controls.Add(radioButtonTCPandUDP);
-            groupBoxProtocol.Controls.Add(radioButtonUDP);
-            groupBoxProtocol.Controls.Add(radioButtonTCP);
+            groupBoxProtocol.Controls.Add(radioButtonGz);
+            groupBoxProtocol.Controls.Add(radioButtonRar);
+            groupBoxProtocol.Controls.Add(radioButton7z);
+            groupBoxProtocol.Controls.Add(radioButtonZip);
             groupBoxProtocol.FlatStyle = FlatStyle.Flat;
             groupBoxProtocol.Location = new Point(170, 7);
             groupBoxProtocol.Margin = new Padding(3, 4, 3, 4);
@@ -396,64 +396,64 @@
             groupBoxProtocol.TabStop = false;
             groupBoxProtocol.Text = "Format";
             // 
-            // radioButton1
+            // radioButtonGz
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(185, 28);
-            radioButton1.Margin = new Padding(3, 4, 3, 4);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(49, 24);
-            radioButton1.TabIndex = 3;
-            radioButton1.TabStop = true;
-            radioButton1.Text = ".gz";
-            radioButton1.UseVisualStyleBackColor = true;
+            radioButtonGz.AutoSize = true;
+            radioButtonGz.Location = new Point(185, 28);
+            radioButtonGz.Margin = new Padding(3, 4, 3, 4);
+            radioButtonGz.Name = "radioButtonGz";
+            radioButtonGz.Size = new Size(49, 24);
+            radioButtonGz.TabIndex = 3;
+            radioButtonGz.TabStop = true;
+            radioButtonGz.Text = ".gz";
+            radioButtonGz.UseVisualStyleBackColor = true;
             // 
-            // radioButtonTCPandUDP
+            // radioButtonRar
             // 
-            radioButtonTCPandUDP.AutoSize = true;
-            radioButtonTCPandUDP.Location = new Point(65, 29);
-            radioButtonTCPandUDP.Margin = new Padding(3, 4, 3, 4);
-            radioButtonTCPandUDP.Name = "radioButtonTCPandUDP";
-            radioButtonTCPandUDP.Size = new Size(51, 24);
-            radioButtonTCPandUDP.TabIndex = 2;
-            radioButtonTCPandUDP.TabStop = true;
-            radioButtonTCPandUDP.Text = ".rar";
-            radioButtonTCPandUDP.UseVisualStyleBackColor = true;
+            radioButtonRar.AutoSize = true;
+            radioButtonRar.Location = new Point(63, 29);
+            radioButtonRar.Margin = new Padding(3, 4, 3, 4);
+            radioButtonRar.Name = "radioButtonRar";
+            radioButtonRar.Size = new Size(51, 24);
+            radioButtonRar.TabIndex = 2;
+            radioButtonRar.TabStop = true;
+            radioButtonRar.Text = ".rar";
+            radioButtonRar.UseVisualStyleBackColor = true;
             // 
-            // radioButtonUDP
+            // radioButton7z
             // 
-            radioButtonUDP.AutoSize = true;
-            radioButtonUDP.Location = new Point(120, 29);
-            radioButtonUDP.Margin = new Padding(3, 4, 3, 4);
-            radioButtonUDP.Name = "radioButtonUDP";
-            radioButtonUDP.Size = new Size(48, 24);
-            radioButtonUDP.TabIndex = 1;
-            radioButtonUDP.TabStop = true;
-            radioButtonUDP.Text = ".7z";
-            radioButtonUDP.UseVisualStyleBackColor = true;
+            radioButton7z.AutoSize = true;
+            radioButton7z.Location = new Point(120, 29);
+            radioButton7z.Margin = new Padding(3, 4, 3, 4);
+            radioButton7z.Name = "radioButton7z";
+            radioButton7z.Size = new Size(48, 24);
+            radioButton7z.TabIndex = 1;
+            radioButton7z.TabStop = true;
+            radioButton7z.Text = ".7z";
+            radioButton7z.UseVisualStyleBackColor = true;
             // 
-            // radioButtonTCP
+            // radioButtonZip
             // 
-            radioButtonTCP.AutoSize = true;
-            radioButtonTCP.Location = new Point(7, 29);
-            radioButtonTCP.Margin = new Padding(3, 4, 3, 4);
-            radioButtonTCP.Name = "radioButtonTCP";
-            radioButtonTCP.Size = new Size(53, 24);
-            radioButtonTCP.TabIndex = 0;
-            radioButtonTCP.TabStop = true;
-            radioButtonTCP.Text = ".zip";
-            radioButtonTCP.UseVisualStyleBackColor = true;
+            radioButtonZip.AutoSize = true;
+            radioButtonZip.Location = new Point(7, 29);
+            radioButtonZip.Margin = new Padding(3, 4, 3, 4);
+            radioButtonZip.Name = "radioButtonZip";
+            radioButtonZip.Size = new Size(53, 24);
+            radioButtonZip.TabIndex = 0;
+            radioButtonZip.TabStop = true;
+            radioButtonZip.Text = ".zip";
+            radioButtonZip.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // checkBoxArchive
             // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(31, 36);
-            checkBox4.Margin = new Padding(3, 4, 3, 4);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(80, 24);
-            checkBox4.TabIndex = 54;
-            checkBox4.Text = "Archive";
-            checkBox4.UseVisualStyleBackColor = true;
+            checkBoxArchive.AutoSize = true;
+            checkBoxArchive.Location = new Point(31, 36);
+            checkBoxArchive.Margin = new Padding(3, 4, 3, 4);
+            checkBoxArchive.Name = "checkBoxArchive";
+            checkBoxArchive.Size = new Size(80, 24);
+            checkBoxArchive.TabIndex = 54;
+            checkBoxArchive.Text = "Archive";
+            checkBoxArchive.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -464,13 +464,13 @@
             label11.TabIndex = 53;
             label11.Text = "Job Name";
             // 
-            // textBox6
+            // textBoxJobName
             // 
-            textBox6.Location = new Point(7, 49);
-            textBox6.Margin = new Padding(3, 4, 3, 4);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(671, 27);
-            textBox6.TabIndex = 0;
+            textBoxJobName.Location = new Point(7, 49);
+            textBoxJobName.Margin = new Padding(3, 4, 3, 4);
+            textBoxJobName.Name = "textBoxJobName";
+            textBoxJobName.Size = new Size(671, 27);
+            textBoxJobName.TabIndex = 0;
             // 
             // panel5
             // 
@@ -478,10 +478,10 @@
             panel5.Controls.Add(button7);
             panel5.Controls.Add(button5);
             panel5.Controls.Add(button6);
-            panel5.Controls.Add(button8);
+            panel5.Controls.Add(buttonEditJob);
             panel5.Controls.Add(button10);
             panel5.Controls.Add(label12);
-            panel5.Controls.Add(comboBoxFirewallPreset);
+            panel5.Controls.Add(comboBoxJobSelection);
             panel5.Location = new Point(7, 20);
             panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
@@ -567,21 +567,22 @@
             button6.TextAlign = ContentAlignment.BottomCenter;
             button6.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // buttonEditJob
             // 
-            button8.Cursor = Cursors.Hand;
-            button8.Font = new Font("Segoe UI", 9F);
-            button8.ImageAlign = ContentAlignment.TopCenter;
-            button8.ImageIndex = 16;
-            button8.ImageList = imageListIcons;
-            button8.Location = new Point(280, 75);
-            button8.Margin = new Padding(3, 4, 3, 4);
-            button8.Name = "button8";
-            button8.Size = new Size(126, 57);
-            button8.TabIndex = 4;
-            button8.Text = "Edit Job";
-            button8.TextAlign = ContentAlignment.BottomCenter;
-            button8.UseVisualStyleBackColor = true;
+            buttonEditJob.Cursor = Cursors.Hand;
+            buttonEditJob.Font = new Font("Segoe UI", 9F);
+            buttonEditJob.ImageAlign = ContentAlignment.TopCenter;
+            buttonEditJob.ImageIndex = 16;
+            buttonEditJob.ImageList = imageListIcons;
+            buttonEditJob.Location = new Point(280, 75);
+            buttonEditJob.Margin = new Padding(3, 4, 3, 4);
+            buttonEditJob.Name = "buttonEditJob";
+            buttonEditJob.Size = new Size(126, 57);
+            buttonEditJob.TabIndex = 4;
+            buttonEditJob.Text = "Edit Job";
+            buttonEditJob.TextAlign = ContentAlignment.BottomCenter;
+            buttonEditJob.UseVisualStyleBackColor = true;
+            buttonEditJob.Click += buttonEditJob_Click;
             // 
             // button10
             // 
@@ -608,14 +609,14 @@
             label12.TabIndex = 1;
             label12.Text = "Job Manager";
             // 
-            // comboBoxFirewallPreset
+            // comboBoxJobSelection
             // 
-            comboBoxFirewallPreset.FormattingEnabled = true;
-            comboBoxFirewallPreset.Location = new Point(3, 36);
-            comboBoxFirewallPreset.Margin = new Padding(3, 4, 3, 4);
-            comboBoxFirewallPreset.Name = "comboBoxFirewallPreset";
-            comboBoxFirewallPreset.Size = new Size(676, 28);
-            comboBoxFirewallPreset.TabIndex = 0;
+            comboBoxJobSelection.FormattingEnabled = true;
+            comboBoxJobSelection.Location = new Point(3, 36);
+            comboBoxJobSelection.Margin = new Padding(3, 4, 3, 4);
+            comboBoxJobSelection.Name = "comboBoxJobSelection";
+            comboBoxJobSelection.Size = new Size(676, 28);
+            comboBoxJobSelection.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -623,7 +624,7 @@
             groupBox2.Controls.Add(panel3);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(textBoxSourcePath);
             groupBox2.Location = new Point(722, 8);
             groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
@@ -754,20 +755,20 @@
             label4.TabIndex = 56;
             label4.Text = "Source Path";
             // 
-            // textBox2
+            // textBoxSourcePath
             // 
-            textBox2.Location = new Point(7, 49);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(636, 27);
-            textBox2.TabIndex = 54;
+            textBoxSourcePath.Location = new Point(7, 49);
+            textBoxSourcePath.Margin = new Padding(3, 4, 3, 4);
+            textBoxSourcePath.Name = "textBoxSourcePath";
+            textBoxSourcePath.Size = new Size(636, 27);
+            textBoxSourcePath.TabIndex = 54;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(panel2);
-            groupBox1.Controls.Add(checkBox1);
+            groupBox1.Controls.Add(checkBoxCreateSubdirectory);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(textBoxDestinationPath);
             groupBox1.Controls.Add(buttonSelectScheduleTask);
             groupBox1.Location = new Point(7, 568);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
@@ -783,7 +784,7 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(checkBox2);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(textBox3);
+            panel2.Controls.Add(textBoxSubdirectoryName);
             panel2.Controls.Add(label2);
             panel2.Location = new Point(5, 131);
             panel2.Margin = new Padding(3, 4, 3, 4);
@@ -811,13 +812,13 @@
             label3.TabIndex = 55;
             label3.Text = "Directory Name";
             // 
-            // textBox3
+            // textBoxSubdirectoryName
             // 
-            textBox3.Location = new Point(3, 40);
-            textBox3.Margin = new Padding(3, 4, 3, 4);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(321, 27);
-            textBox3.TabIndex = 54;
+            textBoxSubdirectoryName.Location = new Point(3, 40);
+            textBoxSubdirectoryName.Margin = new Padding(3, 4, 3, 4);
+            textBoxSubdirectoryName.Name = "textBoxSubdirectoryName";
+            textBoxSubdirectoryName.Size = new Size(321, 27);
+            textBoxSubdirectoryName.TabIndex = 54;
             // 
             // label2
             // 
@@ -828,33 +829,33 @@
             label2.TabIndex = 0;
             label2.Text = "label2";
             // 
-            // checkBox1
+            // checkBoxCreateSubdirectory
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(7, 101);
-            checkBox1.Margin = new Padding(3, 4, 3, 4);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(162, 24);
-            checkBox1.TabIndex = 54;
-            checkBox1.Text = "Create Subdirectory";
-            checkBox1.UseVisualStyleBackColor = true;
+            checkBoxCreateSubdirectory.AutoSize = true;
+            checkBoxCreateSubdirectory.Location = new Point(7, 101);
+            checkBoxCreateSubdirectory.Margin = new Padding(3, 4, 3, 4);
+            checkBoxCreateSubdirectory.Name = "checkBoxCreateSubdirectory";
+            checkBoxCreateSubdirectory.Size = new Size(162, 24);
+            checkBoxCreateSubdirectory.TabIndex = 54;
+            checkBoxCreateSubdirectory.Text = "Create Subdirectory";
+            checkBoxCreateSubdirectory.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(7, 25);
             label1.Name = "label1";
-            label1.Size = new Size(82, 20);
+            label1.Size = new Size(117, 20);
             label1.TabIndex = 53;
-            label1.Text = "Target Path";
+            label1.Text = "Destination Path";
             // 
-            // textBox1
+            // textBoxDestinationPath
             // 
-            textBox1.Location = new Point(7, 49);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(636, 27);
-            textBox1.TabIndex = 0;
+            textBoxDestinationPath.Location = new Point(7, 49);
+            textBoxDestinationPath.Margin = new Padding(3, 4, 3, 4);
+            textBoxDestinationPath.Name = "textBoxDestinationPath";
+            textBoxDestinationPath.Size = new Size(636, 27);
+            textBoxDestinationPath.TabIndex = 0;
             // 
             // buttonSelectScheduleTask
             // 
@@ -948,7 +949,7 @@
         private ToolStripMenuItem visitWebsiteToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem openConfigfolderToolStripMenuItem;
-        private TextBox textBox1;
+        private TextBox textBoxDestinationPath;
         private Button buttonSelectScheduleTask;
         private ImageList imageListIcons;
         private ImageList imageListHighQualityIcons;
@@ -957,13 +958,13 @@
         private GroupBox groupBox2;
         private Label label1;
         private Panel panel2;
-        private CheckBox checkBox1;
+        private CheckBox checkBoxCreateSubdirectory;
         private CheckBox checkBox2;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox textBoxSubdirectoryName;
         private Label label2;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox textBoxSourcePath;
         private Button button2;
         private Label label7;
         private Panel panel3;
@@ -978,26 +979,26 @@
         private Label label8;
         private Panel panel5;
         private Button button6;
-        private Button button8;
+        private Button buttonEditJob;
         private Button button10;
         private Label label12;
-        private ComboBox comboBoxFirewallPreset;
+        private ComboBox comboBoxJobSelection;
         private Button button7;
         private Button button5;
         private GroupBox groupBox3;
         private Panel panel4;
-        private CheckBox checkBox4;
+        private CheckBox checkBoxArchive;
         private Label label11;
-        private TextBox textBox6;
+        private TextBox textBoxJobName;
         private GroupBox groupBoxProtocol;
-        private RadioButton radioButton1;
-        private RadioButton radioButtonTCPandUDP;
-        private RadioButton radioButtonUDP;
-        private RadioButton radioButtonTCP;
+        private RadioButton radioButtonGz;
+        private RadioButton radioButtonRar;
+        private RadioButton radioButton7z;
+        private RadioButton radioButtonZip;
         private Label label9;
         private GroupBox groupBox4;
         private ComboBox comboBox1;
-        private RichTextBox richTextBox1;
+        private RichTextBox richTextBoxJobDescription;
         private Label label10;
     }
 }

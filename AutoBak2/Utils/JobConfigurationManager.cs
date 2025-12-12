@@ -75,10 +75,10 @@ public static class JobConfigurationManager
 
         if (!File.Exists(filePath))
         {
-            throw new FileNotFoundException($"Job-Konfigurationsdatei nicht gefunden: {filePath}");
+            throw new FileNotFoundException($"File not found: {filePath}");
         }
 
-        // Deserialisierung: XML-Datei in JobConfig-Objekt umwandeln
+        // deserialize
         XmlSerializer serializer = new XmlSerializer(typeof(JobConfig));
         JobConfig config;
 
@@ -87,7 +87,6 @@ public static class JobConfigurationManager
             config = (JobConfig)serializer.Deserialize(reader);
         }
 
-        Console.WriteLine($"Job-Konfiguration erfolgreich geladen: {filePath}");
         return config;
     }
 
