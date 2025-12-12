@@ -65,10 +65,10 @@
             label11 = new Label();
             textBoxJobName = new TextBox();
             panel5 = new Panel();
-            button7 = new Button();
+            buttonOpenJobFolder = new Button();
             imageListIcons = new ImageList(components);
             buttonNewJob = new Button();
-            button6 = new Button();
+            buttonDeleteJob = new Button();
             buttonEditJob = new Button();
             buttonSaveJob = new Button();
             label12 = new Label();
@@ -81,9 +81,9 @@
             button15 = new Button();
             button3 = new Button();
             label5 = new Label();
-            textBox4 = new TextBox();
+            textBoxExclusionPath = new TextBox();
             label6 = new Label();
-            button2 = new Button();
+            buttonSelectSourcePath = new Button();
             label4 = new Label();
             textBoxSourcePath = new TextBox();
             groupBox1 = new GroupBox();
@@ -95,7 +95,7 @@
             checkBoxCreateSubdirectory = new CheckBox();
             label1 = new Label();
             textBoxDestinationPath = new TextBox();
-            buttonSelectScheduleTask = new Button();
+            buttonSelectDestinationPath = new Button();
             tabPage3 = new TabPage();
             label8 = new Label();
             menuStrip1.SuspendLayout();
@@ -475,9 +475,9 @@
             // panel5
             // 
             panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(button7);
+            panel5.Controls.Add(buttonOpenJobFolder);
             panel5.Controls.Add(buttonNewJob);
-            panel5.Controls.Add(button6);
+            panel5.Controls.Add(buttonDeleteJob);
             panel5.Controls.Add(buttonEditJob);
             panel5.Controls.Add(buttonSaveJob);
             panel5.Controls.Add(label12);
@@ -488,21 +488,22 @@
             panel5.Size = new Size(685, 147);
             panel5.TabIndex = 29;
             // 
-            // button7
+            // buttonOpenJobFolder
             // 
-            button7.Cursor = Cursors.Hand;
-            button7.Font = new Font("Segoe UI", 9F);
-            button7.ImageAlign = ContentAlignment.TopCenter;
-            button7.ImageIndex = 13;
-            button7.ImageList = imageListIcons;
-            button7.Location = new Point(543, 75);
-            button7.Margin = new Padding(3, 4, 3, 4);
-            button7.Name = "button7";
-            button7.Size = new Size(126, 57);
-            button7.TabIndex = 7;
-            button7.Text = "Open Job Folder";
-            button7.TextAlign = ContentAlignment.BottomCenter;
-            button7.UseVisualStyleBackColor = true;
+            buttonOpenJobFolder.Cursor = Cursors.Hand;
+            buttonOpenJobFolder.Font = new Font("Segoe UI", 9F);
+            buttonOpenJobFolder.ImageAlign = ContentAlignment.TopCenter;
+            buttonOpenJobFolder.ImageIndex = 13;
+            buttonOpenJobFolder.ImageList = imageListIcons;
+            buttonOpenJobFolder.Location = new Point(543, 75);
+            buttonOpenJobFolder.Margin = new Padding(3, 4, 3, 4);
+            buttonOpenJobFolder.Name = "buttonOpenJobFolder";
+            buttonOpenJobFolder.Size = new Size(126, 57);
+            buttonOpenJobFolder.TabIndex = 7;
+            buttonOpenJobFolder.Text = "Open Job Folder";
+            buttonOpenJobFolder.TextAlign = ContentAlignment.BottomCenter;
+            buttonOpenJobFolder.UseVisualStyleBackColor = true;
+            buttonOpenJobFolder.Click += buttonOpenJobFolder_Click;
             // 
             // imageListIcons
             // 
@@ -552,21 +553,22 @@
             buttonNewJob.UseVisualStyleBackColor = true;
             buttonNewJob.Click += buttonNewJob_Click;
             // 
-            // button6
+            // buttonDeleteJob
             // 
-            button6.Cursor = Cursors.Hand;
-            button6.Font = new Font("Segoe UI", 9F);
-            button6.ImageAlign = ContentAlignment.TopCenter;
-            button6.ImageIndex = 3;
-            button6.ImageList = imageListIcons;
-            button6.Location = new Point(413, 75);
-            button6.Margin = new Padding(3, 4, 3, 4);
-            button6.Name = "button6";
-            button6.Size = new Size(126, 57);
-            button6.TabIndex = 5;
-            button6.Text = "Delete Job";
-            button6.TextAlign = ContentAlignment.BottomCenter;
-            button6.UseVisualStyleBackColor = true;
+            buttonDeleteJob.Cursor = Cursors.Hand;
+            buttonDeleteJob.Font = new Font("Segoe UI", 9F);
+            buttonDeleteJob.ImageAlign = ContentAlignment.TopCenter;
+            buttonDeleteJob.ImageIndex = 3;
+            buttonDeleteJob.ImageList = imageListIcons;
+            buttonDeleteJob.Location = new Point(413, 75);
+            buttonDeleteJob.Margin = new Padding(3, 4, 3, 4);
+            buttonDeleteJob.Name = "buttonDeleteJob";
+            buttonDeleteJob.Size = new Size(126, 57);
+            buttonDeleteJob.TabIndex = 5;
+            buttonDeleteJob.Text = "Delete Job";
+            buttonDeleteJob.TextAlign = ContentAlignment.BottomCenter;
+            buttonDeleteJob.UseVisualStyleBackColor = true;
+            buttonDeleteJob.Click += buttonDeleteJob_Click;
             // 
             // buttonEditJob
             // 
@@ -624,7 +626,7 @@
             // 
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(panel3);
-            groupBox2.Controls.Add(button2);
+            groupBox2.Controls.Add(buttonSelectSourcePath);
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(textBoxSourcePath);
             groupBox2.Location = new Point(722, 8);
@@ -653,7 +655,7 @@
             panel3.Controls.Add(button15);
             panel3.Controls.Add(button3);
             panel3.Controls.Add(label5);
-            panel3.Controls.Add(textBox4);
+            panel3.Controls.Add(textBoxExclusionPath);
             panel3.Controls.Add(label6);
             panel3.Location = new Point(5, 131);
             panel3.Margin = new Padding(3, 4, 3, 4);
@@ -721,13 +723,13 @@
             label5.TabIndex = 55;
             label5.Text = "Directory Name";
             // 
-            // textBox4
+            // textBoxExclusionPath
             // 
-            textBox4.Location = new Point(3, 52);
-            textBox4.Margin = new Padding(3, 4, 3, 4);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(378, 27);
-            textBox4.TabIndex = 54;
+            textBoxExclusionPath.Location = new Point(3, 52);
+            textBoxExclusionPath.Margin = new Padding(3, 4, 3, 4);
+            textBoxExclusionPath.Name = "textBoxExclusionPath";
+            textBoxExclusionPath.Size = new Size(378, 27);
+            textBoxExclusionPath.TabIndex = 54;
             // 
             // label6
             // 
@@ -738,15 +740,16 @@
             label6.TabIndex = 0;
             label6.Text = "label6";
             // 
-            // button2
+            // buttonSelectSourcePath
             // 
-            button2.Location = new Point(647, 47);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(32, 35);
-            button2.TabIndex = 57;
-            button2.Text = "🔍";
-            button2.UseVisualStyleBackColor = true;
+            buttonSelectSourcePath.Location = new Point(647, 47);
+            buttonSelectSourcePath.Margin = new Padding(3, 4, 3, 4);
+            buttonSelectSourcePath.Name = "buttonSelectSourcePath";
+            buttonSelectSourcePath.Size = new Size(32, 35);
+            buttonSelectSourcePath.TabIndex = 57;
+            buttonSelectSourcePath.Text = "🔍";
+            buttonSelectSourcePath.UseVisualStyleBackColor = true;
+            buttonSelectSourcePath.Click += buttonSelectSourcePath_Click;
             // 
             // label4
             // 
@@ -771,7 +774,7 @@
             groupBox1.Controls.Add(checkBoxCreateSubdirectory);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(textBoxDestinationPath);
-            groupBox1.Controls.Add(buttonSelectScheduleTask);
+            groupBox1.Controls.Add(buttonSelectDestinationPath);
             groupBox1.Location = new Point(7, 568);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
@@ -859,15 +862,16 @@
             textBoxDestinationPath.Size = new Size(636, 27);
             textBoxDestinationPath.TabIndex = 0;
             // 
-            // buttonSelectScheduleTask
+            // buttonSelectDestinationPath
             // 
-            buttonSelectScheduleTask.Location = new Point(647, 47);
-            buttonSelectScheduleTask.Margin = new Padding(3, 4, 3, 4);
-            buttonSelectScheduleTask.Name = "buttonSelectScheduleTask";
-            buttonSelectScheduleTask.Size = new Size(32, 35);
-            buttonSelectScheduleTask.TabIndex = 52;
-            buttonSelectScheduleTask.Text = "🔍";
-            buttonSelectScheduleTask.UseVisualStyleBackColor = true;
+            buttonSelectDestinationPath.Location = new Point(647, 47);
+            buttonSelectDestinationPath.Margin = new Padding(3, 4, 3, 4);
+            buttonSelectDestinationPath.Name = "buttonSelectDestinationPath";
+            buttonSelectDestinationPath.Size = new Size(32, 35);
+            buttonSelectDestinationPath.TabIndex = 52;
+            buttonSelectDestinationPath.Text = "🔍";
+            buttonSelectDestinationPath.UseVisualStyleBackColor = true;
+            buttonSelectDestinationPath.Click += buttonSelectDestinationPath_Click;
             // 
             // tabPage3
             // 
@@ -952,7 +956,7 @@
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem openConfigfolderToolStripMenuItem;
         private TextBox textBoxDestinationPath;
-        private Button buttonSelectScheduleTask;
+        private Button buttonSelectDestinationPath;
         private ImageList imageListIcons;
         private ImageList imageListHighQualityIcons;
         private Button button1;
@@ -967,25 +971,25 @@
         private Label label2;
         private Label label4;
         private TextBox textBoxSourcePath;
-        private Button button2;
+        private Button buttonSelectSourcePath;
         private Label label7;
         private Panel panel3;
         private Button button15;
         private Button button3;
         private Label label5;
-        private TextBox textBox4;
+        private TextBox textBoxExclusionPath;
         private Label label6;
         private FlowLayoutPanel flowLayoutPanel1;
         private Button button4;
         private TabPage tabPage3;
         private Label label8;
         private Panel panel5;
-        private Button button6;
+        private Button buttonDeleteJob;
         private Button buttonEditJob;
         private Button buttonSaveJob;
         private Label label12;
         private ComboBox comboBoxJobSelection;
-        private Button button7;
+        private Button buttonOpenJobFolder;
         private Button buttonNewJob;
         private GroupBox groupBox3;
         private Panel panel4;

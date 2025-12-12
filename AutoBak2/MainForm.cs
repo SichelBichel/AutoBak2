@@ -1,4 +1,5 @@
 using AutoBak2.Utils;
+using AutoBak2.Utils.ShellActions;
 
 namespace AutoBak2
 {
@@ -165,6 +166,12 @@ namespace AutoBak2
 
         }
 
+
+
+
+
+
+
         private void buttonEditJob_Click(object sender, EventArgs e)
         {
 
@@ -188,7 +195,7 @@ namespace AutoBak2
                 MessageHandler.DisplayWarningBox("Warning", $"{selectedJobName} not found");
             }
             catch (Exception ex)
-            { 
+            {
                 MessageHandler.DisplayErrorBox("ERROR", $"Error while loading job config: {ex.Message}");
             }
         }
@@ -239,10 +246,64 @@ namespace AutoBak2
             radioButtonZip.Checked = false;
         }
 
+
+        private void SelectFolderAndSetTextBox(string context)
+        {
+            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            {
+                fbd.Description = $"Select the {context}Directory";
+                fbd.ShowNewFolderButton = true;
+
+                if (fbd.ShowDialog() == DialogResult.OK)
+                {
+                    if (context == "destination")
+                    {
+                        textBoxDestinationPath.Text = fbd.SelectedPath;
+                    }
+                    if (context == "source")
+                    {
+                        textBoxSourcePath.Text = fbd.SelectedPath;
+                    }
+                    if (context == "exclusion")
+                    {
+                        textBoxExclusionPath.Text = fbd.SelectedPath;
+                    }
+                }
+            }
+        }
+
+
+
+
         private void buttonNewJob_Click(object sender, EventArgs e)
         {
             clearEditorSelection();
             comboBoxJobSelection.Text = "New Job";
+        }
+
+        private void buttonSelectSourcePath_Click(object sender, EventArgs e)
+        {
+            SelectFolderAndSetTextBox("source");
+        }
+
+        private void buttonSelectDestinationPath_Click(object sender, EventArgs e)
+        {
+            SelectFolderAndSetTextBox("destination");
+        }
+
+        private void buttonOpenJobFolder_Click(object sender, EventArgs e)
+        {
+            string exeRoot = AppDomain.CurrentDomain.BaseDirectory;
+            const string DataDirectoryName = "data";
+            const string JobsDirectoryName = "jobs";
+
+            string fullJobsPath = Path.Combine(exeRoot, DataDirectoryName, JobsDirectoryName);
+            ShellHandler.path(fullJobsPath, this);
+        }
+
+        private void buttonDeleteJob_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
