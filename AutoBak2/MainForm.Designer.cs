@@ -1375,6 +1375,7 @@
             Controls.Add(menuStrip1);
             ForeColor = SystemColors.ControlDarkDark;
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             Name = "MainForm";
