@@ -59,17 +59,16 @@ namespace AutoBak2.Forms
             progressForm.Show(); // Wichtig: Nicht-modal anzeigen
 
             // 2. IProgress-Handler erstellen (kümmert sich um die UI-Updates)
-            var progressHandler = new Progress<JobProgressData>(data =>
+            IProgress<JobProgressData> progressHandler = new Progress<JobProgressData>(data =>
             {
-                // Diese Logik läuft im UI-Thread und ist sicher!
                 if (data.IsComplete)
                 {
                     progressForm.Close();
                 }
                 else
                 {
-                    progressForm.labelCurrentAction.Text = $"Copying: {data.CurrentFile}";
-                    progressForm.progressBarTotal.Value = data.ProgressPercentage;
+                    progressForm.Name = $"Copying: {data.CurrentFile}";
+                    progressForm.progressBar.Value = data.ProgressPercentage;
                 }
             });
 

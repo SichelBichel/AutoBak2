@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AutoBak2.Forms
 {
-    public partial class Progress : Form
+    public partial class ProgressForm : Form
     {
-        public Progress()
+        public ProgressForm()
         {
             InitializeComponent();
         }

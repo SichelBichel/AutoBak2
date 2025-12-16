@@ -12,7 +12,7 @@ namespace AutoBak2.Utils
     {
         public static void ExecuteJob(JobConfig config, IProgress<JobProgressData> progress)
         {
-            MessageHandler.DisplayInfoBox("Job Start", $"Starting job: {config.Name}");
+            //MessageHandler.DisplayInfoBox("Job Start", $"Starting job: {config.Name}");
 
             if (!Directory.Exists(config.SourcePath))
             {
@@ -26,11 +26,11 @@ namespace AutoBak2.Utils
 
                 if (config.ArchiveEnabled)
                 {
-                    CreateArchiveJob(config, finalTargetPath);
+                    CreateArchiveJob(config, finalTargetPath); // ADD PROGRESS LATER ON
                 }
                 else
                 {
-                    CopyDirectoryJob(config, finalTargetPath);
+                    CopyDirectoryJob(config, finalTargetPath, progress); 
                 }
 
                 MessageHandler.DisplayInfoBox("Job Success", $"Job '{config.Name}' completed successfully!");
@@ -78,23 +78,31 @@ namespace AutoBak2.Utils
         // -------------------------------------------------------------
         // Hilfsmethode 2: Direkte Verzeichnis-Kopie (ohne Archivierung)
         // -------------------------------------------------------------
-        private static void CopyDirectoryJob(JobConfig config, string finalTargetPath)
+        private static void CopyDirectoryJob(JobConfig config, string finalTargetPath, IProgress<JobProgressData> progress)
         {
             Directory.CreateDirectory(finalTargetPath);
 
-            CopyDirectoryRecursive(config.SourcePath, finalTargetPath, config.ExcludedItems);
+            // Erst Dateien zählen für korrekten Progress
+            int totalFiles = CountFiles(config.SourcePath, config.ExcludedItems);
+            int currentFileCount = 0;
+
+            CopyDirectoryRecursive(config.SourcePath, finalTargetPath, config.ExcludedItems, ref currentFileCount, totalFiles, progress);
         }
 
-        private static void CopyDirectoryRecursive(string sourceDir, string targetDir, List<string> exclusions)
+        private static void CopyDirectoryRecursive(
+     string sourceDir,
+     string targetDir,
+     List<string> exclusions,
+     ref int currentFileCount,
+     int totalFileCount,
+     IProgress<JobProgressData> progress = null)
         {
             string normalizedSourceDir = sourceDir.TrimEnd(Path.DirectorySeparatorChar);
             string normalizedTargetDir = targetDir.TrimEnd(Path.DirectorySeparatorChar);
 
-            // exclusion testfunct
             Func<string, bool> isExcluded = (path) =>
             {
                 string normalizedPath = path.TrimEnd(Path.DirectorySeparatorChar);
-            
                 return exclusions.Any(e => normalizedPath.StartsWith(e.TrimEnd(Path.DirectorySeparatorChar), StringComparison.OrdinalIgnoreCase));
             };
 
@@ -103,7 +111,6 @@ namespace AutoBak2.Utils
                 Directory.CreateDirectory(normalizedTargetDir);
             }
 
-            //copy data
             try
             {
                 foreach (string filePath in Directory.GetFiles(normalizedSourceDir))
@@ -114,6 +121,19 @@ namespace AutoBak2.Utils
                         string targetFilePath = Path.Combine(normalizedTargetDir, fileName);
 
                         File.Copy(filePath, targetFilePath, true);
+
+                        // Progress-Update
+                        currentFileCount++;
+                        if (progress != null && totalFileCount > 0)
+                        {
+                            int percentage = (int)((currentFileCount / (double)totalFileCount) * 100);
+                            progress.Report(new JobProgressData
+                            {
+                                ProgressPercentage = Math.Min(percentage, 100),
+                                CurrentFile = fileName,
+                                IsComplete = false
+                            });
+                        }
                     }
                 }
             }
@@ -135,7 +155,7 @@ namespace AutoBak2.Utils
                         string dirName = Path.GetFileName(subDirPath);
                         string targetSubDir = Path.Combine(normalizedTargetDir, dirName);
 
-                        CopyDirectoryRecursive(subDirPath, targetSubDir, exclusions);
+                        CopyDirectoryRecursive(subDirPath, targetSubDir, exclusions, ref currentFileCount, totalFileCount, progress);
                     }
                 }
             }
@@ -151,6 +171,35 @@ namespace AutoBak2.Utils
 
 
 
+        private static int CountFiles(string directory, List<string> exclusions)
+        {
+            int count = 0;
+
+            Func<string, bool> isExcluded = (path) =>
+            {
+                string normalizedPath = path.TrimEnd(Path.DirectorySeparatorChar);
+                return exclusions.Any(e => normalizedPath.StartsWith(e.TrimEnd(Path.DirectorySeparatorChar), StringComparison.OrdinalIgnoreCase));
+            };
+
+            try
+            {
+                foreach (string file in Directory.GetFiles(directory))
+                {
+                    if (!isExcluded(file)) count++;
+                }
+
+                foreach (string subDir in Directory.GetDirectories(directory))
+                {
+                    if (!isExcluded(subDir))
+                    {
+                        count += CountFiles(subDir, exclusions);
+                    }
+                }
+            }
+            catch { }
+
+            return count;
+        }
 
 
         //##################################################################
