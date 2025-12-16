@@ -46,6 +46,8 @@
             aboutToolStripMenuItem = new ToolStripMenuItem();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            flowLayoutPanelInstances = new FlowLayoutPanel();
+            label14 = new Label();
             groupBox4 = new GroupBox();
             comboBox1 = new ComboBox();
             button1 = new Button();
@@ -97,6 +99,17 @@
             textBoxDestinationPath = new TextBox();
             buttonSelectDestinationPath = new Button();
             tabPage3 = new TabPage();
+            buttonShowDates = new Button();
+            richTextBox1 = new RichTextBox();
+            label8 = new Label();
+            panel7 = new Panel();
+            buttonOpenSchedulefolder = new Button();
+            buttonNewSchedule = new Button();
+            buttonDeleteSchedule = new Button();
+            buttonEditSchedule = new Button();
+            buttonSaveSchedule = new Button();
+            label13 = new Label();
+            comboBox2 = new ComboBox();
             groupBox7 = new GroupBox();
             radioButtonEndTime = new RadioButton();
             radioButtonNever = new RadioButton();
@@ -125,22 +138,10 @@
             numericUpDown2 = new NumericUpDown();
             monthCalendarStart = new MonthCalendar();
             numericUpDown1 = new NumericUpDown();
-            label8 = new Label();
-            panel7 = new Panel();
-            buttonOpenSchedulefolder = new Button();
-            buttonNewSchedule = new Button();
-            buttonDeleteSchedule = new Button();
-            buttonEditSchedule = new Button();
-            buttonSaveSchedule = new Button();
-            label13 = new Label();
-            comboBox2 = new ComboBox();
-            richTextBox1 = new RichTextBox();
-            buttonShowDates = new Button();
-            flowLayoutPanelInstances = new FlowLayoutPanel();
-            label14 = new Label();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            flowLayoutPanelInstances.SuspendLayout();
             groupBox4.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -152,6 +153,7 @@
             groupBox1.SuspendLayout();
             panel2.SuspendLayout();
             tabPage3.SuspendLayout();
+            panel7.SuspendLayout();
             groupBox7.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
@@ -163,8 +165,6 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            panel7.SuspendLayout();
-            flowLayoutPanelInstances.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -217,19 +217,19 @@
             // importToolStripMenuItem
             // 
             importToolStripMenuItem.Name = "importToolStripMenuItem";
-            importToolStripMenuItem.Size = new Size(224, 26);
+            importToolStripMenuItem.Size = new Size(216, 26);
             importToolStripMenuItem.Text = "Import";
             // 
             // exportToolStripMenuItem
             // 
             exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            exportToolStripMenuItem.Size = new Size(224, 26);
+            exportToolStripMenuItem.Size = new Size(216, 26);
             exportToolStripMenuItem.Text = "Export";
             // 
             // openConfigfolderToolStripMenuItem
             // 
             openConfigfolderToolStripMenuItem.Name = "openConfigfolderToolStripMenuItem";
-            openConfigfolderToolStripMenuItem.Size = new Size(224, 26);
+            openConfigfolderToolStripMenuItem.Size = new Size(216, 26);
             openConfigfolderToolStripMenuItem.Text = "Open Configfolder";
             // 
             // helpToolStripMenuItem
@@ -288,6 +288,26 @@
             tabPage1.Size = new Size(1416, 822);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Control";
+            // 
+            // flowLayoutPanelInstances
+            // 
+            flowLayoutPanelInstances.BackColor = Color.DarkGray;
+            flowLayoutPanelInstances.BorderStyle = BorderStyle.FixedSingle;
+            flowLayoutPanelInstances.Controls.Add(label14);
+            flowLayoutPanelInstances.Location = new Point(6, 101);
+            flowLayoutPanelInstances.Name = "flowLayoutPanelInstances";
+            flowLayoutPanelInstances.Size = new Size(1404, 714);
+            flowLayoutPanelInstances.TabIndex = 2;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 14F);
+            label14.Location = new Point(3, 0);
+            label14.Name = "label14";
+            label14.Size = new Size(336, 32);
+            label14.TabIndex = 0;
+            label14.Text = "Not available in alpha verision";
             // 
             // groupBox4
             // 
@@ -948,6 +968,157 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Schedule Editor";
             // 
+            // buttonShowDates
+            // 
+            buttonShowDates.ForeColor = Color.Black;
+            buttonShowDates.Location = new Point(947, 8);
+            buttonShowDates.Name = "buttonShowDates";
+            buttonShowDates.Size = new Size(453, 35);
+            buttonShowDates.TabIndex = 35;
+            buttonShowDates.Text = "Calculate Backup Times";
+            buttonShowDates.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.BackColor = Color.Black;
+            richTextBox1.ForeColor = Color.White;
+            richTextBox1.Location = new Point(947, 49);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(453, 761);
+            richTextBox1.TabIndex = 34;
+            richTextBox1.Text = "";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 32F, FontStyle.Bold);
+            label8.ForeColor = SystemColors.ActiveCaptionText;
+            label8.Location = new Point(183, 163);
+            label8.Name = "label8";
+            label8.Size = new Size(507, 72);
+            label8.TabIndex = 33;
+            label8.Text = "SCHEDULE EDITOR";
+            label8.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // panel7
+            // 
+            panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(buttonOpenSchedulefolder);
+            panel7.Controls.Add(buttonNewSchedule);
+            panel7.Controls.Add(buttonDeleteSchedule);
+            panel7.Controls.Add(buttonEditSchedule);
+            panel7.Controls.Add(buttonSaveSchedule);
+            panel7.Controls.Add(label13);
+            panel7.Controls.Add(comboBox2);
+            panel7.Location = new Point(102, 12);
+            panel7.Margin = new Padding(3, 4, 3, 4);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(685, 147);
+            panel7.TabIndex = 32;
+            // 
+            // buttonOpenSchedulefolder
+            // 
+            buttonOpenSchedulefolder.Cursor = Cursors.Hand;
+            buttonOpenSchedulefolder.Font = new Font("Segoe UI", 9F);
+            buttonOpenSchedulefolder.ForeColor = SystemColors.ActiveCaptionText;
+            buttonOpenSchedulefolder.ImageAlign = ContentAlignment.TopCenter;
+            buttonOpenSchedulefolder.ImageIndex = 13;
+            buttonOpenSchedulefolder.ImageList = imageListIcons;
+            buttonOpenSchedulefolder.Location = new Point(543, 75);
+            buttonOpenSchedulefolder.Margin = new Padding(3, 4, 3, 4);
+            buttonOpenSchedulefolder.Name = "buttonOpenSchedulefolder";
+            buttonOpenSchedulefolder.Size = new Size(126, 57);
+            buttonOpenSchedulefolder.TabIndex = 7;
+            buttonOpenSchedulefolder.Text = "Open Folder";
+            buttonOpenSchedulefolder.TextAlign = ContentAlignment.BottomCenter;
+            buttonOpenSchedulefolder.UseVisualStyleBackColor = true;
+            // 
+            // buttonNewSchedule
+            // 
+            buttonNewSchedule.Cursor = Cursors.Hand;
+            buttonNewSchedule.ForeColor = SystemColors.ActiveCaptionText;
+            buttonNewSchedule.ImageAlign = ContentAlignment.TopCenter;
+            buttonNewSchedule.ImageIndex = 6;
+            buttonNewSchedule.ImageList = imageListIcons;
+            buttonNewSchedule.Location = new Point(15, 75);
+            buttonNewSchedule.Margin = new Padding(3, 4, 3, 4);
+            buttonNewSchedule.Name = "buttonNewSchedule";
+            buttonNewSchedule.Size = new Size(126, 57);
+            buttonNewSchedule.TabIndex = 6;
+            buttonNewSchedule.Text = "New Schedule";
+            buttonNewSchedule.TextAlign = ContentAlignment.BottomCenter;
+            buttonNewSchedule.UseVisualStyleBackColor = true;
+            // 
+            // buttonDeleteSchedule
+            // 
+            buttonDeleteSchedule.Cursor = Cursors.Hand;
+            buttonDeleteSchedule.Font = new Font("Segoe UI", 9F);
+            buttonDeleteSchedule.ForeColor = SystemColors.ActiveCaptionText;
+            buttonDeleteSchedule.ImageAlign = ContentAlignment.TopCenter;
+            buttonDeleteSchedule.ImageIndex = 3;
+            buttonDeleteSchedule.ImageList = imageListIcons;
+            buttonDeleteSchedule.Location = new Point(413, 75);
+            buttonDeleteSchedule.Margin = new Padding(3, 4, 3, 4);
+            buttonDeleteSchedule.Name = "buttonDeleteSchedule";
+            buttonDeleteSchedule.Size = new Size(126, 57);
+            buttonDeleteSchedule.TabIndex = 5;
+            buttonDeleteSchedule.Text = "Delete";
+            buttonDeleteSchedule.TextAlign = ContentAlignment.BottomCenter;
+            buttonDeleteSchedule.UseVisualStyleBackColor = true;
+            // 
+            // buttonEditSchedule
+            // 
+            buttonEditSchedule.Cursor = Cursors.Hand;
+            buttonEditSchedule.Font = new Font("Segoe UI", 9F);
+            buttonEditSchedule.ForeColor = SystemColors.ActiveCaptionText;
+            buttonEditSchedule.ImageAlign = ContentAlignment.TopCenter;
+            buttonEditSchedule.ImageIndex = 16;
+            buttonEditSchedule.ImageList = imageListIcons;
+            buttonEditSchedule.Location = new Point(280, 75);
+            buttonEditSchedule.Margin = new Padding(3, 4, 3, 4);
+            buttonEditSchedule.Name = "buttonEditSchedule";
+            buttonEditSchedule.Size = new Size(126, 57);
+            buttonEditSchedule.TabIndex = 4;
+            buttonEditSchedule.Text = "Edit";
+            buttonEditSchedule.TextAlign = ContentAlignment.BottomCenter;
+            buttonEditSchedule.UseVisualStyleBackColor = true;
+            // 
+            // buttonSaveSchedule
+            // 
+            buttonSaveSchedule.Cursor = Cursors.Hand;
+            buttonSaveSchedule.ForeColor = SystemColors.ActiveCaptionText;
+            buttonSaveSchedule.ImageAlign = ContentAlignment.TopCenter;
+            buttonSaveSchedule.ImageIndex = 15;
+            buttonSaveSchedule.ImageList = imageListIcons;
+            buttonSaveSchedule.Location = new Point(147, 75);
+            buttonSaveSchedule.Margin = new Padding(3, 4, 3, 4);
+            buttonSaveSchedule.Name = "buttonSaveSchedule";
+            buttonSaveSchedule.Size = new Size(126, 57);
+            buttonSaveSchedule.TabIndex = 2;
+            buttonSaveSchedule.Text = "Save";
+            buttonSaveSchedule.TextAlign = ContentAlignment.BottomCenter;
+            buttonSaveSchedule.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 10F);
+            label13.ForeColor = SystemColors.ActiveCaptionText;
+            label13.Location = new Point(264, 0);
+            label13.Name = "label13";
+            label13.Size = new Size(152, 23);
+            label13.TabIndex = 1;
+            label13.Text = "Schedule Manager";
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(3, 36);
+            comboBox2.Margin = new Padding(3, 4, 3, 4);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(676, 28);
+            comboBox2.TabIndex = 0;
+            // 
             // groupBox7
             // 
             groupBox7.BackColor = Color.Transparent;
@@ -1000,16 +1171,16 @@
             panel6.Controls.Add(numericUpDown3);
             panel6.Controls.Add(monthCalendarEnd);
             panel6.Controls.Add(numericUpDown4);
-            panel6.Location = new Point(67, 172);
+            panel6.Location = new Point(66, 172);
             panel6.Name = "panel6";
-            panel6.Size = new Size(228, 351);
+            panel6.Size = new Size(251, 351);
             panel6.TabIndex = 9;
             // 
             // buttonSetNowEnd
             // 
             buttonSetNowEnd.BackColor = SystemColors.Control;
             buttonSetNowEnd.ForeColor = SystemColors.ActiveCaptionText;
-            buttonSetNowEnd.Location = new Point(69, 308);
+            buttonSetNowEnd.Location = new Point(79, 308);
             buttonSetNowEnd.Name = "buttonSetNowEnd";
             buttonSetNowEnd.Size = new Size(94, 29);
             buttonSetNowEnd.TabIndex = 9;
@@ -1018,7 +1189,7 @@
             // 
             // numericUpDown3
             // 
-            numericUpDown3.Location = new Point(125, 252);
+            numericUpDown3.Location = new Point(135, 252);
             numericUpDown3.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
             numericUpDown3.Name = "numericUpDown3";
             numericUpDown3.Size = new Size(73, 27);
@@ -1032,7 +1203,7 @@
             // 
             // numericUpDown4
             // 
-            numericUpDown4.Location = new Point(25, 252);
+            numericUpDown4.Location = new Point(35, 252);
             numericUpDown4.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
             numericUpDown4.Name = "numericUpDown4";
             numericUpDown4.Size = new Size(73, 27);
@@ -1203,16 +1374,16 @@
             panel1.Controls.Add(numericUpDown2);
             panel1.Controls.Add(monthCalendarStart);
             panel1.Controls.Add(numericUpDown1);
-            panel1.Location = new Point(61, 172);
+            panel1.Location = new Point(54, 172);
             panel1.Name = "panel1";
-            panel1.Size = new Size(228, 351);
+            panel1.Size = new Size(252, 351);
             panel1.TabIndex = 9;
             // 
             // buttonSetNowStart
             // 
             buttonSetNowStart.BackColor = SystemColors.Control;
             buttonSetNowStart.ForeColor = SystemColors.ActiveCaptionText;
-            buttonSetNowStart.Location = new Point(69, 308);
+            buttonSetNowStart.Location = new Point(73, 308);
             buttonSetNowStart.Name = "buttonSetNowStart";
             buttonSetNowStart.Size = new Size(94, 29);
             buttonSetNowStart.TabIndex = 9;
@@ -1221,7 +1392,7 @@
             // 
             // numericUpDown2
             // 
-            numericUpDown2.Location = new Point(125, 252);
+            numericUpDown2.Location = new Point(129, 252);
             numericUpDown2.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(73, 27);
@@ -1235,183 +1406,12 @@
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(25, 252);
+            numericUpDown1.Location = new Point(29, 252);
             numericUpDown1.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(73, 27);
             numericUpDown1.TabIndex = 7;
             numericUpDown1.Value = new decimal(new int[] { 12, 0, 0, 0 });
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 32F, FontStyle.Bold);
-            label8.ForeColor = SystemColors.ActiveCaptionText;
-            label8.Location = new Point(183, 163);
-            label8.Name = "label8";
-            label8.Size = new Size(507, 72);
-            label8.TabIndex = 33;
-            label8.Text = "SCHEDULE EDITOR";
-            label8.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // panel7
-            // 
-            panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(buttonOpenSchedulefolder);
-            panel7.Controls.Add(buttonNewSchedule);
-            panel7.Controls.Add(buttonDeleteSchedule);
-            panel7.Controls.Add(buttonEditSchedule);
-            panel7.Controls.Add(buttonSaveSchedule);
-            panel7.Controls.Add(label13);
-            panel7.Controls.Add(comboBox2);
-            panel7.Location = new Point(102, 12);
-            panel7.Margin = new Padding(3, 4, 3, 4);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(685, 147);
-            panel7.TabIndex = 32;
-            // 
-            // buttonOpenSchedulefolder
-            // 
-            buttonOpenSchedulefolder.Cursor = Cursors.Hand;
-            buttonOpenSchedulefolder.Font = new Font("Segoe UI", 9F);
-            buttonOpenSchedulefolder.ForeColor = SystemColors.ActiveCaptionText;
-            buttonOpenSchedulefolder.ImageAlign = ContentAlignment.TopCenter;
-            buttonOpenSchedulefolder.ImageIndex = 13;
-            buttonOpenSchedulefolder.ImageList = imageListIcons;
-            buttonOpenSchedulefolder.Location = new Point(543, 75);
-            buttonOpenSchedulefolder.Margin = new Padding(3, 4, 3, 4);
-            buttonOpenSchedulefolder.Name = "buttonOpenSchedulefolder";
-            buttonOpenSchedulefolder.Size = new Size(126, 57);
-            buttonOpenSchedulefolder.TabIndex = 7;
-            buttonOpenSchedulefolder.Text = "Open Folder";
-            buttonOpenSchedulefolder.TextAlign = ContentAlignment.BottomCenter;
-            buttonOpenSchedulefolder.UseVisualStyleBackColor = true;
-            // 
-            // buttonNewSchedule
-            // 
-            buttonNewSchedule.Cursor = Cursors.Hand;
-            buttonNewSchedule.ForeColor = SystemColors.ActiveCaptionText;
-            buttonNewSchedule.ImageAlign = ContentAlignment.TopCenter;
-            buttonNewSchedule.ImageIndex = 6;
-            buttonNewSchedule.ImageList = imageListIcons;
-            buttonNewSchedule.Location = new Point(15, 75);
-            buttonNewSchedule.Margin = new Padding(3, 4, 3, 4);
-            buttonNewSchedule.Name = "buttonNewSchedule";
-            buttonNewSchedule.Size = new Size(126, 57);
-            buttonNewSchedule.TabIndex = 6;
-            buttonNewSchedule.Text = "New Schedule";
-            buttonNewSchedule.TextAlign = ContentAlignment.BottomCenter;
-            buttonNewSchedule.UseVisualStyleBackColor = true;
-            // 
-            // buttonDeleteSchedule
-            // 
-            buttonDeleteSchedule.Cursor = Cursors.Hand;
-            buttonDeleteSchedule.Font = new Font("Segoe UI", 9F);
-            buttonDeleteSchedule.ForeColor = SystemColors.ActiveCaptionText;
-            buttonDeleteSchedule.ImageAlign = ContentAlignment.TopCenter;
-            buttonDeleteSchedule.ImageIndex = 3;
-            buttonDeleteSchedule.ImageList = imageListIcons;
-            buttonDeleteSchedule.Location = new Point(413, 75);
-            buttonDeleteSchedule.Margin = new Padding(3, 4, 3, 4);
-            buttonDeleteSchedule.Name = "buttonDeleteSchedule";
-            buttonDeleteSchedule.Size = new Size(126, 57);
-            buttonDeleteSchedule.TabIndex = 5;
-            buttonDeleteSchedule.Text = "Delete";
-            buttonDeleteSchedule.TextAlign = ContentAlignment.BottomCenter;
-            buttonDeleteSchedule.UseVisualStyleBackColor = true;
-            // 
-            // buttonEditSchedule
-            // 
-            buttonEditSchedule.Cursor = Cursors.Hand;
-            buttonEditSchedule.Font = new Font("Segoe UI", 9F);
-            buttonEditSchedule.ForeColor = SystemColors.ActiveCaptionText;
-            buttonEditSchedule.ImageAlign = ContentAlignment.TopCenter;
-            buttonEditSchedule.ImageIndex = 16;
-            buttonEditSchedule.ImageList = imageListIcons;
-            buttonEditSchedule.Location = new Point(280, 75);
-            buttonEditSchedule.Margin = new Padding(3, 4, 3, 4);
-            buttonEditSchedule.Name = "buttonEditSchedule";
-            buttonEditSchedule.Size = new Size(126, 57);
-            buttonEditSchedule.TabIndex = 4;
-            buttonEditSchedule.Text = "Edit";
-            buttonEditSchedule.TextAlign = ContentAlignment.BottomCenter;
-            buttonEditSchedule.UseVisualStyleBackColor = true;
-            // 
-            // buttonSaveSchedule
-            // 
-            buttonSaveSchedule.Cursor = Cursors.Hand;
-            buttonSaveSchedule.ForeColor = SystemColors.ActiveCaptionText;
-            buttonSaveSchedule.ImageAlign = ContentAlignment.TopCenter;
-            buttonSaveSchedule.ImageIndex = 15;
-            buttonSaveSchedule.ImageList = imageListIcons;
-            buttonSaveSchedule.Location = new Point(147, 75);
-            buttonSaveSchedule.Margin = new Padding(3, 4, 3, 4);
-            buttonSaveSchedule.Name = "buttonSaveSchedule";
-            buttonSaveSchedule.Size = new Size(126, 57);
-            buttonSaveSchedule.TabIndex = 2;
-            buttonSaveSchedule.Text = "Save";
-            buttonSaveSchedule.TextAlign = ContentAlignment.BottomCenter;
-            buttonSaveSchedule.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 10F);
-            label13.ForeColor = SystemColors.ActiveCaptionText;
-            label13.Location = new Point(264, 0);
-            label13.Name = "label13";
-            label13.Size = new Size(152, 23);
-            label13.TabIndex = 1;
-            label13.Text = "Schedule Manager";
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(3, 36);
-            comboBox2.Margin = new Padding(3, 4, 3, 4);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(676, 28);
-            comboBox2.TabIndex = 0;
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.BackColor = Color.Black;
-            richTextBox1.ForeColor = Color.White;
-            richTextBox1.Location = new Point(947, 49);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(453, 761);
-            richTextBox1.TabIndex = 34;
-            richTextBox1.Text = "";
-            // 
-            // buttonShowDates
-            // 
-            buttonShowDates.ForeColor = Color.Black;
-            buttonShowDates.Location = new Point(947, 8);
-            buttonShowDates.Name = "buttonShowDates";
-            buttonShowDates.Size = new Size(453, 35);
-            buttonShowDates.TabIndex = 35;
-            buttonShowDates.Text = "Calculate Backup Times";
-            buttonShowDates.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanelInstances
-            // 
-            flowLayoutPanelInstances.BackColor = Color.DarkGray;
-            flowLayoutPanelInstances.BorderStyle = BorderStyle.FixedSingle;
-            flowLayoutPanelInstances.Controls.Add(label14);
-            flowLayoutPanelInstances.Location = new Point(6, 101);
-            flowLayoutPanelInstances.Name = "flowLayoutPanelInstances";
-            flowLayoutPanelInstances.Size = new Size(1404, 714);
-            flowLayoutPanelInstances.TabIndex = 2;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 14F);
-            label14.Location = new Point(3, 0);
-            label14.Name = "label14";
-            label14.Size = new Size(336, 32);
-            label14.TabIndex = 0;
-            label14.Text = "Not available in alpha verision";
             // 
             // MainForm
             // 
@@ -1431,6 +1431,8 @@
             menuStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            flowLayoutPanelInstances.ResumeLayout(false);
+            flowLayoutPanelInstances.PerformLayout();
             groupBox4.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
@@ -1452,6 +1454,8 @@
             panel2.PerformLayout();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
             groupBox7.ResumeLayout(false);
             groupBox7.PerformLayout();
             panel6.ResumeLayout(false);
@@ -1467,10 +1471,6 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
-            flowLayoutPanelInstances.ResumeLayout(false);
-            flowLayoutPanelInstances.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
