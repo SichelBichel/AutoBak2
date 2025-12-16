@@ -1,3 +1,4 @@
+using AutoBak2.ConfigStructs;
 using AutoBak2.Forms;
 using AutoBak2.Utils;
 using AutoBak2.Utils.ShellActions;
@@ -35,7 +36,7 @@ namespace AutoBak2
 
             catch (Exception ex)
             {
-                MessageHandler.DisplayErrorBox("Error", $"Error while loading jonblist: {ex.Message}");
+                MessageHandler.DisplayErrorBox("Error", $"Error while loading joblist: {ex.Message}");
             }
         }
 
@@ -414,6 +415,12 @@ namespace AutoBak2
         private void visitWebsiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShellHandler.url("https://regoga-interactive.com/", this);
+        }
+
+        private void SingleExecutiontoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SingleExecForm execForm = new SingleExecForm();
+            execForm.Show();
         }
     }
 }

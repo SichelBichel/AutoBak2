@@ -1,4 +1,5 @@
-﻿using AutoBak2.Utils;
+﻿using AutoBak2.ConfigStructs;
+using AutoBak2.Utils;
 using System;
 using System.Collections.Generic;
 using System.IO;

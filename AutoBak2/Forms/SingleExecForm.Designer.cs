@@ -1,16 +1,16 @@
 ﻿namespace AutoBak2.Forms
 {
-    partial class ExclusionEntry
+    partial class SingleExecForm
     {
-        /// <summary> 
-        /// Erforderliche Designervariable.
+        /// <summary>
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Verwendete Ressourcen bereinigen.
+        /// <summary>
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,33 +20,36 @@
             base.Dispose(disposing);
         }
 
-        #region Vom Komponenten-Designer generierter Code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Erforderliche Methode für die Designerunterstützung. 
-        /// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExclusionEntry));
-            buttonRemoveThisExclusion = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SingleExecForm));
+            comboBoxJobSelection = new ComboBox();
             imageListHighQualityIcons = new ImageList(components);
             imageListIcons = new ImageList(components);
-            labelExclusionPath = new Label();
+            singleExecuteButton = new Button();
+            richTextBox1 = new RichTextBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            linkLabelBrowseToSource = new LinkLabel();
+            linkLabelBrowseToDestination = new LinkLabel();
+            label4 = new Label();
             SuspendLayout();
             // 
-            // buttonRemoveThisExclusion
+            // comboBoxJobSelection
             // 
-            buttonRemoveThisExclusion.Font = new Font("Segoe UI", 12F);
-            buttonRemoveThisExclusion.ImageKey = "icon_remove.png";
-            buttonRemoveThisExclusion.ImageList = imageListHighQualityIcons;
-            buttonRemoveThisExclusion.Location = new Point(586, 3);
-            buttonRemoveThisExclusion.Name = "buttonRemoveThisExclusion";
-            buttonRemoveThisExclusion.Size = new Size(45, 45);
-            buttonRemoveThisExclusion.TabIndex = 0;
-            buttonRemoveThisExclusion.UseVisualStyleBackColor = true;
-            buttonRemoveThisExclusion.Click += buttonRemoveThisExclusion_Click;
+            comboBoxJobSelection.FormattingEnabled = true;
+            comboBoxJobSelection.Location = new Point(211, 41);
+            comboBoxJobSelection.Name = "comboBoxJobSelection";
+            comboBoxJobSelection.Size = new Size(276, 28);
+            comboBoxJobSelection.TabIndex = 0;
             // 
             // imageListHighQualityIcons
             // 
@@ -113,34 +116,113 @@
             imageListIcons.Images.SetKeyName(24, "icon_remove.png");
             imageListIcons.Images.SetKeyName(25, "icon_clearconsole.png");
             // 
-            // labelExclusionPath
+            // singleExecuteButton
             // 
-            labelExclusionPath.AutoSize = true;
-            labelExclusionPath.Location = new Point(3, 18);
-            labelExclusionPath.Name = "labelExclusionPath";
-            labelExclusionPath.Size = new Size(31, 20);
-            labelExclusionPath.TabIndex = 1;
-            labelExclusionPath.Text = "n/a";
+            singleExecuteButton.ImageIndex = 21;
+            singleExecuteButton.ImageList = imageListHighQualityIcons;
+            singleExecuteButton.Location = new Point(103, 25);
+            singleExecuteButton.Name = "singleExecuteButton";
+            singleExecuteButton.Size = new Size(65, 58);
+            singleExecuteButton.TabIndex = 1;
+            singleExecuteButton.UseVisualStyleBackColor = true;
+            singleExecuteButton.Click += singleExecuteButton_Click;
             // 
-            // ExclusionEntry
+            // richTextBox1
+            // 
+            richTextBox1.Location = new Point(27, 124);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(582, 74);
+            richTextBox1.TabIndex = 2;
+            richTextBox1.Text = "";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(27, 101);
+            label1.Name = "label1";
+            label1.Size = new Size(115, 20);
+            label1.TabIndex = 3;
+            label1.Text = "Job Description:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(58, 222);
+            label2.Name = "label2";
+            label2.Size = new Size(57, 20);
+            label2.TabIndex = 4;
+            label2.Text = "Source:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(27, 255);
+            label3.Name = "label3";
+            label3.Size = new Size(88, 20);
+            label3.TabIndex = 5;
+            label3.Text = "Destination:";
+            // 
+            // linkLabelBrowseToSource
+            // 
+            linkLabelBrowseToSource.AutoSize = true;
+            linkLabelBrowseToSource.Location = new Point(121, 222);
+            linkLabelBrowseToSource.Name = "linkLabelBrowseToSource";
+            linkLabelBrowseToSource.Size = new Size(177, 20);
+            linkLabelBrowseToSource.TabIndex = 6;
+            linkLabelBrowseToSource.TabStop = true;
+            linkLabelBrowseToSource.Text = "linkLabelBrowseToSource";
+            // 
+            // linkLabelBrowseToDestination
+            // 
+            linkLabelBrowseToDestination.AutoSize = true;
+            linkLabelBrowseToDestination.Location = new Point(121, 255);
+            linkLabelBrowseToDestination.Name = "linkLabelBrowseToDestination";
+            linkLabelBrowseToDestination.Size = new Size(208, 20);
+            linkLabelBrowseToDestination.TabIndex = 7;
+            linkLabelBrowseToDestination.TabStop = true;
+            linkLabelBrowseToDestination.Text = "linkLabelBrowseToDestination";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(310, 18);
+            label4.Name = "label4";
+            label4.Size = new Size(76, 20);
+            label4.TabIndex = 8;
+            label4.Text = "Select Job";
+            // 
+            // SingleExecForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            BorderStyle = BorderStyle.FixedSingle;
-            Controls.Add(labelExclusionPath);
-            Controls.Add(buttonRemoveThisExclusion);
-            Name = "ExclusionEntry";
-            Size = new Size(634, 51);
+            ClientSize = new Size(637, 308);
+            Controls.Add(label4);
+            Controls.Add(linkLabelBrowseToDestination);
+            Controls.Add(linkLabelBrowseToSource);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(richTextBox1);
+            Controls.Add(singleExecuteButton);
+            Controls.Add(comboBoxJobSelection);
+            Name = "SingleExecForm";
+            Text = "Single Execution";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button buttonRemoveThisExclusion;
-        private ImageList imageListIcons;
+        private ComboBox comboBoxJobSelection;
         private ImageList imageListHighQualityIcons;
-        private Label labelExclusionPath;
+        private ImageList imageListIcons;
+        private Button singleExecuteButton;
+        private RichTextBox richTextBox1;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private LinkLabel linkLabelBrowseToSource;
+        private LinkLabel linkLabelBrowseToDestination;
+        private Label label4;
     }
 }

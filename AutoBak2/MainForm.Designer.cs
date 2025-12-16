@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
+            SingleExecutiontoolStripMenuItem = new ToolStripMenuItem();
             addInstanceToolStripMenuItem = new ToolStripMenuItem();
             stopAllInstancesToolStripMenuItem = new ToolStripMenuItem();
             optionsToolStripMenuItem = new ToolStripMenuItem();
@@ -45,10 +46,6 @@
             label15 = new Label();
             flowLayoutPanelInstances = new FlowLayoutPanel();
             label14 = new Label();
-            groupBox4 = new GroupBox();
-            comboBox1 = new ComboBox();
-            button1 = new Button();
-            imageListHighQualityIcons = new ImageList(components);
             tabPage2 = new TabPage();
             label9 = new Label();
             groupBox3 = new GroupBox();
@@ -76,6 +73,7 @@
             label7 = new Label();
             panel3 = new Panel();
             buttonDeleteExclusions = new Button();
+            imageListHighQualityIcons = new ImageList(components);
             flowLayoutPanelExclusions = new FlowLayoutPanel();
             buttonCreateExclusion = new Button();
             buttonSelectExclusionDialog = new Button();
@@ -135,12 +133,10 @@
             numericUpDown2 = new NumericUpDown();
             monthCalendarStart = new MonthCalendar();
             numericUpDown1 = new NumericUpDown();
-            SingleExecutiontoolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             flowLayoutPanelInstances.SuspendLayout();
-            groupBox4.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox3.SuspendLayout();
             panel4.SuspendLayout();
@@ -185,16 +181,23 @@
             fileToolStripMenuItem.Text = "Actions";
             fileToolStripMenuItem.Click += fileToolStripMenuItem_Click;
             // 
+            // SingleExecutiontoolStripMenuItem
+            // 
+            SingleExecutiontoolStripMenuItem.Name = "SingleExecutiontoolStripMenuItem";
+            SingleExecutiontoolStripMenuItem.Size = new Size(209, 26);
+            SingleExecutiontoolStripMenuItem.Text = "Single Execution";
+            SingleExecutiontoolStripMenuItem.Click += SingleExecutiontoolStripMenuItem_Click;
+            // 
             // addInstanceToolStripMenuItem
             // 
             addInstanceToolStripMenuItem.Name = "addInstanceToolStripMenuItem";
-            addInstanceToolStripMenuItem.Size = new Size(224, 26);
+            addInstanceToolStripMenuItem.Size = new Size(209, 26);
             addInstanceToolStripMenuItem.Text = "Add Instance";
             // 
             // stopAllInstancesToolStripMenuItem
             // 
             stopAllInstancesToolStripMenuItem.Name = "stopAllInstancesToolStripMenuItem";
-            stopAllInstancesToolStripMenuItem.Size = new Size(224, 26);
+            stopAllInstancesToolStripMenuItem.Size = new Size(209, 26);
             stopAllInstancesToolStripMenuItem.Text = "Stop All Instances";
             // 
             // optionsToolStripMenuItem
@@ -209,13 +212,13 @@
             // importToolStripMenuItem
             // 
             importToolStripMenuItem.Name = "importToolStripMenuItem";
-            importToolStripMenuItem.Size = new Size(224, 26);
+            importToolStripMenuItem.Size = new Size(207, 26);
             importToolStripMenuItem.Text = "Settings";
             // 
             // exportToolStripMenuItem
             // 
             exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            exportToolStripMenuItem.Size = new Size(224, 26);
+            exportToolStripMenuItem.Size = new Size(207, 26);
             exportToolStripMenuItem.Text = "Check for Update";
             // 
             // helpToolStripMenuItem
@@ -228,14 +231,14 @@
             // visitWebsiteToolStripMenuItem
             // 
             visitWebsiteToolStripMenuItem.Name = "visitWebsiteToolStripMenuItem";
-            visitWebsiteToolStripMenuItem.Size = new Size(224, 26);
+            visitWebsiteToolStripMenuItem.Size = new Size(177, 26);
             visitWebsiteToolStripMenuItem.Text = "Visit Website";
             visitWebsiteToolStripMenuItem.Click += visitWebsiteToolStripMenuItem_Click;
             // 
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(224, 26);
+            aboutToolStripMenuItem.Size = new Size(177, 26);
             aboutToolStripMenuItem.Text = "About";
             // 
             // tabControl1
@@ -255,7 +258,6 @@
             tabPage1.BackColor = Color.Silver;
             tabPage1.Controls.Add(label15);
             tabPage1.Controls.Add(flowLayoutPanelInstances);
-            tabPage1.Controls.Add(groupBox4);
             tabPage1.ForeColor = SystemColors.ActiveCaptionText;
             tabPage1.Location = new Point(4, 29);
             tabPage1.Margin = new Padding(3, 4, 3, 4);
@@ -268,7 +270,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(6, 78);
+            label15.Location = new Point(6, 4);
             label15.Name = "label15";
             label15.Size = new Size(99, 20);
             label15.TabIndex = 3;
@@ -279,9 +281,9 @@
             flowLayoutPanelInstances.BackColor = Color.DarkGray;
             flowLayoutPanelInstances.BorderStyle = BorderStyle.FixedSingle;
             flowLayoutPanelInstances.Controls.Add(label14);
-            flowLayoutPanelInstances.Location = new Point(6, 101);
+            flowLayoutPanelInstances.Location = new Point(6, 27);
             flowLayoutPanelInstances.Name = "flowLayoutPanelInstances";
-            flowLayoutPanelInstances.Size = new Size(1404, 714);
+            flowLayoutPanelInstances.Size = new Size(1404, 788);
             flowLayoutPanelInstances.TabIndex = 2;
             // 
             // label14
@@ -293,77 +295,6 @@
             label14.Size = new Size(336, 32);
             label14.TabIndex = 0;
             label14.Text = "Not available in alpha verision";
-            // 
-            // groupBox4
-            // 
-            groupBox4.Controls.Add(comboBox1);
-            groupBox4.Controls.Add(button1);
-            groupBox4.Location = new Point(458, 8);
-            groupBox4.Margin = new Padding(3, 4, 3, 4);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Padding = new Padding(3, 4, 3, 4);
-            groupBox4.Size = new Size(451, 86);
-            groupBox4.TabIndex = 1;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Single Copy";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(136, 40);
-            comboBox1.Margin = new Padding(3, 4, 3, 4);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(292, 28);
-            comboBox1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            button1.Cursor = Cursors.Hand;
-            button1.Font = new Font("Segoe UI", 9F);
-            button1.ImageAlign = ContentAlignment.TopCenter;
-            button1.ImageKey = "icon_Start.png";
-            button1.ImageList = imageListHighQualityIcons;
-            button1.Location = new Point(6, 29);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(115, 49);
-            button1.TabIndex = 1;
-            button1.Text = "Start Job";
-            button1.TextAlign = ContentAlignment.BottomCenter;
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // imageListHighQualityIcons
-            // 
-            imageListHighQualityIcons.ColorDepth = ColorDepth.Depth32Bit;
-            imageListHighQualityIcons.ImageStream = (ImageListStreamer)resources.GetObject("imageListHighQualityIcons.ImageStream");
-            imageListHighQualityIcons.TransparentColor = Color.Transparent;
-            imageListHighQualityIcons.Images.SetKeyName(0, "icon_Check.png");
-            imageListHighQualityIcons.Images.SetKeyName(1, "icon_blitz.png");
-            imageListHighQualityIcons.Images.SetKeyName(2, "icon_clear.png");
-            imageListHighQualityIcons.Images.SetKeyName(3, "icon_clearconsole.png");
-            imageListHighQualityIcons.Images.SetKeyName(4, "icon_console.png");
-            imageListHighQualityIcons.Images.SetKeyName(5, "icon_create.png");
-            imageListHighQualityIcons.Images.SetKeyName(6, "icon_delete.png");
-            imageListHighQualityIcons.Images.SetKeyName(7, "icon_disable.png");
-            imageListHighQualityIcons.Images.SetKeyName(8, "icon_download.png");
-            imageListHighQualityIcons.Images.SetKeyName(9, "icon_Edit.png");
-            imageListHighQualityIcons.Images.SetKeyName(10, "icon_enable.png");
-            imageListHighQualityIcons.Images.SetKeyName(11, "icon_export.png");
-            imageListHighQualityIcons.Images.SetKeyName(12, "icon_help.png");
-            imageListHighQualityIcons.Images.SetKeyName(13, "icon_import.png");
-            imageListHighQualityIcons.Images.SetKeyName(14, "icon_information.png");
-            imageListHighQualityIcons.Images.SetKeyName(15, "icon_inject.png");
-            imageListHighQualityIcons.Images.SetKeyName(16, "icon_Load.png");
-            imageListHighQualityIcons.Images.SetKeyName(17, "icon_reload.png");
-            imageListHighQualityIcons.Images.SetKeyName(18, "icon_remove.png");
-            imageListHighQualityIcons.Images.SetKeyName(19, "icon_Save.png");
-            imageListHighQualityIcons.Images.SetKeyName(20, "icon_settings.png");
-            imageListHighQualityIcons.Images.SetKeyName(21, "icon_Start.png");
-            imageListHighQualityIcons.Images.SetKeyName(22, "icon_stopall.png");
-            imageListHighQualityIcons.Images.SetKeyName(23, "icon_Uncheck.png");
-            imageListHighQualityIcons.Images.SetKeyName(24, "icon_upload.png");
-            imageListHighQualityIcons.Images.SetKeyName(25, "icon_website.png");
-            imageListHighQualityIcons.Images.SetKeyName(26, "icon_Save2.png");
             // 
             // tabPage2
             // 
@@ -458,7 +389,8 @@
             // radioButtonGz
             // 
             radioButtonGz.AutoSize = true;
-            radioButtonGz.Location = new Point(185, 28);
+            radioButtonGz.Enabled = false;
+            radioButtonGz.Location = new Point(174, 29);
             radioButtonGz.Margin = new Padding(3, 4, 3, 4);
             radioButtonGz.Name = "radioButtonGz";
             radioButtonGz.Size = new Size(49, 24);
@@ -470,6 +402,7 @@
             // radioButtonRar
             // 
             radioButtonRar.AutoSize = true;
+            radioButtonRar.Enabled = false;
             radioButtonRar.Location = new Point(63, 29);
             radioButtonRar.Margin = new Padding(3, 4, 3, 4);
             radioButtonRar.Name = "radioButtonRar";
@@ -482,6 +415,7 @@
             // radioButton7z
             // 
             radioButton7z.AutoSize = true;
+            radioButton7z.Enabled = false;
             radioButton7z.Location = new Point(120, 29);
             radioButton7z.Margin = new Padding(3, 4, 3, 4);
             radioButton7z.Name = "radioButton7z";
@@ -738,6 +672,39 @@
             buttonDeleteExclusions.TextAlign = ContentAlignment.BottomCenter;
             buttonDeleteExclusions.UseVisualStyleBackColor = true;
             buttonDeleteExclusions.Click += buttonDeleteExclusions_Click;
+            // 
+            // imageListHighQualityIcons
+            // 
+            imageListHighQualityIcons.ColorDepth = ColorDepth.Depth32Bit;
+            imageListHighQualityIcons.ImageStream = (ImageListStreamer)resources.GetObject("imageListHighQualityIcons.ImageStream");
+            imageListHighQualityIcons.TransparentColor = Color.Transparent;
+            imageListHighQualityIcons.Images.SetKeyName(0, "icon_Check.png");
+            imageListHighQualityIcons.Images.SetKeyName(1, "icon_blitz.png");
+            imageListHighQualityIcons.Images.SetKeyName(2, "icon_clear.png");
+            imageListHighQualityIcons.Images.SetKeyName(3, "icon_clearconsole.png");
+            imageListHighQualityIcons.Images.SetKeyName(4, "icon_console.png");
+            imageListHighQualityIcons.Images.SetKeyName(5, "icon_create.png");
+            imageListHighQualityIcons.Images.SetKeyName(6, "icon_delete.png");
+            imageListHighQualityIcons.Images.SetKeyName(7, "icon_disable.png");
+            imageListHighQualityIcons.Images.SetKeyName(8, "icon_download.png");
+            imageListHighQualityIcons.Images.SetKeyName(9, "icon_Edit.png");
+            imageListHighQualityIcons.Images.SetKeyName(10, "icon_enable.png");
+            imageListHighQualityIcons.Images.SetKeyName(11, "icon_export.png");
+            imageListHighQualityIcons.Images.SetKeyName(12, "icon_help.png");
+            imageListHighQualityIcons.Images.SetKeyName(13, "icon_import.png");
+            imageListHighQualityIcons.Images.SetKeyName(14, "icon_information.png");
+            imageListHighQualityIcons.Images.SetKeyName(15, "icon_inject.png");
+            imageListHighQualityIcons.Images.SetKeyName(16, "icon_Load.png");
+            imageListHighQualityIcons.Images.SetKeyName(17, "icon_reload.png");
+            imageListHighQualityIcons.Images.SetKeyName(18, "icon_remove.png");
+            imageListHighQualityIcons.Images.SetKeyName(19, "icon_Save.png");
+            imageListHighQualityIcons.Images.SetKeyName(20, "icon_settings.png");
+            imageListHighQualityIcons.Images.SetKeyName(21, "icon_Start.png");
+            imageListHighQualityIcons.Images.SetKeyName(22, "icon_stopall.png");
+            imageListHighQualityIcons.Images.SetKeyName(23, "icon_Uncheck.png");
+            imageListHighQualityIcons.Images.SetKeyName(24, "icon_upload.png");
+            imageListHighQualityIcons.Images.SetKeyName(25, "icon_website.png");
+            imageListHighQualityIcons.Images.SetKeyName(26, "icon_Save2.png");
             // 
             // flowLayoutPanelExclusions
             // 
@@ -1398,12 +1365,6 @@
             numericUpDown1.TabIndex = 7;
             numericUpDown1.Value = new decimal(new int[] { 12, 0, 0, 0 });
             // 
-            // SingleExecutiontoolStripMenuItem
-            // 
-            SingleExecutiontoolStripMenuItem.Name = "SingleExecutiontoolStripMenuItem";
-            SingleExecutiontoolStripMenuItem.Size = new Size(224, 26);
-            SingleExecutiontoolStripMenuItem.Text = "Single Execution";
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1425,7 +1386,6 @@
             tabPage1.PerformLayout();
             flowLayoutPanelInstances.ResumeLayout(false);
             flowLayoutPanelInstances.PerformLayout();
-            groupBox4.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -1486,7 +1446,6 @@
         private Button buttonSelectDestinationPath;
         private ImageList imageListIcons;
         private ImageList imageListHighQualityIcons;
-        private Button button1;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private Label label1;
@@ -1528,8 +1487,6 @@
         private RadioButton radioButton7z;
         private RadioButton radioButtonZip;
         private Label label9;
-        private GroupBox groupBox4;
-        private ComboBox comboBox1;
         private RichTextBox richTextBoxJobDescription;
         private Label label10;
         private MonthCalendar monthCalendarStart;
