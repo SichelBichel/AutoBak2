@@ -58,7 +58,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "AboutForm";
-            Text = "AboutForm";
+            Text = "About";
             ResumeLayout(false);
             PerformLayout();
         }
