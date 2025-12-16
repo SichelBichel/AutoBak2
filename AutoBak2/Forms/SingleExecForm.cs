@@ -49,30 +49,49 @@ namespace AutoBak2.Forms
 
         private void singleExecuteButton_Click(object sender, EventArgs e)
         {
-            if (comboBoxJobSelection.SelectedItem == null || string.IsNullOrWhiteSpace(comboBoxJobSelection.Text))
-            {
-                MessageHandler.DisplayWarningBox("Caution", "Please select a job to execute.");
-                return;
-            }
+            if (comboBoxJobSelection.SelectedItem == null) return;
 
             string selectedJobName = comboBoxJobSelection.Text;
+            JobConfig config = JobConfigurationManager.LoadJob(selectedJobName);
 
-            try
+            // 1. ProgressForm initialisieren und anzeigen
+            ProgressForm progressForm = new ProgressForm();
+            progressForm.Show(); // Wichtig: Nicht-modal anzeigen
+
+            // 2. IProgress-Handler erstellen (kümmert sich um die UI-Updates)
+            var progressHandler = new Progress<JobProgressData>(data =>
             {
-                JobConfig config = JobConfigurationManager.LoadJob(selectedJobName);
+                // Diese Logik läuft im UI-Thread und ist sicher!
+                if (data.IsComplete)
+                {
+                    progressForm.Close();
+                }
+                else
+                {
+                    progressForm.labelCurrentAction.Text = $"Copying: {data.CurrentFile}";
+                    progressForm.progressBarTotal.Value = data.ProgressPercentage;
+                }
+            });
 
-                JobExecutor.ExecuteJob(config);
-
-
-            }
-            catch (FileNotFoundException)
+            // 3. Job im Hintergrund starten
+            Task.Run(() =>
             {
-                MessageHandler.DisplayErrorBox("Error", $"Job configuration file for '{selectedJobName}' not found.");
-            }
-            catch (Exception ex)
-            {
-                MessageHandler.DisplayErrorBox("Execution Error", $"An error occurred during job execution: {ex.Message}");
-            }
+                try
+                {
+                    JobExecutor.ExecuteJob(config, progressHandler);
+                }
+                catch (Exception ex)
+                {
+                    // Bei einem Fehler muss das UI-Update auch im UI-Thread erfolgen
+                    progressHandler.Report(new JobProgressData { IsComplete = true });
+                    MessageBox.Show($"Execution failed: {ex.Message}", "Error");
+                }
+                finally
+                {
+                    // 4. Job beendet: Meldung senden, damit die Form geschlossen wird
+                    progressHandler.Report(new JobProgressData { IsComplete = true });
+                }
+            });
         }
     }
 }

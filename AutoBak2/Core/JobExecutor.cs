@@ -10,7 +10,7 @@ namespace AutoBak2.Utils
 {
     public static class JobExecutor
     {
-        public static void ExecuteJob(JobConfig config)
+        public static void ExecuteJob(JobConfig config, IProgress<JobProgressData> progress)
         {
             MessageHandler.DisplayInfoBox("Job Start", $"Starting job: {config.Name}");
 
@@ -82,10 +82,6 @@ namespace AutoBak2.Utils
         {
             Directory.CreateDirectory(finalTargetPath);
 
-            // *** WICHTIG: Die eigentliche rekursive Kopierlogik müsste hier implementiert werden. ***
-            // Dies ist ein komplexer rekursiver Vorgang, der alle Dateien/Ordner kopieren muss.
-
-            // Für diesen Prototyp rufen wir eine Platzhalter-Methode auf:
             CopyDirectoryRecursive(config.SourcePath, finalTargetPath, config.ExcludedItems);
         }
 
@@ -161,9 +157,6 @@ namespace AutoBak2.Utils
         //# ADD INSTANCED PROGRESS FORM HERE
         //##################################################################
 
-        // -------------------------------------------------------------
-        // Hilfsmethode 3: Archivierung erstellen
-        // -------------------------------------------------------------
         private static void CreateArchiveJob(JobConfig config, string finalTargetPath)
         {
             if (config.ArchiveType != JobConfig.ArchiveFormat.Zip)
@@ -176,7 +169,6 @@ namespace AutoBak2.Utils
             string baseName = Path.GetFileName(config.SourcePath.TrimEnd(Path.DirectorySeparatorChar));
             string archiveFileName = baseName + archiveExtension;
 
-            // Zielverzeichnis für das Archiv muss existieren
             Directory.CreateDirectory(finalTargetPath);
 
             string fullArchivePath = Path.Combine(finalTargetPath, archiveFileName);
@@ -188,16 +180,14 @@ namespace AutoBak2.Utils
 
             try
             {
-                // 1. Erstelle ein neues ZIP-Archiv
                 using (FileStream zipStream = new FileStream(fullArchivePath, FileMode.Create))
                 using (ZipArchive archive = new ZipArchive(zipStream, ZipArchiveMode.Create))
                 {
-                    // 2. Rufe die rekursive Methode auf, um die Dateien hinzuzufügen und zu filtern
                     AddFilesToZipRecursive(
                         sourcePath: config.SourcePath,
                         archive: archive,
                         exclusions: config.ExcludedItems,
-                        rootPath: config.SourcePath // Der Startpfad, um die relativen Pfade im Archiv zu berechnen
+                        rootPath: config.SourcePath
                     );
                 }
 
@@ -215,32 +205,26 @@ namespace AutoBak2.Utils
         {
             string normalizedSourcePath = sourcePath.TrimEnd(Path.DirectorySeparatorChar);
 
-            // Lambda-Funktion zur Überprüfung der Ausschlüsse
             Func<string, bool> isExcluded = (path) =>
             {
                 string normalizedPath = path.TrimEnd(Path.DirectorySeparatorChar);
                 return exclusions.Any(e => normalizedPath.StartsWith(e.TrimEnd(Path.DirectorySeparatorChar), StringComparison.OrdinalIgnoreCase));
             };
 
-            // 1. Dateien hinzufügen
             try
             {
                 foreach (string filePath in Directory.GetFiles(normalizedSourcePath))
                 {
                     if (!isExcluded(filePath))
                     {
-                        // WICHTIG: Erstellt den relativen Pfad für den Eintrag im ZIP-Archiv (z.B. "OrdnerX/Datei.txt")
                         string entryName = filePath.Substring(rootPath.Length).TrimStart(Path.DirectorySeparatorChar);
 
-                        // Fügt die Datei zum Archiv hinzu
                         archive.CreateEntryFromFile(filePath, entryName, CompressionLevel.Fastest);
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Fehler beim Zugriff auf Dateien (z.B. Berechtigung)
-                // Sollte nicht den gesamten Job abbrechen, sondern nur diesen Teil protokollieren
                 Console.WriteLine($"Error adding files in {normalizedSourcePath}: {ex.Message}");
             }
 
@@ -252,20 +236,17 @@ namespace AutoBak2.Utils
                 {
                     if (!isExcluded(subDirPath))
                     {
-                        // Rekursiver Aufruf
                         AddFilesToZipRecursive(subDirPath, archive, exclusions, rootPath);
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Fehler beim Zugriff auf Unterverzeichnisse
                 Console.WriteLine($"Error traversing directories in {normalizedSourcePath}: {ex.Message}");
             }
         }
         private static string GetArchiveExtension(JobConfig.ArchiveFormat format)
         {
-            // Die Enumeration JobConfig.ArchiveFormat muss definiert sein (z.B. in AutoBak2.ConfigStructs)
             return format switch
             {
                 JobConfig.ArchiveFormat.Zip => ".zip",
