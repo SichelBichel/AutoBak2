@@ -888,7 +888,7 @@
             tabPage1.Padding = new Padding(3, 4, 3, 4);
             tabPage1.Size = new Size(1416, 822);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "Instnaces (N/A)";
+            tabPage1.Text = "Instances (N/A)";
             // 
             // label15
             // 
