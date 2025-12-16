@@ -57,6 +57,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "AboutForm";
             Text = "About";
             ResumeLayout(false);

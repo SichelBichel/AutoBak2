@@ -208,6 +208,7 @@
             Controls.Add(richTextBox1);
             Controls.Add(singleExecuteButton);
             Controls.Add(comboBoxJobSelection);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "SingleExecForm";
             Text = "Single Execution";
             ResumeLayout(false);
