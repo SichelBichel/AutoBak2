@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AutoBak2.ConfigStructs;
 using AutoBak2.Utils;
+using AutoBak2.Utils.ShellActions;
 
 namespace AutoBak2.Forms
 {
     public partial class SingleExecForm : Form
     {
+        private CancellationTokenSource _cts;
         public SingleExecForm()
         {
             InitializeComponent();
@@ -54,41 +56,54 @@ namespace AutoBak2.Forms
             string selectedJobName = comboBoxJobSelection.Text;
             JobConfig config = JobConfigurationManager.LoadJob(selectedJobName);
 
-            // 1. ProgressForm initialisieren und anzeigen
-            ProgressForm progressForm = new ProgressForm();
-            progressForm.Show(); // Wichtig: Nicht-modal anzeigen
+            _cts = new CancellationTokenSource();
 
-            // 2. IProgress-Handler erstellen (kümmert sich um die UI-Updates)
+            ProgressForm progressForm = new ProgressForm();
+            progressForm.Show();
+
+            progressForm.JobAborted += (s, ev) =>
+            {
+                _cts.Cancel(); 
+            };
+
+
             IProgress<JobProgressData> progressHandler = new Progress<JobProgressData>(data =>
             {
-                if (data.IsComplete)
+                if (progressForm.IsHandleCreated) // Prüfen, ob das Fenster noch existiert
                 {
-                    progressForm.Close();
-                }
-                else
-                {
-                    progressForm.Name = $"Copying: {data.CurrentFile}";
-                    progressForm.progressBar.Value = data.ProgressPercentage;
+                    progressForm.Invoke((MethodInvoker)delegate
+                    {
+                        progressForm.richTextBoxLog.Text += Environment.NewLine + data.CurrentFile;
+                        progressForm.Text = "Copying Files:  "+selectedJobName;
+                        progressForm.progressBar.Value = data.ProgressPercentage;
+                        progressForm.labelCurrentFile.Text = data.CurrentFile;
+                    });
                 }
             });
 
-            // 3. Job im Hintergrund starten
             Task.Run(() =>
             {
                 try
                 {
-                    JobExecutor.ExecuteJob(config, progressHandler);
+                    JobExecutor.ExecuteJob(config, progressHandler, _cts.Token);
+                }
+                catch (OperationCanceledException)
+                {
+                    MessageBox.Show("Operation aborted by user.", "Abort", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 catch (Exception ex)
                 {
-                    // Bei einem Fehler muss das UI-Update auch im UI-Thread erfolgen
-                    progressHandler.Report(new JobProgressData { IsComplete = true });
                     MessageBox.Show($"Execution failed: {ex.Message}", "Error");
                 }
                 finally
                 {
-                    // 4. Job beendet: Meldung senden, damit die Form geschlossen wird
                     progressHandler.Report(new JobProgressData { IsComplete = true });
+
+                    if (_cts != null)
+                    {
+                        _cts.Dispose();
+                        _cts = null;
+                    }
                 }
             });
         }
@@ -96,6 +111,48 @@ namespace AutoBak2.Forms
         private void comboBoxJobSelection_Click(object sender, EventArgs e)
         {
             LoadJobSelectionComboBox();
+        }
+
+        private void comboBoxJobSelection_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxJobSelection.SelectedItem == null)
+            { return; }
+
+            string selectedJobName = comboBoxJobSelection.SelectedItem.ToString();
+            JobConfig config = JobConfigurationManager.LoadJob(selectedJobName);
+
+            if (config != null)
+            {
+                linkLabelBrowseToSource.Text = config.SourcePath;
+                linkLabelBrowseToDestination.Text = config.TargetPath;
+                richTextBox1.Text = config.JobDescription;
+            }
+        }
+
+        private void linkLabelBrowseToSource_Click(object sender, EventArgs e)
+        {
+            var path = linkLabelBrowseToSource.Text;
+            try
+            {
+                ShellHandler.path(path);
+            }
+            catch (Exception ex)
+            {
+                MessageHandler.DisplayErrorBox("Error", ex.Message);
+            }
+        }
+
+        private void linkLabelBrowseToDestination_Click(object sender, EventArgs e)
+        {
+            var path = linkLabelBrowseToDestination.Text;
+            try
+            {
+                ShellHandler.path(path);
+            }
+            catch (Exception ex)
+            {
+                MessageHandler.DisplayErrorBox("Error", ex.Message);
+            }
         }
     }
 }

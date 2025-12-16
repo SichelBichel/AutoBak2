@@ -50,7 +50,7 @@
             comboBoxJobSelection.Name = "comboBoxJobSelection";
             comboBoxJobSelection.Size = new Size(276, 28);
             comboBoxJobSelection.TabIndex = 0;
-            comboBoxJobSelection.Click += comboBoxJobSelection_Click;
+            comboBoxJobSelection.SelectedIndexChanged += comboBoxJobSelection_SelectedIndexChanged;
             // 
             // imageListHighQualityIcons
             // 
@@ -172,6 +172,7 @@
             linkLabelBrowseToSource.TabIndex = 6;
             linkLabelBrowseToSource.TabStop = true;
             linkLabelBrowseToSource.Text = "linkLabelBrowseToSource";
+            linkLabelBrowseToSource.Click += linkLabelBrowseToSource_Click;
             // 
             // linkLabelBrowseToDestination
             // 
@@ -182,6 +183,7 @@
             linkLabelBrowseToDestination.TabIndex = 7;
             linkLabelBrowseToDestination.TabStop = true;
             linkLabelBrowseToDestination.Text = "linkLabelBrowseToDestination";
+            linkLabelBrowseToDestination.Click += linkLabelBrowseToDestination_Click;
             // 
             // label4
             // 

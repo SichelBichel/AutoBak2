@@ -34,17 +34,16 @@
             buttonProgressAbort = new Button();
             imageListHighQualityIcons = new ImageList(components);
             imageListIcons = new ImageList(components);
-            label3 = new Label();
-            label2 = new Label();
-            labelWriteoutProgressSource = new Label();
-            labelWriteoutProgressDestination = new Label();
+            labelCurrentFile = new Label();
+            richTextBoxLog = new RichTextBox();
             SuspendLayout();
             // 
             // progressBar
             // 
-            progressBar.Location = new Point(40, 82);
+            progressBar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            progressBar.Location = new Point(12, 41);
             progressBar.Name = "progressBar";
-            progressBar.Size = new Size(705, 29);
+            progressBar.Size = new Size(763, 29);
             progressBar.TabIndex = 0;
             // 
             // buttonProgressAbort
@@ -53,13 +52,14 @@
             buttonProgressAbort.ImageAlign = ContentAlignment.MiddleRight;
             buttonProgressAbort.ImageKey = "icon_stopall.png";
             buttonProgressAbort.ImageList = imageListHighQualityIcons;
-            buttonProgressAbort.Location = new Point(342, 133);
+            buttonProgressAbort.Location = new Point(343, 444);
             buttonProgressAbort.Name = "buttonProgressAbort";
             buttonProgressAbort.Size = new Size(93, 36);
             buttonProgressAbort.TabIndex = 1;
             buttonProgressAbort.Text = "Abort";
             buttonProgressAbort.TextAlign = ContentAlignment.MiddleLeft;
             buttonProgressAbort.UseVisualStyleBackColor = true;
+            buttonProgressAbort.Click += buttonProgressAbort_Click;
             // 
             // imageListHighQualityIcons
             // 
@@ -126,57 +126,38 @@
             imageListIcons.Images.SetKeyName(24, "icon_remove.png");
             imageListIcons.Images.SetKeyName(25, "icon_clearconsole.png");
             // 
-            // label3
+            // labelCurrentFile
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(40, 53);
-            label3.Name = "label3";
-            label3.Size = new Size(88, 20);
-            label3.TabIndex = 7;
-            label3.Text = "Destination:";
+            labelCurrentFile.Anchor = AnchorStyles.Top;
+            labelCurrentFile.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            labelCurrentFile.Location = new Point(12, 9);
+            labelCurrentFile.Name = "labelCurrentFile";
+            labelCurrentFile.Size = new Size(763, 29);
+            labelCurrentFile.TabIndex = 10;
+            labelCurrentFile.Text = "none";
+            labelCurrentFile.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // richTextBoxLog
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(71, 20);
-            label2.Name = "label2";
-            label2.Size = new Size(57, 20);
-            label2.TabIndex = 6;
-            label2.Text = "Source:";
-            // 
-            // labelWriteoutProgressSource
-            // 
-            labelWriteoutProgressSource.AutoSize = true;
-            labelWriteoutProgressSource.Location = new Point(147, 21);
-            labelWriteoutProgressSource.Name = "labelWriteoutProgressSource";
-            labelWriteoutProgressSource.Size = new Size(50, 20);
-            labelWriteoutProgressSource.TabIndex = 8;
-            labelWriteoutProgressSource.Text = "label1";
-            // 
-            // labelWriteoutProgressDestination
-            // 
-            labelWriteoutProgressDestination.AutoSize = true;
-            labelWriteoutProgressDestination.Location = new Point(147, 53);
-            labelWriteoutProgressDestination.Name = "labelWriteoutProgressDestination";
-            labelWriteoutProgressDestination.Size = new Size(50, 20);
-            labelWriteoutProgressDestination.TabIndex = 9;
-            labelWriteoutProgressDestination.Text = "label4";
+            richTextBoxLog.Location = new Point(12, 92);
+            richTextBoxLog.Name = "richTextBoxLog";
+            richTextBoxLog.Size = new Size(763, 333);
+            richTextBoxLog.TabIndex = 11;
+            richTextBoxLog.Text = "";
             // 
             // ProgressForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 181);
-            Controls.Add(labelWriteoutProgressDestination);
-            Controls.Add(labelWriteoutProgressSource);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            ClientSize = new Size(787, 492);
+            Controls.Add(richTextBoxLog);
+            Controls.Add(labelCurrentFile);
             Controls.Add(buttonProgressAbort);
             Controls.Add(progressBar);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ProgressForm";
             Text = "Progress";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -185,9 +166,7 @@
         private Button buttonProgressAbort;
         private ImageList imageListIcons;
         private ImageList imageListHighQualityIcons;
-        private Label label3;
-        private Label label2;
-        private Label labelWriteoutProgressSource;
-        private Label labelWriteoutProgressDestination;
+        public Label labelCurrentFile;
+        public RichTextBox richTextBoxLog;
     }
 }

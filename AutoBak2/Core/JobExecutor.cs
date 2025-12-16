@@ -10,7 +10,7 @@ namespace AutoBak2.Utils
 {
     public static class JobExecutor
     {
-        public static void ExecuteJob(JobConfig config, IProgress<JobProgressData> progress)
+        public static void ExecuteJob(JobConfig config, IProgress<JobProgressData> progress, CancellationToken ct)
         {
             //MessageHandler.DisplayInfoBox("Job Start", $"Starting job: {config.Name}");
 
@@ -20,26 +20,19 @@ namespace AutoBak2.Utils
                 return;
             }
 
-            try
-            {
                 string finalTargetPath = DetermineFinalTargetPath(config);
 
                 if (config.ArchiveEnabled)
                 {
-                    CreateArchiveJob(config, finalTargetPath, progress); // ADD PROGRESS LATER ON
+                    CreateArchiveJob(config, finalTargetPath, progress, ct); // ADD PROGRESS LATER ON
                 }
                 else
                 {
-                    CopyDirectoryJob(config, finalTargetPath, progress); 
+                    CopyDirectoryJob(config, finalTargetPath, progress, ct); 
                 }
 
                 MessageHandler.DisplayInfoBox("Job Success", $"Job '{config.Name}' completed successfully!");
             }
-            catch (Exception ex)
-            {
-                MessageHandler.DisplayErrorBox("Job Failed", $"Job '{config.Name}' failed: {ex.Message}");
-            }
-        }
 
         private static string DetermineFinalTargetPath(JobConfig config)
         {
@@ -75,7 +68,7 @@ namespace AutoBak2.Utils
         }
 
 
-        private static void CopyDirectoryJob(JobConfig config, string finalTargetPath, IProgress<JobProgressData> progress)
+        private static void CopyDirectoryJob(JobConfig config, string finalTargetPath, IProgress<JobProgressData> progress, CancellationToken ct)
         {
             Directory.CreateDirectory(finalTargetPath);
 
@@ -83,7 +76,7 @@ namespace AutoBak2.Utils
             int totalFiles = CountFiles(config.SourcePath, config.ExcludedItems);
             int currentFileCount = 0;
 
-            CopyDirectoryRecursive(config.SourcePath, finalTargetPath, config.ExcludedItems, ref currentFileCount, totalFiles, progress);
+            CopyDirectoryRecursive(config.SourcePath, finalTargetPath, config.ExcludedItems, ref currentFileCount, totalFiles, ct, progress);
         }
 
         private static void CopyDirectoryRecursive(
@@ -92,6 +85,7 @@ namespace AutoBak2.Utils
      List<string> exclusions,
      ref int currentFileCount,
      int totalFileCount,
+             CancellationToken ct,
      IProgress<JobProgressData> progress = null)
         {
             string normalizedSourceDir = sourceDir.TrimEnd(Path.DirectorySeparatorChar);
@@ -114,6 +108,7 @@ namespace AutoBak2.Utils
                 {
                     if (!isExcluded(filePath))
                     {
+                        ct.ThrowIfCancellationRequested();
                         string fileName = Path.GetFileName(filePath);
                         string targetFilePath = Path.Combine(normalizedTargetDir, fileName);
 
@@ -149,10 +144,12 @@ namespace AutoBak2.Utils
                 {
                     if (!isExcluded(subDirPath))
                     {
+                        ct.ThrowIfCancellationRequested();
+
                         string dirName = Path.GetFileName(subDirPath);
                         string targetSubDir = Path.Combine(normalizedTargetDir, dirName);
 
-                        CopyDirectoryRecursive(subDirPath, targetSubDir, exclusions, ref currentFileCount, totalFileCount, progress);
+                        CopyDirectoryRecursive(subDirPath, targetSubDir, exclusions, ref currentFileCount, totalFileCount, ct, progress);
                     }
                 }
             }
@@ -162,7 +159,7 @@ namespace AutoBak2.Utils
             }
             catch (Exception ex)
             {
-                MessageHandler.DisplayErrorBox("Directory Error", $"An error occurred during directory traversal in {normalizedSourceDir}: {ex.Message}");
+                // OUT BECAUSE OF ABORD MSG MessageHandler.DisplayErrorBox("Directory Error", $"An error occurred during directory traversal in {normalizedSourceDir}: {ex.Message}");
             }
         }
 
@@ -203,7 +200,7 @@ namespace AutoBak2.Utils
         //# ADD INSTANCED PROGRESS FORM HERE
         //##################################################################
 
-        private static void CreateArchiveJob(JobConfig config, string finalTargetPath, IProgress<JobProgressData> progress)
+        private static void CreateArchiveJob(JobConfig config, string finalTargetPath, IProgress<JobProgressData> progress, CancellationToken ct)
         {
             if (config.ArchiveType != JobConfig.ArchiveFormat.Zip)
             {
@@ -239,8 +236,9 @@ namespace AutoBak2.Utils
                         exclusions: config.ExcludedItems,
                         rootPath: config.SourcePath,
                         currentFileCount: ref currentFileCount, 
-                        totalFileCount: totalFiles,              
-                        progress: progress                      
+                        totalFileCount: totalFiles,
+                        ct: ct,
+                        progress: progress
                     );
                 }
 
@@ -259,7 +257,8 @@ namespace AutoBak2.Utils
             List<string> exclusions,
             string rootPath,
             ref int currentFileCount,           // NEU
-            int totalFileCount,                 // NEU
+            int totalFileCount,
+            CancellationToken ct,
             IProgress<JobProgressData> progress = null)  // NEU
         {
             string normalizedSourcePath = sourcePath.TrimEnd(Path.DirectorySeparatorChar);
@@ -276,6 +275,9 @@ namespace AutoBak2.Utils
                 {
                     if (!isExcluded(filePath))
                     {
+
+                        ct.ThrowIfCancellationRequested();
+
                         string entryName = filePath.Substring(rootPath.Length).TrimStart(Path.DirectorySeparatorChar);
                         string fileName = Path.GetFileName(filePath);
 
@@ -307,7 +309,8 @@ namespace AutoBak2.Utils
                 {
                     if (!isExcluded(subDirPath))
                     {
-                        AddFilesToZipRecursive(subDirPath, archive, exclusions, rootPath, ref currentFileCount, totalFileCount, progress);
+                        ct.ThrowIfCancellationRequested();
+                        AddFilesToZipRecursive(subDirPath, archive, exclusions, rootPath, ref currentFileCount, totalFileCount, ct, progress);
                     }
                 }
             }

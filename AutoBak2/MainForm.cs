@@ -345,7 +345,7 @@ namespace AutoBak2
             const string JobsDirectoryName = "jobs";
 
             string fullJobsPath = Path.Combine(exeRoot, DataDirectoryName, JobsDirectoryName);
-            ShellHandler.path(fullJobsPath, this);
+            ShellHandler.path(fullJobsPath);
         }
 
         private void buttonDeleteJob_Click(object sender, EventArgs e)
@@ -414,7 +414,7 @@ namespace AutoBak2
 
         private void visitWebsiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShellHandler.url("https://regoga-interactive.com/", this);
+            ShellHandler.url("https://regoga-interactive.com/");
         }
 
         private void SingleExecutiontoolStripMenuItem_Click(object sender, EventArgs e)

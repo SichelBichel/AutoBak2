@@ -9,7 +9,7 @@ namespace AutoBak2.Utils.ShellActions
 {
     public static class ShellHandler
     {
-        public static void path(string path, MainForm form)
+        public static void path(string path)
         {
             try
             {
@@ -28,7 +28,7 @@ namespace AutoBak2.Utils.ShellActions
                 MessageHandler.DisplayErrorBox("Error Opening Path", $"Failed to open the path: {path}\n\nError: {ex.Message}");
             }
         }
-        public static void url(string url, MainForm form)
+        public static void url(string url)
         {
             try
             {
@@ -44,7 +44,7 @@ namespace AutoBak2.Utils.ShellActions
                 MessageHandler.DisplayErrorBox("Error Opening URL", $"Failed to open the URL: {url}\n\nError: {ex.Message}");
             }
         }
-        public static void file(string filePath, MainForm form)
+        public static void file(string filePath)
         {
             try
             {
