@@ -73,6 +73,11 @@ namespace AutoBak2.Forms
                 {
                     progressForm.Invoke((MethodInvoker)delegate
                     {
+                        if (data.IsComplete)
+                        {
+                            progressForm.Close();
+                            return;
+                        }
                         progressForm.richTextBoxLog.AppendText(Environment.NewLine + data.CurrentFile);
                         progressForm.Text = "Copying Files:  "+selectedJobName;
                         progressForm.progressBar.Value = data.ProgressPercentage;
@@ -106,6 +111,7 @@ namespace AutoBak2.Forms
                         _cts.Dispose();
                         _cts = null;
                     }
+                    //this.Close();
                 }
             });
         }
