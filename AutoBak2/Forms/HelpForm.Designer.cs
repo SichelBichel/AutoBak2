@@ -1,6 +1,6 @@
 ﻿namespace AutoBak2.Forms
 {
-    partial class AboutForm
+    partial class HelpForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,47 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
-            label1 = new Label();
-            label2 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpForm));
             SuspendLayout();
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(325, 180);
-            label1.Name = "label1";
-            label1.Size = new Size(136, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Version Alpha_0.0.1";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(262, 386);
-            label2.Name = "label2";
-            label2.Size = new Size(277, 20);
-            label2.TabIndex = 1;
-            label2.Text = "© 2026 ReHoGa Interactive, AutoBak 2™";
-            // 
-            // AboutForm
+            // HelpForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "AboutForm";
-            Text = "About";
+            Name = "HelpForm";
+            Text = "Help";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
-        private Label label2;
     }
 }

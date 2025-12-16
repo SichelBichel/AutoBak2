@@ -209,6 +209,7 @@
             Controls.Add(singleExecuteButton);
             Controls.Add(comboBoxJobSelection);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "SingleExecForm";
             Text = "Single Execution";
             ResumeLayout(false);
