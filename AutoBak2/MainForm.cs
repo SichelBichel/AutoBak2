@@ -410,5 +410,10 @@ namespace AutoBak2
         {
             flowLayoutPanelExclusions.Controls.Clear();
         }
+
+        private void visitWebsiteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShellHandler.url("https://regoga-interactive.com/", this);
+        }
     }
 }
