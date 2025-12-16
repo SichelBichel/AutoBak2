@@ -422,5 +422,23 @@ namespace AutoBak2
             SingleExecForm execForm = new SingleExecForm();
             execForm.Show();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.Show();
+        }
+
+        private void helpToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            HelpForm helpForm = new HelpForm();
+            helpForm.Show();
+        }
+
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.Show();
+        }
     }
 }

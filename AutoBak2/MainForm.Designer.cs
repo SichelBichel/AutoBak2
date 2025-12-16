@@ -36,16 +36,13 @@
             addInstanceToolStripMenuItem = new ToolStripMenuItem();
             stopAllInstancesToolStripMenuItem = new ToolStripMenuItem();
             optionsToolStripMenuItem = new ToolStripMenuItem();
-            importToolStripMenuItem = new ToolStripMenuItem();
-            exportToolStripMenuItem = new ToolStripMenuItem();
+            settingsToolStripMenuItem = new ToolStripMenuItem();
+            updateToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             visitWebsiteToolStripMenuItem = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
+            helpToolStripMenuItem1 = new ToolStripMenuItem();
             tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            label15 = new Label();
-            flowLayoutPanelInstances = new FlowLayoutPanel();
-            label14 = new Label();
             tabPage2 = new TabPage();
             label9 = new Label();
             groupBox3 = new GroupBox();
@@ -93,6 +90,10 @@
             label1 = new Label();
             textBoxDestinationPath = new TextBox();
             buttonSelectDestinationPath = new Button();
+            tabPage1 = new TabPage();
+            label15 = new Label();
+            flowLayoutPanelInstances = new FlowLayoutPanel();
+            label14 = new Label();
             tabPage3 = new TabPage();
             buttonShowDates = new Button();
             richTextBox1 = new RichTextBox();
@@ -135,8 +136,6 @@
             numericUpDown1 = new NumericUpDown();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
-            flowLayoutPanelInstances.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox3.SuspendLayout();
             panel4.SuspendLayout();
@@ -146,6 +145,8 @@
             panel3.SuspendLayout();
             groupBox1.SuspendLayout();
             panel2.SuspendLayout();
+            tabPage1.SuspendLayout();
+            flowLayoutPanelInstances.SuspendLayout();
             tabPage3.SuspendLayout();
             panel7.SuspendLayout();
             groupBox7.SuspendLayout();
@@ -183,68 +184,83 @@
             // 
             // SingleExecutiontoolStripMenuItem
             // 
+            SingleExecutiontoolStripMenuItem.Image = Properties.Resources.icon_blitz;
             SingleExecutiontoolStripMenuItem.Name = "SingleExecutiontoolStripMenuItem";
-            SingleExecutiontoolStripMenuItem.Size = new Size(209, 26);
+            SingleExecutiontoolStripMenuItem.Size = new Size(224, 26);
             SingleExecutiontoolStripMenuItem.Text = "Single Execution";
             SingleExecutiontoolStripMenuItem.Click += SingleExecutiontoolStripMenuItem_Click;
             // 
             // addInstanceToolStripMenuItem
             // 
             addInstanceToolStripMenuItem.Name = "addInstanceToolStripMenuItem";
-            addInstanceToolStripMenuItem.Size = new Size(209, 26);
+            addInstanceToolStripMenuItem.Size = new Size(224, 26);
             addInstanceToolStripMenuItem.Text = "Add Instance";
             // 
             // stopAllInstancesToolStripMenuItem
             // 
             stopAllInstancesToolStripMenuItem.Name = "stopAllInstancesToolStripMenuItem";
-            stopAllInstancesToolStripMenuItem.Size = new Size(209, 26);
+            stopAllInstancesToolStripMenuItem.Size = new Size(224, 26);
             stopAllInstancesToolStripMenuItem.Text = "Stop All Instances";
             // 
             // optionsToolStripMenuItem
             // 
-            optionsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { importToolStripMenuItem, exportToolStripMenuItem });
+            optionsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { settingsToolStripMenuItem, updateToolStripMenuItem });
             optionsToolStripMenuItem.ForeColor = SystemColors.ActiveCaptionText;
             optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             optionsToolStripMenuItem.Size = new Size(75, 24);
             optionsToolStripMenuItem.Text = "Options";
             optionsToolStripMenuItem.Click += optionsToolStripMenuItem_Click;
             // 
-            // importToolStripMenuItem
+            // settingsToolStripMenuItem
             // 
-            importToolStripMenuItem.Name = "importToolStripMenuItem";
-            importToolStripMenuItem.Size = new Size(207, 26);
-            importToolStripMenuItem.Text = "Settings";
+            settingsToolStripMenuItem.Image = Properties.Resources.icon_settings;
+            settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            settingsToolStripMenuItem.Size = new Size(224, 26);
+            settingsToolStripMenuItem.Text = "Settings";
+            settingsToolStripMenuItem.Click += importToolStripMenuItem_Click;
             // 
-            // exportToolStripMenuItem
+            // updateToolStripMenuItem
             // 
-            exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            exportToolStripMenuItem.Size = new Size(207, 26);
-            exportToolStripMenuItem.Text = "Check for Update";
+            updateToolStripMenuItem.Image = Properties.Resources.icon_reload;
+            updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            updateToolStripMenuItem.Size = new Size(224, 26);
+            updateToolStripMenuItem.Text = "Check for Update";
             // 
             // helpToolStripMenuItem
             // 
-            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { visitWebsiteToolStripMenuItem, aboutToolStripMenuItem });
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { visitWebsiteToolStripMenuItem, aboutToolStripMenuItem, helpToolStripMenuItem1 });
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             helpToolStripMenuItem.Size = new Size(55, 24);
             helpToolStripMenuItem.Text = "Help";
             // 
             // visitWebsiteToolStripMenuItem
             // 
+            visitWebsiteToolStripMenuItem.Image = Properties.Resources.icon_website;
             visitWebsiteToolStripMenuItem.Name = "visitWebsiteToolStripMenuItem";
-            visitWebsiteToolStripMenuItem.Size = new Size(177, 26);
+            visitWebsiteToolStripMenuItem.Size = new Size(224, 26);
             visitWebsiteToolStripMenuItem.Text = "Visit Website";
             visitWebsiteToolStripMenuItem.Click += visitWebsiteToolStripMenuItem_Click;
             // 
             // aboutToolStripMenuItem
             // 
+            aboutToolStripMenuItem.Image = Properties.Resources.icon_information;
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(177, 26);
+            aboutToolStripMenuItem.Size = new Size(224, 26);
             aboutToolStripMenuItem.Text = "About";
+            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
+            // 
+            // helpToolStripMenuItem1
+            // 
+            helpToolStripMenuItem1.Image = Properties.Resources.icon_help;
+            helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            helpToolStripMenuItem1.Size = new Size(224, 26);
+            helpToolStripMenuItem1.Text = "Help";
+            helpToolStripMenuItem1.Click += helpToolStripMenuItem1_Click;
             // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Location = new Point(14, 36);
             tabControl1.Margin = new Padding(3, 4, 3, 4);
@@ -252,49 +268,6 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(1424, 855);
             tabControl1.TabIndex = 1;
-            // 
-            // tabPage1
-            // 
-            tabPage1.BackColor = Color.Silver;
-            tabPage1.Controls.Add(label15);
-            tabPage1.Controls.Add(flowLayoutPanelInstances);
-            tabPage1.ForeColor = SystemColors.ActiveCaptionText;
-            tabPage1.Location = new Point(4, 29);
-            tabPage1.Margin = new Padding(3, 4, 3, 4);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3, 4, 3, 4);
-            tabPage1.Size = new Size(1416, 822);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Instances";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(6, 4);
-            label15.Name = "label15";
-            label15.Size = new Size(99, 20);
-            label15.TabIndex = 3;
-            label15.Text = "Instance Pool:";
-            // 
-            // flowLayoutPanelInstances
-            // 
-            flowLayoutPanelInstances.BackColor = Color.DarkGray;
-            flowLayoutPanelInstances.BorderStyle = BorderStyle.FixedSingle;
-            flowLayoutPanelInstances.Controls.Add(label14);
-            flowLayoutPanelInstances.Location = new Point(6, 27);
-            flowLayoutPanelInstances.Name = "flowLayoutPanelInstances";
-            flowLayoutPanelInstances.Size = new Size(1404, 788);
-            flowLayoutPanelInstances.TabIndex = 2;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 14F);
-            label14.Location = new Point(3, 0);
-            label14.Name = "label14";
-            label14.Size = new Size(336, 32);
-            label14.TabIndex = 0;
-            label14.Text = "Not available in alpha verision";
             // 
             // tabPage2
             // 
@@ -903,6 +876,49 @@
             buttonSelectDestinationPath.UseVisualStyleBackColor = true;
             buttonSelectDestinationPath.Click += buttonSelectDestinationPath_Click;
             // 
+            // tabPage1
+            // 
+            tabPage1.BackColor = Color.Silver;
+            tabPage1.Controls.Add(label15);
+            tabPage1.Controls.Add(flowLayoutPanelInstances);
+            tabPage1.ForeColor = SystemColors.ActiveCaptionText;
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Margin = new Padding(3, 4, 3, 4);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3, 4, 3, 4);
+            tabPage1.Size = new Size(1416, 822);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Instnaces (N/A)";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(6, 4);
+            label15.Name = "label15";
+            label15.Size = new Size(99, 20);
+            label15.TabIndex = 3;
+            label15.Text = "Instance Pool:";
+            // 
+            // flowLayoutPanelInstances
+            // 
+            flowLayoutPanelInstances.BackColor = Color.DarkGray;
+            flowLayoutPanelInstances.BorderStyle = BorderStyle.FixedSingle;
+            flowLayoutPanelInstances.Controls.Add(label14);
+            flowLayoutPanelInstances.Location = new Point(6, 27);
+            flowLayoutPanelInstances.Name = "flowLayoutPanelInstances";
+            flowLayoutPanelInstances.Size = new Size(1404, 788);
+            flowLayoutPanelInstances.TabIndex = 2;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 14F);
+            label14.Location = new Point(3, 0);
+            label14.Name = "label14";
+            label14.Size = new Size(336, 32);
+            label14.TabIndex = 0;
+            label14.Text = "Not available in alpha verision";
+            // 
             // tabPage3
             // 
             tabPage3.BackColor = Color.Silver;
@@ -918,7 +934,7 @@
             tabPage3.Name = "tabPage3";
             tabPage3.Size = new Size(1416, 822);
             tabPage3.TabIndex = 2;
-            tabPage3.Text = "Schedule Editor";
+            tabPage3.Text = "Schedule Editor (N/A)";
             // 
             // buttonShowDates
             // 
@@ -1383,10 +1399,6 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
-            flowLayoutPanelInstances.ResumeLayout(false);
-            flowLayoutPanelInstances.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -1405,6 +1417,10 @@
             groupBox1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            flowLayoutPanelInstances.ResumeLayout(false);
+            flowLayoutPanelInstances.PerformLayout();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             panel7.ResumeLayout(false);
@@ -1439,8 +1455,8 @@
         private TabPage tabPage2;
         private ToolStripMenuItem addInstanceToolStripMenuItem;
         private ToolStripMenuItem stopAllInstancesToolStripMenuItem;
-        private ToolStripMenuItem importToolStripMenuItem;
-        private ToolStripMenuItem exportToolStripMenuItem;
+        private ToolStripMenuItem settingsToolStripMenuItem;
+        private ToolStripMenuItem updateToolStripMenuItem;
         private ToolStripMenuItem visitWebsiteToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private TextBox textBoxDestinationPath;
@@ -1533,5 +1549,6 @@
         private Label label14;
         private Label label15;
         private ToolStripMenuItem SingleExecutiontoolStripMenuItem;
+        private ToolStripMenuItem helpToolStripMenuItem1;
     }
 }
