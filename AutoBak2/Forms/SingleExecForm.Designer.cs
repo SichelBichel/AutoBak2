@@ -50,6 +50,7 @@
             comboBoxJobSelection.Name = "comboBoxJobSelection";
             comboBoxJobSelection.Size = new Size(276, 28);
             comboBoxJobSelection.TabIndex = 0;
+            comboBoxJobSelection.Click += comboBoxJobSelection_Click;
             // 
             // imageListHighQualityIcons
             // 

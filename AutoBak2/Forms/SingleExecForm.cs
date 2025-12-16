@@ -92,5 +92,10 @@ namespace AutoBak2.Forms
                 }
             });
         }
+
+        private void comboBoxJobSelection_Click(object sender, EventArgs e)
+        {
+            LoadJobSelectionComboBox();
+        }
     }
 }

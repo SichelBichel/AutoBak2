@@ -26,7 +26,7 @@ namespace AutoBak2.Utils
 
                 if (config.ArchiveEnabled)
                 {
-                    CreateArchiveJob(config, finalTargetPath); // ADD PROGRESS LATER ON
+                    CreateArchiveJob(config, finalTargetPath, progress); // ADD PROGRESS LATER ON
                 }
                 else
                 {
@@ -65,9 +65,9 @@ namespace AutoBak2.Utils
                 targetDirectoryName = config.Name;
             }
 
-            string timestamp = DateTime.Now.ToString("yyyy_MM_dd_HH_mm");
+            string timestamp = DateTime.Now.ToString("yyyy-MM-dd-HH-mm");
 
-            string finalSubdirectoryName = $"{timestamp}___{targetDirectoryName}";
+            string finalSubdirectoryName = $"{timestamp}__{targetDirectoryName}";
 
             string finalTargetPath = Path.Combine(baseTarget, finalSubdirectoryName);
 
@@ -75,9 +75,6 @@ namespace AutoBak2.Utils
         }
 
 
-        // -------------------------------------------------------------
-        // Hilfsmethode 2: Direkte Verzeichnis-Kopie (ohne Archivierung)
-        // -------------------------------------------------------------
         private static void CopyDirectoryJob(JobConfig config, string finalTargetPath, IProgress<JobProgressData> progress)
         {
             Directory.CreateDirectory(finalTargetPath);
@@ -206,7 +203,7 @@ namespace AutoBak2.Utils
         //# ADD INSTANCED PROGRESS FORM HERE
         //##################################################################
 
-        private static void CreateArchiveJob(JobConfig config, string finalTargetPath)
+        private static void CreateArchiveJob(JobConfig config, string finalTargetPath, IProgress<JobProgressData> progress)
         {
             if (config.ArchiveType != JobConfig.ArchiveFormat.Zip)
             {
@@ -229,6 +226,10 @@ namespace AutoBak2.Utils
 
             try
             {
+                // NEU: Dateien zählen für Progress
+                int totalFiles = CountFiles(config.SourcePath, config.ExcludedItems);
+                int currentFileCount = 0;
+
                 using (FileStream zipStream = new FileStream(fullArchivePath, FileMode.Create))
                 using (ZipArchive archive = new ZipArchive(zipStream, ZipArchiveMode.Create))
                 {
@@ -236,12 +237,14 @@ namespace AutoBak2.Utils
                         sourcePath: config.SourcePath,
                         archive: archive,
                         exclusions: config.ExcludedItems,
-                        rootPath: config.SourcePath
+                        rootPath: config.SourcePath,
+                        currentFileCount: ref currentFileCount, 
+                        totalFileCount: totalFiles,              
+                        progress: progress                      
                     );
                 }
 
-                MessageHandler.DisplayInfoBox("Archive Success",
-                    $"Filtered ZIP archive created successfully at: {fullArchivePath}.");
+                //MessageHandler.DisplayInfoBox("Archive Success", $"Filtered ZIP archive created successfully at: {fullArchivePath}.");
             }
             catch (Exception ex)
             {
@@ -250,7 +253,14 @@ namespace AutoBak2.Utils
             }
         }
 
-        private static void AddFilesToZipRecursive(string sourcePath, ZipArchive archive, List<string> exclusions, string rootPath)
+        private static void AddFilesToZipRecursive(
+            string sourcePath,
+            ZipArchive archive,
+            List<string> exclusions,
+            string rootPath,
+            ref int currentFileCount,           // NEU
+            int totalFileCount,                 // NEU
+            IProgress<JobProgressData> progress = null)  // NEU
         {
             string normalizedSourcePath = sourcePath.TrimEnd(Path.DirectorySeparatorChar);
 
@@ -267,8 +277,22 @@ namespace AutoBak2.Utils
                     if (!isExcluded(filePath))
                     {
                         string entryName = filePath.Substring(rootPath.Length).TrimStart(Path.DirectorySeparatorChar);
+                        string fileName = Path.GetFileName(filePath);
 
                         archive.CreateEntryFromFile(filePath, entryName, CompressionLevel.Fastest);
+
+                        // Progress-Update
+                        currentFileCount++;
+                        if (progress != null && totalFileCount > 0)
+                        {
+                            int percentage = (int)((currentFileCount / (double)totalFileCount) * 100);
+                            progress.Report(new JobProgressData
+                            {
+                                ProgressPercentage = Math.Min(percentage, 100),
+                                CurrentFile = fileName,
+                                IsComplete = false
+                            });
+                        }
                     }
                 }
             }
@@ -277,15 +301,13 @@ namespace AutoBak2.Utils
                 Console.WriteLine($"Error adding files in {normalizedSourcePath}: {ex.Message}");
             }
 
-
-            // 2. Unterverzeichnisse rekursiv verarbeiten
             try
             {
                 foreach (string subDirPath in Directory.GetDirectories(normalizedSourcePath))
                 {
                     if (!isExcluded(subDirPath))
                     {
-                        AddFilesToZipRecursive(subDirPath, archive, exclusions, rootPath);
+                        AddFilesToZipRecursive(subDirPath, archive, exclusions, rootPath, ref currentFileCount, totalFileCount, progress);
                     }
                 }
             }
