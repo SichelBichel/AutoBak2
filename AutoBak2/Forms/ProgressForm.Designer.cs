@@ -141,6 +141,7 @@
             // 
             richTextBoxLog.Location = new Point(12, 92);
             richTextBoxLog.Name = "richTextBoxLog";
+            richTextBoxLog.ReadOnly = true;
             richTextBoxLog.Size = new Size(763, 333);
             richTextBoxLog.TabIndex = 11;
             richTextBoxLog.Text = "";

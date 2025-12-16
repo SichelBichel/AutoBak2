@@ -73,10 +73,12 @@ namespace AutoBak2.Forms
                 {
                     progressForm.Invoke((MethodInvoker)delegate
                     {
-                        progressForm.richTextBoxLog.Text += Environment.NewLine + data.CurrentFile;
+                        progressForm.richTextBoxLog.AppendText(Environment.NewLine + data.CurrentFile);
                         progressForm.Text = "Copying Files:  "+selectedJobName;
                         progressForm.progressBar.Value = data.ProgressPercentage;
                         progressForm.labelCurrentFile.Text = data.CurrentFile;
+                        progressForm.richTextBoxLog.SelectionStart = progressForm.richTextBoxLog.Text.Length;
+                        progressForm.richTextBoxLog.ScrollToCaret();
                     });
                 }
             });
