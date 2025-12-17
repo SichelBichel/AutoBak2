@@ -186,20 +186,20 @@
             // 
             SingleExecutiontoolStripMenuItem.Image = Properties.Resources.icon_blitz;
             SingleExecutiontoolStripMenuItem.Name = "SingleExecutiontoolStripMenuItem";
-            SingleExecutiontoolStripMenuItem.Size = new Size(224, 26);
+            SingleExecutiontoolStripMenuItem.Size = new Size(209, 26);
             SingleExecutiontoolStripMenuItem.Text = "Single Execution";
             SingleExecutiontoolStripMenuItem.Click += SingleExecutiontoolStripMenuItem_Click;
             // 
             // addInstanceToolStripMenuItem
             // 
             addInstanceToolStripMenuItem.Name = "addInstanceToolStripMenuItem";
-            addInstanceToolStripMenuItem.Size = new Size(224, 26);
+            addInstanceToolStripMenuItem.Size = new Size(209, 26);
             addInstanceToolStripMenuItem.Text = "Add Instance";
             // 
             // stopAllInstancesToolStripMenuItem
             // 
             stopAllInstancesToolStripMenuItem.Name = "stopAllInstancesToolStripMenuItem";
-            stopAllInstancesToolStripMenuItem.Size = new Size(224, 26);
+            stopAllInstancesToolStripMenuItem.Size = new Size(209, 26);
             stopAllInstancesToolStripMenuItem.Text = "Stop All Instances";
             // 
             // optionsToolStripMenuItem
@@ -215,7 +215,7 @@
             // 
             settingsToolStripMenuItem.Image = Properties.Resources.icon_settings;
             settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            settingsToolStripMenuItem.Size = new Size(224, 26);
+            settingsToolStripMenuItem.Size = new Size(207, 26);
             settingsToolStripMenuItem.Text = "Settings";
             settingsToolStripMenuItem.Click += importToolStripMenuItem_Click;
             // 
@@ -223,7 +223,7 @@
             // 
             updateToolStripMenuItem.Image = Properties.Resources.icon_reload;
             updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            updateToolStripMenuItem.Size = new Size(224, 26);
+            updateToolStripMenuItem.Size = new Size(207, 26);
             updateToolStripMenuItem.Text = "Check for Update";
             // 
             // helpToolStripMenuItem
@@ -237,7 +237,7 @@
             // 
             visitWebsiteToolStripMenuItem.Image = Properties.Resources.icon_website;
             visitWebsiteToolStripMenuItem.Name = "visitWebsiteToolStripMenuItem";
-            visitWebsiteToolStripMenuItem.Size = new Size(224, 26);
+            visitWebsiteToolStripMenuItem.Size = new Size(177, 26);
             visitWebsiteToolStripMenuItem.Text = "Visit Website";
             visitWebsiteToolStripMenuItem.Click += visitWebsiteToolStripMenuItem_Click;
             // 
@@ -245,7 +245,7 @@
             // 
             aboutToolStripMenuItem.Image = Properties.Resources.icon_information;
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(224, 26);
+            aboutToolStripMenuItem.Size = new Size(177, 26);
             aboutToolStripMenuItem.Text = "About";
             aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
@@ -253,7 +253,7 @@
             // 
             helpToolStripMenuItem1.Image = Properties.Resources.icon_help;
             helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            helpToolStripMenuItem1.Size = new Size(224, 26);
+            helpToolStripMenuItem1.Size = new Size(177, 26);
             helpToolStripMenuItem1.Text = "Help";
             helpToolStripMenuItem1.Click += helpToolStripMenuItem1_Click;
             // 
@@ -1395,7 +1395,7 @@
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             Name = "MainForm";
-            Text = "AutoBak 2 [0.0.1]";
+            Text = "AutoBak 2 [0.0.2]";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
