@@ -8,6 +8,7 @@ using AutoBak2.Utils;
 
 namespace AutoBak2.Utils
 {
+
     public static class JobExecutor
     {
         public static void ExecuteJob(JobConfig config, IProgress<JobProgressData> progress, CancellationToken ct)
@@ -91,6 +92,7 @@ namespace AutoBak2.Utils
             string normalizedSourceDir = sourceDir.TrimEnd(Path.DirectorySeparatorChar);
             string normalizedTargetDir = targetDir.TrimEnd(Path.DirectorySeparatorChar);
 
+
             Func<string, bool> isExcluded = (path) =>
             {
                 string normalizedPath = path.TrimEnd(Path.DirectorySeparatorChar);
@@ -101,6 +103,8 @@ namespace AutoBak2.Utils
             {
                 Directory.CreateDirectory(normalizedTargetDir);
             }
+
+            int lastReportedPercentage = -1;
 
             try
             {
@@ -118,13 +122,19 @@ namespace AutoBak2.Utils
                         currentFileCount++;
                         if (progress != null && totalFileCount > 0)
                         {
+
                             int percentage = (int)((currentFileCount / (double)totalFileCount) * 100);
-                            progress.Report(new JobProgressData
-                            {
-                                ProgressPercentage = Math.Min(percentage, 100),
-                                CurrentFile = fileName,
-                                IsComplete = false
-                            });
+                            
+                            if (percentage > lastReportedPercentage)
+                                {
+                                lastReportedPercentage = percentage;
+                                progress.Report(new JobProgressData
+                                {
+                                    ProgressPercentage = Math.Min(percentage, 100),
+                                    CurrentFile = fileName,
+                                    IsComplete = false
+                                });
+                            }  
                         }
                     }
                 }
