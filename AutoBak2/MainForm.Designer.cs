@@ -134,6 +134,8 @@
             numericUpDown2 = new NumericUpDown();
             monthCalendarStart = new MonthCalendar();
             numericUpDown1 = new NumericUpDown();
+            tabPage4 = new TabPage();
+            label16 = new Label();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -160,6 +162,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            tabPage4.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -186,20 +189,20 @@
             // 
             SingleExecutiontoolStripMenuItem.Image = Properties.Resources.icon_blitz;
             SingleExecutiontoolStripMenuItem.Name = "SingleExecutiontoolStripMenuItem";
-            SingleExecutiontoolStripMenuItem.Size = new Size(209, 26);
+            SingleExecutiontoolStripMenuItem.Size = new Size(224, 26);
             SingleExecutiontoolStripMenuItem.Text = "Single Execution";
             SingleExecutiontoolStripMenuItem.Click += SingleExecutiontoolStripMenuItem_Click;
             // 
             // addInstanceToolStripMenuItem
             // 
             addInstanceToolStripMenuItem.Name = "addInstanceToolStripMenuItem";
-            addInstanceToolStripMenuItem.Size = new Size(209, 26);
+            addInstanceToolStripMenuItem.Size = new Size(224, 26);
             addInstanceToolStripMenuItem.Text = "Add Instance";
             // 
             // stopAllInstancesToolStripMenuItem
             // 
             stopAllInstancesToolStripMenuItem.Name = "stopAllInstancesToolStripMenuItem";
-            stopAllInstancesToolStripMenuItem.Size = new Size(209, 26);
+            stopAllInstancesToolStripMenuItem.Size = new Size(224, 26);
             stopAllInstancesToolStripMenuItem.Text = "Stop All Instances";
             // 
             // optionsToolStripMenuItem
@@ -262,6 +265,7 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPage4);
             tabControl1.Location = new Point(14, 36);
             tabControl1.Margin = new Padding(3, 4, 3, 4);
             tabControl1.Name = "tabControl1";
@@ -1381,6 +1385,25 @@
             numericUpDown1.TabIndex = 7;
             numericUpDown1.Value = new decimal(new int[] { 12, 0, 0, 0 });
             // 
+            // tabPage4
+            // 
+            tabPage4.Controls.Add(label16);
+            tabPage4.Location = new Point(4, 29);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Size = new Size(1416, 822);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Reminder Editor";
+            tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(334, 337);
+            label16.Name = "label16";
+            label16.Size = new Size(637, 20);
+            label16.TabIndex = 0;
+            label16.Text = "Hallo Mach hie sones ding dasme cha reminder ihsteue das es eim nid bim wärche dri piggeret";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1440,6 +1463,8 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1550,5 +1575,7 @@
         private Label label15;
         private ToolStripMenuItem SingleExecutiontoolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem1;
+        private TabPage tabPage4;
+        private Label label16;
     }
 }
