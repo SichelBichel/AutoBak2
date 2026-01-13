@@ -7,6 +7,7 @@ namespace AutoBak2
 {
     public partial class MainForm : Form
     {
+        public bool flipFlop = false;
         public MainForm()
         {
             InitializeComponent();
@@ -439,6 +440,16 @@ namespace AutoBak2
         {
             SettingsForm settingsForm = new SettingsForm();
             settingsForm.Show();
+        }
+
+        private void ClearWeekdayCheckboxes(object sender, EventArgs e)
+        {
+            flipFlop = !flipFlop;
+
+            for (int i = 0; i < checkedListBoxWeekdays.Items.Count; i++)
+            {
+                checkedListBoxWeekdays.SetItemChecked(i, flipFlop);
+            }
         }
     }
 }

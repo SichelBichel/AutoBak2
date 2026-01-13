@@ -35,6 +35,7 @@
             SingleExecutiontoolStripMenuItem = new ToolStripMenuItem();
             addInstanceToolStripMenuItem = new ToolStripMenuItem();
             stopAllInstancesToolStripMenuItem = new ToolStripMenuItem();
+            actionsToolStripMenuItem = new ToolStripMenuItem();
             optionsToolStripMenuItem = new ToolStripMenuItem();
             settingsToolStripMenuItem = new ToolStripMenuItem();
             updateToolStripMenuItem = new ToolStripMenuItem();
@@ -119,6 +120,7 @@
             radioButtonUseWeekdays = new RadioButton();
             radioButtonUseInterval = new RadioButton();
             groupBox9 = new GroupBox();
+            buttonWeekdaysClear = new Button();
             checkedListBoxWeekdays = new CheckedListBox();
             groupBox8 = new GroupBox();
             textBox3 = new TextBox();
@@ -179,7 +181,7 @@
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { SingleExecutiontoolStripMenuItem, addInstanceToolStripMenuItem, stopAllInstancesToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { SingleExecutiontoolStripMenuItem, addInstanceToolStripMenuItem, stopAllInstancesToolStripMenuItem, actionsToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(72, 24);
             fileToolStripMenuItem.Text = "Actions";
@@ -189,21 +191,27 @@
             // 
             SingleExecutiontoolStripMenuItem.Image = Properties.Resources.icon_blitz;
             SingleExecutiontoolStripMenuItem.Name = "SingleExecutiontoolStripMenuItem";
-            SingleExecutiontoolStripMenuItem.Size = new Size(224, 26);
+            SingleExecutiontoolStripMenuItem.Size = new Size(209, 26);
             SingleExecutiontoolStripMenuItem.Text = "Single Execution";
             SingleExecutiontoolStripMenuItem.Click += SingleExecutiontoolStripMenuItem_Click;
             // 
             // addInstanceToolStripMenuItem
             // 
             addInstanceToolStripMenuItem.Name = "addInstanceToolStripMenuItem";
-            addInstanceToolStripMenuItem.Size = new Size(224, 26);
+            addInstanceToolStripMenuItem.Size = new Size(209, 26);
             addInstanceToolStripMenuItem.Text = "Add Instance";
             // 
             // stopAllInstancesToolStripMenuItem
             // 
             stopAllInstancesToolStripMenuItem.Name = "stopAllInstancesToolStripMenuItem";
-            stopAllInstancesToolStripMenuItem.Size = new Size(224, 26);
+            stopAllInstancesToolStripMenuItem.Size = new Size(209, 26);
             stopAllInstancesToolStripMenuItem.Text = "Stop All Instances";
+            // 
+            // actionsToolStripMenuItem
+            // 
+            actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
+            actionsToolStripMenuItem.Size = new Size(209, 26);
+            actionsToolStripMenuItem.Text = "Actions";
             // 
             // optionsToolStripMenuItem
             // 
@@ -1169,7 +1177,7 @@
             // 
             // monthCalendarEnd
             // 
-            monthCalendarEnd.Location = new Point(11, 9);
+            monthCalendarEnd.Location = new Point(22, 9);
             monthCalendarEnd.Name = "monthCalendarEnd";
             monthCalendarEnd.TabIndex = 4;
             // 
@@ -1221,13 +1229,26 @@
             // 
             // groupBox9
             // 
+            groupBox9.Controls.Add(buttonWeekdaysClear);
             groupBox9.Controls.Add(checkedListBoxWeekdays);
-            groupBox9.Location = new Point(15, 331);
+            groupBox9.Location = new Point(15, 310);
             groupBox9.Name = "groupBox9";
-            groupBox9.Size = new Size(133, 192);
+            groupBox9.Size = new Size(133, 233);
             groupBox9.TabIndex = 17;
             groupBox9.TabStop = false;
             groupBox9.Text = "Every";
+            // 
+            // buttonWeekdaysClear
+            // 
+            buttonWeekdaysClear.BackColor = SystemColors.Control;
+            buttonWeekdaysClear.ForeColor = SystemColors.ActiveCaptionText;
+            buttonWeekdaysClear.Location = new Point(19, 192);
+            buttonWeekdaysClear.Name = "buttonWeekdaysClear";
+            buttonWeekdaysClear.Size = new Size(94, 29);
+            buttonWeekdaysClear.TabIndex = 10;
+            buttonWeekdaysClear.Text = "Swap";
+            buttonWeekdaysClear.UseVisualStyleBackColor = false;
+            buttonWeekdaysClear.Click += ClearWeekdayCheckboxes;
             // 
             // checkedListBoxWeekdays
             // 
@@ -1245,9 +1266,9 @@
             groupBox8.Controls.Add(radioButtonMinutes);
             groupBox8.Controls.Add(radioButton2);
             groupBox8.Controls.Add(radioButton1);
-            groupBox8.Location = new Point(15, 155);
+            groupBox8.Location = new Point(15, 130);
             groupBox8.Name = "groupBox8";
-            groupBox8.Size = new Size(133, 170);
+            groupBox8.Size = new Size(133, 178);
             groupBox8.TabIndex = 16;
             groupBox8.TabStop = false;
             groupBox8.Text = "Every";
@@ -1372,7 +1393,7 @@
             // 
             // monthCalendarStart
             // 
-            monthCalendarStart.Location = new Point(11, 9);
+            monthCalendarStart.Location = new Point(23, 9);
             monthCalendarStart.Name = "monthCalendarStart";
             monthCalendarStart.TabIndex = 4;
             // 
@@ -1387,22 +1408,22 @@
             // 
             // tabPage4
             // 
+            tabPage4.BackColor = Color.Silver;
             tabPage4.Controls.Add(label16);
             tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
             tabPage4.Size = new Size(1416, 822);
             tabPage4.TabIndex = 3;
-            tabPage4.Text = "Reminder Editor";
-            tabPage4.UseVisualStyleBackColor = true;
+            tabPage4.Text = "Reminder Editor (DEPRECATED)";
             // 
             // label16
             // 
             label16.AutoSize = true;
             label16.Location = new Point(334, 337);
             label16.Name = "label16";
-            label16.Size = new Size(637, 20);
+            label16.Size = new Size(980, 20);
             label16.TabIndex = 0;
-            label16.Text = "Hallo Mach hie sones ding dasme cha reminder ihsteue das es eim nid bim wärche dri piggeret";
+            label16.Text = "Hallo Mach hie sones ding dasme cha reminder ihsteue das es eim nid bim wärche dri piggeret // Nevermind mach das eifach bim instance creator";
             // 
             // MainForm
             // 
@@ -1577,5 +1598,7 @@
         private ToolStripMenuItem helpToolStripMenuItem1;
         private TabPage tabPage4;
         private Label label16;
+        private Button buttonWeekdaysClear;
+        private ToolStripMenuItem actionsToolStripMenuItem;
     }
 }
