@@ -138,6 +138,7 @@
             numericUpDown1 = new NumericUpDown();
             tabPage4 = new TabPage();
             label16 = new Label();
+            tabPage5 = new TabPage();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -191,26 +192,26 @@
             // 
             SingleExecutiontoolStripMenuItem.Image = Properties.Resources.icon_blitz;
             SingleExecutiontoolStripMenuItem.Name = "SingleExecutiontoolStripMenuItem";
-            SingleExecutiontoolStripMenuItem.Size = new Size(209, 26);
+            SingleExecutiontoolStripMenuItem.Size = new Size(224, 26);
             SingleExecutiontoolStripMenuItem.Text = "Single Execution";
             SingleExecutiontoolStripMenuItem.Click += SingleExecutiontoolStripMenuItem_Click;
             // 
             // addInstanceToolStripMenuItem
             // 
             addInstanceToolStripMenuItem.Name = "addInstanceToolStripMenuItem";
-            addInstanceToolStripMenuItem.Size = new Size(209, 26);
+            addInstanceToolStripMenuItem.Size = new Size(224, 26);
             addInstanceToolStripMenuItem.Text = "Add Instance";
             // 
             // stopAllInstancesToolStripMenuItem
             // 
             stopAllInstancesToolStripMenuItem.Name = "stopAllInstancesToolStripMenuItem";
-            stopAllInstancesToolStripMenuItem.Size = new Size(209, 26);
+            stopAllInstancesToolStripMenuItem.Size = new Size(224, 26);
             stopAllInstancesToolStripMenuItem.Text = "Stop All Instances";
             // 
             // actionsToolStripMenuItem
             // 
             actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
-            actionsToolStripMenuItem.Size = new Size(209, 26);
+            actionsToolStripMenuItem.Size = new Size(224, 26);
             actionsToolStripMenuItem.Text = "Actions";
             // 
             // optionsToolStripMenuItem
@@ -274,6 +275,7 @@
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
+            tabControl1.Controls.Add(tabPage5);
             tabControl1.Location = new Point(14, 36);
             tabControl1.Margin = new Padding(3, 4, 3, 4);
             tabControl1.Name = "tabControl1";
@@ -1425,6 +1427,15 @@
             label16.TabIndex = 0;
             label16.Text = "Hallo Mach hie sones ding dasme cha reminder ihsteue das es eim nid bim wärche dri piggeret // Nevermind mach das eifach bim instance creator";
             // 
+            // tabPage5
+            // 
+            tabPage5.BackColor = Color.Silver;
+            tabPage5.Location = new Point(4, 29);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Size = new Size(1416, 822);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "Group Editor";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1439,7 +1450,7 @@
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             Name = "MainForm";
-            Text = "AutoBak 2 [0.0.2]";
+            Text = "AutoBak 2 [0.0.3]";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
@@ -1600,5 +1611,6 @@
         private Label label16;
         private Button buttonWeekdaysClear;
         private ToolStripMenuItem actionsToolStripMenuItem;
+        private TabPage tabPage5;
     }
 }
