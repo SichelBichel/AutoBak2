@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             label1 = new Label();
             label2 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -40,7 +42,7 @@
             label1.Name = "label1";
             label1.Size = new Size(136, 20);
             label1.TabIndex = 0;
-            label1.Text = "Version Alpha_0.0.1";
+            label1.Text = "Version Alpha_0.0.3";
             // 
             // label2
             // 
@@ -51,17 +53,30 @@
             label2.TabIndex = 1;
             label2.Text = "© 2026 ReHoGa Interactive, AutoBak 2™";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top;
+            pictureBox1.Image = Properties.Resources.ReHoGaBanner3_0_Transparent;
+            pictureBox1.Location = new Point(276, 22);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(243, 111);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            // 
             // AboutForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AboutForm";
             Text = "About";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -70,5 +85,6 @@
 
         private Label label1;
         private Label label2;
+        private PictureBox pictureBox1;
     }
 }

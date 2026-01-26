@@ -119,5 +119,15 @@ namespace AutoBak2.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ReHoGaBanner3_0_Transparent {
+            get {
+                object obj = ResourceManager.GetObject("ReHoGaBanner3.0_Transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
