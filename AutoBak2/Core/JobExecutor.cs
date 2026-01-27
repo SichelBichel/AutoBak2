@@ -98,33 +98,40 @@ namespace AutoBak2.Utils
             Directory.CreateDirectory(finalTargetPath);
             int currentFileCount = 0;
 
-            // EnumerateFiles ist der Schlüssel: Es liefert die erste Datei SOFORT.
-            // SearchOption.AllDirectories ersetzt die manuelle Rekursion für den flachen Parallel-Ansatz.
             var allFiles = Directory.EnumerateFiles(config.SourcePath, "*", SearchOption.AllDirectories);
 
             Parallel.ForEach(allFiles, new ParallelOptions { MaxDegreeOfParallelism = 10, CancellationToken = ct }, filePath =>
             {
-                // Deine vorhandene Exclusion-Logik (muss evtl. kurz als Helper greifbar sein)
-                if (IsManualExcluded(filePath, config.ExcludedItems)) return;
-
-                string relativePath = Path.GetRelativePath(config.SourcePath, filePath);
-                string targetFilePath = Path.Combine(finalTargetPath, relativePath);
-
-                // Verzeichnis am Ziel erstellen (Thread-safe)
-                string targetDir = Path.GetDirectoryName(targetFilePath);
-                if (!Directory.Exists(targetDir)) Directory.CreateDirectory(targetDir);
-
-                // Kopieren - hier wird die Latenz durch Parallelität "versteckt"
-                File.Copy(filePath, targetFilePath, true);
-
-                // Progress melden
-                Interlocked.Increment(ref currentFileCount);
-                progress?.Report(new JobProgressData
+                try
                 {
-                    ProgressPercentage = 0, // Wir verzichten auf CountFiles, daher keine %
-                    CurrentFile = Path.GetFileName(filePath),
-                    IsComplete = false
-                });
+                    // Deine vorhandene Exclusion-Logik (muss evtl. kurz als Helper greifbar sein)
+                    if (IsManualExcluded(filePath, config.ExcludedItems)) return;
+
+                    string relativePath = Path.GetRelativePath(config.SourcePath, filePath);
+                    string targetFilePath = Path.Combine(finalTargetPath, relativePath);
+
+                    // Verzeichnis am Ziel erstellen (Thread-safe)
+                    string targetDir = Path.GetDirectoryName(targetFilePath);
+                    if (!Directory.Exists(targetDir)) Directory.CreateDirectory(targetDir);
+
+                    File.Copy(filePath, targetFilePath, true);
+
+                    Interlocked.Increment(ref currentFileCount);
+                    progress?.Report(new JobProgressData
+                    {
+                        ProgressPercentage = 0,
+                        CurrentFile = Path.GetFileName(filePath),
+                        IsComplete = false
+                    });
+                }
+                catch (IOException ex) when ((uint)ex.HResult == 0x80070001)
+                {
+                    progress?.Report(new JobProgressData { CurrentFile = "SKIP (Google Link): " + Path.GetFileName(filePath) });
+                }
+                catch (Exception ex)
+                {
+                    MessageHandler.DisplayErrorBox("ERROR", ex.Message);
+                }
             });
         }
 
