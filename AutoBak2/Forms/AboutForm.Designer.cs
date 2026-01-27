@@ -42,7 +42,7 @@
             label1.Name = "label1";
             label1.Size = new Size(136, 20);
             label1.TabIndex = 0;
-            label1.Text = "Version Alpha_0.0.3";
+            label1.Text = "Version Alpha_0.0.4";
             // 
             // label2
             // 
