@@ -59,6 +59,11 @@ namespace AutoBak2.Forms
             _cts = new CancellationTokenSource();
 
             ProgressForm progressForm = new ProgressForm();
+            if (config.CloudMode)
+            {
+                progressForm.progressBar.Style = ProgressBarStyle.Marquee;
+                progressForm.progressBar.MarqueeAnimationSpeed = 30;
+            }
             progressForm.Show();
 
             progressForm.JobAborted += (s, ev) =>
@@ -80,7 +85,11 @@ namespace AutoBak2.Forms
                         }
                         progressForm.richTextBoxLog.AppendText(Environment.NewLine + data.CurrentFile);
                         progressForm.Text = "Copying Files:  "+selectedJobName;
-                        progressForm.progressBar.Value = data.ProgressPercentage;
+                        // ONLY UPDATE IF NOT CLOUDMODE
+                        if (!config.CloudMode)
+                        {
+                            progressForm.progressBar.Value = data.ProgressPercentage;
+                        }
                         progressForm.labelCurrentFile.Text = data.CurrentFile;
                         progressForm.richTextBoxLog.SelectionStart = progressForm.richTextBoxLog.Text.Length;
                         progressForm.richTextBoxLog.ScrollToCaret();

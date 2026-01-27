@@ -29,11 +29,23 @@ namespace AutoBak2.Utils
                 }
                 else
                 {
-                    CopyDirectoryJob(config, finalTargetPath, progress, ct); 
+                    //cloud
+                    if (config.CloudMode)
+                        {
+                            CopyDirectoryCloudParallel(config, finalTargetPath, progress, ct);
+                        }
+                    else
+                    //Default (not cloud)
+                        {
+                            CopyDirectoryJob(config, finalTargetPath, progress, ct);
+                        }
                 }
 
+            if (!ct.IsCancellationRequested)
+            {
                 MessageHandler.DisplayInfoBox("Job Success", $"Job '{config.Name}' completed successfully!");
             }
+        }
 
         private static string DetermineFinalTargetPath(JobConfig config)
         {
