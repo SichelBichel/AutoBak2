@@ -198,6 +198,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Silver;
             ClientSize = new Size(637, 308);
             Controls.Add(label4);
             Controls.Add(linkLabelBrowseToDestination);

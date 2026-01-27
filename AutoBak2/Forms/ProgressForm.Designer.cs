@@ -139,6 +139,8 @@
             // 
             // richTextBoxLog
             // 
+            richTextBoxLog.BackColor = SystemColors.ActiveCaptionText;
+            richTextBoxLog.ForeColor = Color.White;
             richTextBoxLog.Location = new Point(12, 92);
             richTextBoxLog.Name = "richTextBoxLog";
             richTextBoxLog.ReadOnly = true;
@@ -150,6 +152,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Silver;
             ClientSize = new Size(787, 492);
             Controls.Add(richTextBoxLog);
             Controls.Add(labelCurrentFile);
