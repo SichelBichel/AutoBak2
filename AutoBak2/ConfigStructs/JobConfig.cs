@@ -51,6 +51,8 @@ namespace AutoBak2.ConfigStructs
         [XmlElement("SourcePath")]
         public string SourcePath { get; set; } = string.Empty;
 
+        public bool CloudMode { get; set; } = false;
+
         // --- Exklusions-Einstellungen ---
 
         [XmlArray("Exclusions")]

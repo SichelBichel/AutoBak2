@@ -54,6 +54,8 @@ namespace AutoBak2
 
             checkBoxArchive.Checked = config.ArchiveEnabled;
 
+            checkBoxCloudMode.Checked = config.CloudMode;
+
             checkBoxUseSourcedirectoryName.Checked = config.UseSourcedirectoryName;
 
             radioButtonZip.Checked = false;
@@ -146,7 +148,7 @@ namespace AutoBak2
             job.CreateSubdirectory = checkBoxCreateSubdirectory.Checked;
             job.SubdirectoryName = textBoxSubdirectoryName.Text.Trim();
             job.UseSourcedirectoryName = checkBoxUseSourcedirectoryName.Checked;
-
+            job.CloudMode = checkBoxCloudMode.Checked;
             job.ExcludedItems = new List<string>();
             foreach (Control control in flowLayoutPanelExclusions.Controls)
             {

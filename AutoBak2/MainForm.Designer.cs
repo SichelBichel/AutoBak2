@@ -68,6 +68,7 @@
             label12 = new Label();
             comboBoxJobSelection = new ComboBox();
             groupBox2 = new GroupBox();
+            checkBoxCloudMode = new CheckBox();
             label7 = new Label();
             panel3 = new Panel();
             buttonDeleteExclusions = new Button();
@@ -192,26 +193,26 @@
             // 
             SingleExecutiontoolStripMenuItem.Image = Properties.Resources.icon_blitz;
             SingleExecutiontoolStripMenuItem.Name = "SingleExecutiontoolStripMenuItem";
-            SingleExecutiontoolStripMenuItem.Size = new Size(224, 26);
+            SingleExecutiontoolStripMenuItem.Size = new Size(209, 26);
             SingleExecutiontoolStripMenuItem.Text = "Single Execution";
             SingleExecutiontoolStripMenuItem.Click += SingleExecutiontoolStripMenuItem_Click;
             // 
             // addInstanceToolStripMenuItem
             // 
             addInstanceToolStripMenuItem.Name = "addInstanceToolStripMenuItem";
-            addInstanceToolStripMenuItem.Size = new Size(224, 26);
+            addInstanceToolStripMenuItem.Size = new Size(209, 26);
             addInstanceToolStripMenuItem.Text = "Add Instance";
             // 
             // stopAllInstancesToolStripMenuItem
             // 
             stopAllInstancesToolStripMenuItem.Name = "stopAllInstancesToolStripMenuItem";
-            stopAllInstancesToolStripMenuItem.Size = new Size(224, 26);
+            stopAllInstancesToolStripMenuItem.Size = new Size(209, 26);
             stopAllInstancesToolStripMenuItem.Text = "Stop All Instances";
             // 
             // actionsToolStripMenuItem
             // 
             actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
-            actionsToolStripMenuItem.Size = new Size(224, 26);
+            actionsToolStripMenuItem.Size = new Size(209, 26);
             actionsToolStripMenuItem.Text = "Actions";
             // 
             // optionsToolStripMenuItem
@@ -604,6 +605,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(checkBoxCloudMode);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(panel3);
             groupBox2.Controls.Add(buttonSelectSourcePath);
@@ -617,6 +619,16 @@
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Source";
+            // 
+            // checkBoxCloudMode
+            // 
+            checkBoxCloudMode.AutoSize = true;
+            checkBoxCloudMode.Location = new Point(117, 24);
+            checkBoxCloudMode.Name = "checkBoxCloudMode";
+            checkBoxCloudMode.Size = new Size(113, 24);
+            checkBoxCloudMode.TabIndex = 60;
+            checkBoxCloudMode.Text = "Cloud Mode";
+            checkBoxCloudMode.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -1450,7 +1462,7 @@
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             Name = "MainForm";
-            Text = "AutoBak 2 [0.0.3]";
+            Text = "AutoBak 2 [0.0.4]";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
@@ -1612,5 +1624,6 @@
         private Button buttonWeekdaysClear;
         private ToolStripMenuItem actionsToolStripMenuItem;
         private TabPage tabPage5;
+        private CheckBox checkBoxCloudMode;
     }
 }

@@ -80,6 +80,50 @@ namespace AutoBak2.Utils
             CopyDirectoryRecursive(config.SourcePath, finalTargetPath, config.ExcludedItems, ref currentFileCount, totalFiles, ct, progress);
         }
 
+
+        private static void CopyDirectoryCloudParallel(JobConfig config, string finalTargetPath, IProgress<JobProgressData> progress, CancellationToken ct)
+        {
+            Directory.CreateDirectory(finalTargetPath);
+            int currentFileCount = 0;
+
+            // EnumerateFiles ist der Schlüssel: Es liefert die erste Datei SOFORT.
+            // SearchOption.AllDirectories ersetzt die manuelle Rekursion für den flachen Parallel-Ansatz.
+            var allFiles = Directory.EnumerateFiles(config.SourcePath, "*", SearchOption.AllDirectories);
+
+            Parallel.ForEach(allFiles, new ParallelOptions { MaxDegreeOfParallelism = 10, CancellationToken = ct }, filePath =>
+            {
+                // Deine vorhandene Exclusion-Logik (muss evtl. kurz als Helper greifbar sein)
+                if (IsManualExcluded(filePath, config.ExcludedItems)) return;
+
+                string relativePath = Path.GetRelativePath(config.SourcePath, filePath);
+                string targetFilePath = Path.Combine(finalTargetPath, relativePath);
+
+                // Verzeichnis am Ziel erstellen (Thread-safe)
+                string targetDir = Path.GetDirectoryName(targetFilePath);
+                if (!Directory.Exists(targetDir)) Directory.CreateDirectory(targetDir);
+
+                // Kopieren - hier wird die Latenz durch Parallelität "versteckt"
+                File.Copy(filePath, targetFilePath, true);
+
+                // Progress melden
+                Interlocked.Increment(ref currentFileCount);
+                progress?.Report(new JobProgressData
+                {
+                    ProgressPercentage = 0, // Wir verzichten auf CountFiles, daher keine %
+                    CurrentFile = Path.GetFileName(filePath),
+                    IsComplete = false
+                });
+            });
+        }
+
+        // Kleiner Helper, der genau das tut, was deine Func bisher in der Rekursion gemacht hat
+        private static bool IsManualExcluded(string path, List<string> exclusions)
+        {
+            string normalizedPath = path.TrimEnd(Path.DirectorySeparatorChar);
+            return exclusions.Any(e => normalizedPath.StartsWith(e.TrimEnd(Path.DirectorySeparatorChar), StringComparison.OrdinalIgnoreCase));
+        }
+
+
         private static void CopyDirectoryRecursive(
      string sourceDir,
      string targetDir,
