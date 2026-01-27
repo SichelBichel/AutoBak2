@@ -270,7 +270,7 @@ namespace AutoBak2.Utils
         {
             if (config.ArchiveType != JobConfig.ArchiveFormat.Zip)
             {
-                MessageHandler.DisplayErrorBox("Error", $"Archive format '{config.ArchiveType}' not supported yet (only filtered Zip is built-in).");
+                MessageHandler.DisplayErrorBox("Error", $"Archive format '{config.ArchiveType}' not supported yet.");
                 return;
             }
 
@@ -278,42 +278,50 @@ namespace AutoBak2.Utils
             string baseName = Path.GetFileName(config.SourcePath.TrimEnd(Path.DirectorySeparatorChar));
             string archiveFileName = baseName + archiveExtension;
 
+            // Ziel-Ordner (auf Drive) sicherstellen
             Directory.CreateDirectory(finalTargetPath);
+            string remoteArchivePath = Path.Combine(finalTargetPath, archiveFileName);
 
-            string fullArchivePath = Path.Combine(finalTargetPath, archiveFileName);
-
-            if (File.Exists(fullArchivePath))
-            {
-                File.Delete(fullArchivePath);
-            }
+            // WEICHE: Lokal zippen wenn CloudMode, sonst direkt (dein alter Weg)
+            string localTempPath = config.CloudMode
+                ? Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + ".zip")
+                : remoteArchivePath;
 
             try
             {
-                // NEU: Dateien zählen für Progress
-                int totalFiles = CountFiles(config.SourcePath, config.ExcludedItems);
+                int totalFiles = config.CloudMode ? 0 : CountFiles(config.SourcePath, config.ExcludedItems);
                 int currentFileCount = 0;
 
-                using (FileStream zipStream = new FileStream(fullArchivePath, FileMode.Create))
+                if (File.Exists(localTempPath)) File.Delete(localTempPath);
+
+                using (FileStream zipStream = new FileStream(localTempPath, FileMode.Create))
                 using (ZipArchive archive = new ZipArchive(zipStream, ZipArchiveMode.Create))
                 {
                     AddFilesToZipRecursive(
-                        sourcePath: config.SourcePath,
-                        archive: archive,
-                        exclusions: config.ExcludedItems,
-                        rootPath: config.SourcePath,
-                        currentFileCount: ref currentFileCount, 
-                        totalFileCount: totalFiles,
-                        ct: ct,
-                        progress: progress
+                        config.SourcePath,
+                        archive,
+                        config.ExcludedItems,
+                        config.SourcePath,
+                        ref currentFileCount,
+                        totalFiles,
+                        ct,
+                        progress
                     );
                 }
 
-                //MessageHandler.DisplayInfoBox("Archive Success", $"Filtered ZIP archive created successfully at: {fullArchivePath}.");
+                // Wenn wir im CloudMode lokal gearbeitet haben, jetzt hochladen
+                if (config.CloudMode)
+                {
+                    progress?.Report(new JobProgressData { CurrentFile = "Uploading ZIP to Cloud...", ProgressPercentage = 100 });
+
+                    if (File.Exists(remoteArchivePath)) File.Delete(remoteArchivePath);
+                    File.Move(localTempPath, remoteArchivePath);
+                }
             }
             catch (Exception ex)
             {
-                MessageHandler.DisplayErrorBox("Archive Failed",
-                    $"Failed to create filtered ZIP archive: {ex.Message}");
+                if (config.CloudMode && File.Exists(localTempPath)) File.Delete(localTempPath);
+                MessageHandler.DisplayErrorBox("Archive Failed", $"Failed to create ZIP: {ex.Message}");
             }
         }
 
