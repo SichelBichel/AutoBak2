@@ -56,7 +56,7 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top;
-            pictureBox1.Image = Properties.Resources.ReHoGaBanner3_0_Transparent;
+            pictureBox1.Image = Properties.Resources.ReHoGaBanner31;
             pictureBox1.Location = new Point(276, 22);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(243, 111);
