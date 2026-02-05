@@ -453,5 +453,10 @@ namespace AutoBak2
                 checkedListBoxWeekdays.SetItemChecked(i, flipFlop);
             }
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

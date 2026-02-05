@@ -1462,7 +1462,8 @@
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             Name = "MainForm";
-            Text = "AutoBak 2 [0.0.4]";
+            Text = "AutoBak 2 [0.0.4.1]";
+            Load += MainForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
