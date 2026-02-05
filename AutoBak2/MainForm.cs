@@ -417,7 +417,7 @@ namespace AutoBak2
 
         private void visitWebsiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShellHandler.url("https://regoga-interactive.com/");
+            ShellHandler.url("https://rehoga-interactive.com/");
         }
 
         private void SingleExecutiontoolStripMenuItem_Click(object sender, EventArgs e)
