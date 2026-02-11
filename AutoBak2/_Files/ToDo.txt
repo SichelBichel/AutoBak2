@@ -1,0 +1,18 @@
+﻿- ShellHandler Upgraden/Modularisieren und HC mess aufräumen in MainForm
+  public static string SelectFolder(string context)
+        {
+            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            {
+                fbd.Description = $"Select the {context}Directory";
+                fbd.ShowNewFolderButton = true;
+
+                if (fbd.ShowDialog() == DialogResult.OK)
+                {
+                    return fbd.SelectedPath;
+                }
+                return null;
+            }
+        }
+
+
+
