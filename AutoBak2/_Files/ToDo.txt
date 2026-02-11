@@ -1,4 +1,6 @@
 ﻿- ShellHandler Upgraden/Modularisieren und HC mess aufräumen in MainForm
+- Universal: Enums erstellen für Filetypes etc. und überall verwenden
+
   public static string SelectFolder(string context)
         {
             using (FolderBrowserDialog fbd = new FolderBrowserDialog())

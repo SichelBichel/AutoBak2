@@ -463,7 +463,7 @@
             panel5.Controls.Add(buttonSaveJob);
             panel5.Controls.Add(label12);
             panel5.Controls.Add(comboBoxJobSelection);
-            panel5.Location = new Point(7, 20);
+            panel5.Location = new Point(7, 25);
             panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
             panel5.Size = new Size(685, 147);
