@@ -139,7 +139,6 @@
             numericUpDown1 = new NumericUpDown();
             tabPage4 = new TabPage();
             label16 = new Label();
-            tabPage5 = new TabPage();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -272,11 +271,10 @@
             // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
-            tabControl1.Controls.Add(tabPage5);
             tabControl1.Location = new Point(14, 36);
             tabControl1.Margin = new Padding(3, 4, 3, 4);
             tabControl1.Name = "tabControl1";
@@ -1428,7 +1426,7 @@
             tabPage4.Name = "tabPage4";
             tabPage4.Size = new Size(1416, 822);
             tabPage4.TabIndex = 3;
-            tabPage4.Text = "Reminder Editor (DEPRECATED)";
+            tabPage4.Text = "Retention Editor (N/A)";
             // 
             // label16
             // 
@@ -1438,15 +1436,6 @@
             label16.Size = new Size(980, 20);
             label16.TabIndex = 0;
             label16.Text = "Hallo Mach hie sones ding dasme cha reminder ihsteue das es eim nid bim wärche dri piggeret // Nevermind mach das eifach bim instance creator";
-            // 
-            // tabPage5
-            // 
-            tabPage5.BackColor = Color.Silver;
-            tabPage5.Location = new Point(4, 29);
-            tabPage5.Name = "tabPage5";
-            tabPage5.Size = new Size(1416, 822);
-            tabPage5.TabIndex = 4;
-            tabPage5.Text = "Group Editor";
             // 
             // MainForm
             // 
@@ -1624,7 +1613,6 @@
         private Label label16;
         private Button buttonWeekdaysClear;
         private ToolStripMenuItem actionsToolStripMenuItem;
-        private TabPage tabPage5;
         private CheckBox checkBoxCloudMode;
     }
 }
